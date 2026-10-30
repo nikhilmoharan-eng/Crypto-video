@@ -1,0 +1,50 @@
+{
+  "brand": "CRYPTO BASICS",
+  "_note": "Times are seconds into the voice-over. Each line reveals word by word from `at` (or a list of per-word times).",
+  "scenes": [
+    {"start": 0.0, "end": 2.0, "y": 860, "lines": [
+      {"style": "small", "text": "What is", "at": 0.35},
+      {"style": "huge", "text": "FOMO", "at": 0.8},
+      {"style": "label", "text": "in Crypto?", "at": 1.05}
+    ]},
+    {"start": 2.0, "end": 5.6, "y": 470, "visual": {"type": "bars", "vals": [0.15, 0.22, 0.3, 0.45, 0.7, 1.0]}, "lines": [
+      {"style": "small", "text": "When you see", "at": 2.1},
+      {"style": "big", "text": "a Coin", "at": 3.0},
+      {"style": "grad", "text": "Going Up", "at": 3.9}
+    ]},
+    {"start": 5.6, "end": 10.6, "y": 520, "visual": {"type": "hourglass"}, "lines": [
+      {"style": "small", "text": "You feel like", "at": 5.75},
+      {"style": "big", "text": "Buy it Now", "at": 6.7},
+      {"style": "small", "text": "or you'll", "at": 8.55},
+      {"style": "grad", "text": "Miss Out", "at": 9.0}
+    ]},
+    {"start": 10.6, "end": 15.2, "y": 900, "lines": [
+      {"style": "small", "text": "This fear is called", "at": 11.1},
+      {"style": "huge", "text": "FOMO", "at": 12.2},
+      {"style": "label", "text": "Fear Of Missing Out", "at": [13.55, 13.8, 14.0, 14.25]}
+    ]},
+    {"start": 15.2, "end": 20.75, "y": 520, "visual": {"type": "crowd", "n": 16, "y": 1300}, "lines": [
+      {"style": "small", "text": "Many people", "at": 15.35},
+      {"style": "big", "text": "No Research", "at": 16.3},
+      {"style": "small", "text": "just copying", "at": 17.6},
+      {"style": "grad", "text": "Others' Profits", "at": 18.4}
+    ]},
+    {"start": 20.75, "end": 26.9, "y": 470, "visual": {"type": "pumpdump", "crash_at": 4.1}, "lines": [
+      {"style": "small", "text": "But remember", "at": 20.9},
+      {"style": "label", "text": "prices that", "at": 22.3},
+      {"style": "big", "text": "Rise Fast", "at": [23.0, 23.7]},
+      {"style": "small", "text": "can", "at": 24.85},
+      {"style": "grad", "text": "Fall Fast", "at": [25.1, 25.5]}
+    ]},
+    {"start": 26.9, "end": 31.65, "y": 620, "visual": {"type": "dots"}, "lines": [
+      {"style": "small", "text": "In crypto", "at": 27.3},
+      {"style": "big", "text": "Don't Rush", "at": [27.9, 28.4]},
+      {"style": "grad", "text": "Be Smart", "at": [29.3, 29.8]}
+    ]},
+    {"start": 31.65, "end": 37.7, "y": 880, "lines": [
+      {"style": "small", "text": "Before investing in any coin", "at": 31.85},
+      {"style": "big", "text": "Do Your Own", "at": [33.3, 33.6, 33.85]},
+      {"style": "hugegrad", "text": "Research", "at": 34.4}
+    ]}
+  ]
+}
