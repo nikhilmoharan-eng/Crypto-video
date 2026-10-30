@@ -2,7 +2,8 @@
 """Render a kinetic-typography vertical video entirely from code.
 
 Every pixel is drawn here with Pillow (background, petals, text, illustrations)
-and piped to ffmpeg, which muxes it with the voice-over MP3.
+and piped to ffmpeg, which mixes the voice-over MP3 with sound effects
+synthesised in sfx.py.
 
     python3 make_video.py --audio combined.mp3 --script script.json --out out.mp4
 """
@@ -10,8 +11,11 @@ import argparse
 import json
 import math
 import random
+import os
 import subprocess
+import tempfile
 
+import sfx
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 W, H, FPS = 1080, 1920, 30
@@ -143,19 +147,6 @@ def draw_petals(img, t):
         p = PETALS.rotate(ang, resample=Image.BICUBIC)
         img.paste(INK, (int(cx - p.width / 2), int(cy - p.height / 2)), p)
 
-
-def draw_brand(img, brand):
-    d = ImageDraw.Draw(img)
-    words = brand.upper().split()
-    top = words[0]
-    bottom = " ".join(words[1:])
-    f = font("black", 40)
-    for i, line in enumerate((top, bottom)):
-        if not line:
-            continue
-        w = d.textlength(line, font=f)
-        x = W / 2 - w / 2 + (-30 if i == 0 else 30)
-        d.text((x, 70 + i * 40), line, font=f, fill=INK)
 
 
 # ---------------------------------------------------------------- text
@@ -406,15 +397,23 @@ VISUALS = {
 
 # ---------------------------------------------------------------- main loop
 
-def render(script, audio, out, duration):
+def render(script, audio, out, duration, sfx_volume):
     bg = make_background()
-    brand = script.get("brand", "YOUR BRAND")
     scenes = script["scenes"]
+    for sc in scenes:
+        for line in sc["lines"]:
+            expand_line(line)
+    sfx_path = os.path.join(tempfile.mkdtemp(), "sfx.wav")
+    sfx.build(script, duration, sfx_path)
     n = int(math.ceil(duration * FPS))
     ff = subprocess.Popen([
         "ffmpeg", "-v", "error", "-y",
         "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
-        "-i", audio,
+        "-i", audio, "-i", sfx_path,
+        "-filter_complex",
+        f"[1:a]aresample=44100[vo];[2:a]volume={sfx_volume}[fx];"
+        "[vo][fx]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[a]",
+        "-map", "0:v", "-map", "[a]",
         "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
         "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out,
     ], stdin=subprocess.PIPE)
@@ -428,7 +427,6 @@ def render(script, audio, out, duration):
                     VISUALS[v["type"]](img, t - sc["start"], sc["end"] - sc["start"], v)
                 draw_text_block(img, sc, t)
         draw_petals(img, t)
-        draw_brand(img, brand)
         ff.stdin.write(img.tobytes())
         if i % (FPS * 5) == 0:
             print(f"  frame {i}/{n}", flush=True)
@@ -447,6 +445,7 @@ def main():
     ap.add_argument("--audio", required=True)
     ap.add_argument("--script", default="script.json")
     ap.add_argument("--out", default="output.mp4")
+    ap.add_argument("--sfx-volume", type=float, default=0.35, help="sound-effect level under the voice")
     ap.add_argument("--preview", type=float, nargs="*", help="render still PNGs at these times instead")
     a = ap.parse_args()
     script = json.load(open(a.script))
@@ -461,10 +460,9 @@ def main():
                         VISUALS[v["type"]](img, t - sc["start"], sc["end"] - sc["start"], v)
                     draw_text_block(img, sc, t)
             draw_petals(img, t)
-            draw_brand(img, script.get("brand", "YOUR BRAND"))
             img.save(f"preview_{t:05.2f}.png")
         return
-    render(script, a.audio, a.out, audio_duration(a.audio))
+    render(script, a.audio, a.out, audio_duration(a.audio), a.sfx_volume)
 
 
 if __name__ == "__main__":
