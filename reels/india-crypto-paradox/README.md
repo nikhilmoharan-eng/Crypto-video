@@ -3,7 +3,7 @@
 `india-crypto-paradox.mp4`: 1080×1920, 30 fps, 133 s, −14 LUFS.
 
 The voice-over is the ElevenLabs recording, with three fixes (`voiceover_fixed.flac`):
-- the "apnaane mein" phrase is replaced with the re-recorded patch clip;
+- the "apnaane mein" phrase is replaced with the re-recorded patch clip, sped up 1.2× to match the sentence pace and level-matched;
 - the read-aloud stage direction "Concept detected. Crypto paradox." (about 27–29 s) is removed;
 - the read-aloud heading "CTA" before the share line is removed.
 

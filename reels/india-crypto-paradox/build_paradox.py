@@ -15,9 +15,9 @@ y, SR = sf.read(VO, dtype="float32")
 
 def fixed(o):
     if o <= 2.69: return o
-    if o <= 26.6: return o + 0.21
-    if o <= 130.9: return o - 1.79
-    return o - 2.84
+    if o <= 26.6: return o + 0.078
+    if o <= 130.9: return o - 1.922
+    return o - 2.972
 
 
 def clip(a, b):
