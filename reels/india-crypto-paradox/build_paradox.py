@@ -39,7 +39,7 @@ R = "right"
 ep = {
     "series": "CRYPTO.DECODED",
     "series_icon": "coin",
-    "episode": 1,
+    "episode": 2,
     "tag": "CRYPTO PARADOX",
     "accent": "yellow",
     "disclaimer": "SIRF JAANKARI · FIGURES: 31 OCT 2026 TAK · NOT ADVICE",
@@ -52,20 +52,36 @@ ep = {
     "hook": [
         {
             "chip": "CRYPTO ADOPTION · DUNIYA MEIN",
+            "align": "center",
             "elements": [
-                {"type": "stat", "value": "#1", "count": False, "size": "xl", "color": "acc", "in": 0,
-                 "label": "CRYPTO APNAANE MEIN", "sub": "CHAINALYSIS GLOBAL ADOPTION INDEX"},
-                {"type": "card", "title": "CHAINALYSIS RANKING", "right": "INDIA", "w": 600, "in": "3:Chainalysis", "mt": 14, "rows": [
-                    {"icon": "flag", "iconColor": "acc", "label": "2024", "sub": "GLOBAL INDEX", "value": "#1", "valueColor": "acc", "in": "4:2024", "compact": True},
-                    {"icon": "flag", "iconColor": "acc", "label": "2025", "sub": "GLOBAL INDEX", "value": "#1", "valueColor": "acc", "in": "5:2025", "compact": True},
-                    {"icon": "users", "label": "America", "badge": "PEECHHE", "badgeColor": "mute", "in": "6:America", "compact": True},
-                    {"icon": "users", "label": "Nigeria", "badge": "PEECHHE", "badgeColor": "mute", "in": "7:Nigeria", "compact": True}
+                {"type": "tiles", "size": 84, "in": 0, "items": [
+                    {"icon": "₿", "color": "orange", "label": "BITCOIN"},
+                    {"icon": "Ξ", "color": "violet", "label": "ETHEREUM"},
+                    {"icon": "₮", "color": "green", "label": "USDT"},
+                    {"icon": "globe", "color": "blue", "label": "DUNIYA"}
+                ]},
+                {"type": "stat", "value": "#?", "count": False, "size": "xl", "color": "mute", "in": "0.2", "mt": 18,
+                 "label": "CRYPTO APNAANE MEIN",
+                 "then": [{"at": "1:number", "value": "#1", "color": "acc", "label": "CRYPTO APNAANE MEIN"}]},
+                {"type": "bigtext", "text": "*INDIA*", "size": 110, "in": "2:India", "mt": 4}
+            ],
+            "beats": [
+                B(0.00, 1.10, "*Do saal* tak…", mascot="think", mascot_pos=R),
+                B(1.75, 4.94, "duniya mein *crypto apnaane* mein *number one* desh kaun tha?", mascot="think", mascot_pos=R),
+                B(5.86, 6.29, "*India.*", mascot="happy", mascot_pos=R, pause=0.3)
+            ]
+        },
+        {
+            "chip": "CHAINALYSIS RANKING",
+            "elements": [
+                {"type": "card", "title": "GLOBAL CRYPTO ADOPTION INDEX", "right": "INDIA", "w": 600, "in": 0, "rows": [
+                    {"icon": "flag", "iconColor": "acc", "label": "2024", "sub": "INDIA KI RANK", "value": "#1", "valueColor": "acc", "in": "1:2024", "hl": "1:2024"},
+                    {"icon": "flag", "iconColor": "acc", "label": "2025", "sub": "INDIA KI RANK", "value": "#1", "valueColor": "acc", "in": "2:2025", "hl": "2:2025"},
+                    {"icon": "users", "label": "America", "sub": "INDIA SE", "badge": "PEECHHE", "badgeColor": "mute", "in": "3:America", "dim": "4"},
+                    {"icon": "users", "label": "Nigeria", "sub": "INDIA SE", "badge": "PEECHHE", "badgeColor": "mute", "in": "4:Nigeria"}
                 ]}
             ],
             "beats": [
-                B(0.00, 1.10, "Do saal tak…"),
-                B(1.75, 4.94, "duniya mein *crypto apnaane* mein *number one* desh kaun tha?", mascot="think", mascot_pos=R),
-                B(5.86, 6.29, "*India.*", mascot="happy", mascot_pos=R, pause=0.3),
                 B(6.81, 8.07, "*Chainalysis* ki ranking mein —"),
                 B(8.37, 9.56, "*2024* mein bhi,"),
                 B(9.77, 10.95, "*2025* mein bhi —"),
