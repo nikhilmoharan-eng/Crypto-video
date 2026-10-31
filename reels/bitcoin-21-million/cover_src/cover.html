@@ -1,0 +1,106 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:IT;font-weight:700;src:url(fonts/inter-tight-latin-700-normal.woff2)}
+@font-face{font-family:IT;font-weight:800;src:url(fonts/inter-tight-latin-800-normal.woff2)}
+@font-face{font-family:IT;font-weight:900;src:url(fonts/inter-tight-latin-900-normal.woff2)}
+@font-face{font-family:JB;font-weight:700;src:url(fonts/jetbrains-mono-latin-700-normal.woff2)}
+:root{--ink:#16171a;--paper:#ece7dc;--yel:#FDC43F;--red:#FF5A47;--vio:#7C5CFF;--bg:#0d0e0f}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:var(--bg);overflow:hidden}
+body{position:relative;font-family:IT,sans-serif}
+.abs{position:absolute}
+.grain{inset:0;pointer-events:none;mix-blend-mode:overlay;opacity:.55}
+.glow{left:90px;top:620px;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,138,42,.22) 0%,rgba(255,138,42,.08) 40%,transparent 68%)}
+/* paper note */
+.note{left:96px;top:140px;width:888px;height:560px;transform:rotate(-2.2deg);
+  background:var(--paper);box-shadow:0 30px 60px rgba(0,0,0,.55),0 4px 10px rgba(0,0,0,.4);
+  clip-path:polygon(0 0,100% 0,100% 93%,96% 95%,91% 93.5%,86% 96%,80% 94%,73% 96.5%,66% 94.5%,58% 97%,50% 95%,43% 97.5%,35% 95%,27% 97%,20% 94.5%,13% 96.5%,6% 94%,0 96%)}
+.note .tex{inset:0;opacity:.5;mix-blend-mode:multiply}
+.h1{left:58px;top:40px;font-weight:900;font-size:206px;line-height:.86;letter-spacing:-.045em;color:var(--ink)}
+.h1 .hl{position:relative;display:inline-block;z-index:1}
+.h1 .hl svg{position:absolute;left:-18px;top:30px;width:118%;height:78%;z-index:-1}
+.h3{left:62px;top:400px;font-weight:900;font-size:64px;letter-spacing:-.03em;color:var(--ink)}
+.h3 .zero{position:relative;color:#FF8A2A;margin:0 18px}
+.h3 .zero svg{position:absolute;left:-24px;top:-16px;width:calc(100% + 48px);height:118px}
+.ast{right:42px;top:22px;font-weight:900;font-size:110px;line-height:1;color:var(--ink)}
+.pin{left:420px;top:112px;width:46px;height:46px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#ffe9a8,#e0a923 45%,#8a6110 100%);
+  box-shadow:6px 10px 12px rgba(0,0,0,.5);transform:rotate(-2deg)}
+/* avatar */
+.avatar{left:-30px;top:690px;width:1190px}
+/* annotations */
+.ann{color:#f4f1ea;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:.95}
+.ann .big{font-size:76px;font-weight:900;display:block}
+.ann .sm{font-size:44px;display:block}
+.ann svg{display:block;margin-top:8px}
+.doc{left:50px;top:1080px;width:170px;height:214px;background:#f4f1ea;transform:rotate(-6deg);
+  clip-path:polygon(0 0,74% 0,100% 20%,100% 100%,0 100%);box-shadow:0 18px 30px rgba(0,0,0,.5)}
+.doc i{position:absolute;left:22px;height:9px;border-radius:5px;background:#c9c3b6}
+.doc b{position:absolute;left:46px;top:104px;width:78px;height:78px;border-radius:50%;background:#FF8A2A;
+  font:900 52px/78px IT;text-align:center;color:var(--ink)}
+.nolaw{left:838px;top:1090px;width:230px;height:176px;color:#FF8A2A;font-weight:900;font-size:40px;
+  line-height:.9;text-align:center;padding-top:36px;transform:rotate(-7deg)}
+.nolaw svg{position:absolute;inset:0}
+.arrow{left:950px;top:975px}
+/* bottom */
+.fade{left:0;right:0;bottom:0;height:520px;background:linear-gradient(to bottom,transparent,rgba(13,14,15,.55) 45%,rgba(13,14,15,.85))}
+.title{left:0;right:0;top:1540px;text-align:center;color:#fff;font-weight:900;font-size:58px;letter-spacing:-.03em;text-shadow:0 4px 18px rgba(0,0,0,.6)}
+.brush{left:170px;top:1612px}
+.ep{left:50%;top:1666px;transform:translateX(-50%);background:#FF8A2A;color:var(--ink);
+  font:700 40px/1 JB;letter-spacing:.06em;padding:12px 34px;border-radius:40px}
+.handle{left:0;right:0;top:1742px;text-align:center;color:#a7a39b;font:700 30px JB}
+.handle:before{content:"";display:inline-block;width:16px;height:16px;background:var(--vio);margin-right:12px;vertical-align:2px}
+.torn{left:0;bottom:0;width:1080px;height:96px}
+</style></head>
+<body>
+<!-- faint chalk doodles -->
+<svg class="abs" style="inset:0" width="1080" height="1920">
+  <defs><filter id="chalk"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter></defs>
+  <g filter="url(#chalk)" stroke="#fff" stroke-opacity=".09" fill="none" stroke-width="4" stroke-linecap="round">
+    <path d="M30 760 l60-40 50 30 70-80 60 20"/><path d="M262 680 l-22 2 m22-2 l-2 22"/>
+    <g stroke-width="3"><path d="M40 1480v80M30 1500h20v40H30z"/><path d="M90 1440v90M80 1460h20v50H80z"/><path d="M140 1400v70M130 1420h20v30h-20z"/></g>
+    <path d="M880 760 l40 -50 40 30 60 -90"/><path d="M1020 650 l-24 2 m24 -2 l-2 24"/>
+    <text x="900" y="1500" font-family="IT" font-weight="800" font-size="120" fill="#fff" fill-opacity=".05" stroke="none">₿</text>
+    <text x="40" y="660" font-family="IT" font-weight="800" font-size="110" fill="#fff" fill-opacity=".05" stroke="none">₹</text>
+  </g>
+</svg>
+<div class="abs glow"></div>
+
+<div class="abs pin"></div>
+<div class="abs note">
+  <svg class="abs tex" width="888" height="560"><filter id="p"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3"/><feColorMatrix values="0 0 0 0 .45  0 0 0 0 .42  0 0 0 0 .36  0 0 0 .55 0"/></filter><rect width="100%" height="100%" filter="url(#p)"/></svg>
+  <div class="abs ast">*</div>
+  <div class="abs h1"><span class="hl"><svg viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M2 8 C30 3 70 5 98 4 L97 34 C70 37 35 33 3 37 Z" fill="#FF8A2A"/></svg>21M</span><br>BAS!</div>
+  <div class="abs h3">AAKHRI ₿ → <span class="zero">2140<svg viewBox="0 0 110 118"><path d="M60 8 C20 4 6 40 12 70 C18 104 70 116 94 86 C112 62 100 18 62 10 C50 8 38 12 30 18" fill="none" stroke="#FF8A2A" stroke-width="7" stroke-linecap="round"/></svg></span></div>
+</div>
+
+<!-- pixel cursor -->
+<svg class="abs" style="left:905px;top:610px;filter:drop-shadow(6px 10px 6px rgba(0,0,0,.45))" width="108" height="171" viewBox="0 0 12 19" shape-rendering="crispEdges"><rect x="0" y="0" width="1" height="1" fill="#16171a"/><rect x="0" y="1" width="1" height="1" fill="#16171a"/><rect x="1" y="1" width="1" height="1" fill="#16171a"/><rect x="0" y="2" width="1" height="1" fill="#16171a"/><rect x="1" y="2" width="1" height="1" fill="#fff"/><rect x="2" y="2" width="1" height="1" fill="#16171a"/><rect x="0" y="3" width="1" height="1" fill="#16171a"/><rect x="1" y="3" width="1" height="1" fill="#fff"/><rect x="2" y="3" width="1" height="1" fill="#fff"/><rect x="3" y="3" width="1" height="1" fill="#16171a"/><rect x="0" y="4" width="1" height="1" fill="#16171a"/><rect x="1" y="4" width="1" height="1" fill="#fff"/><rect x="2" y="4" width="1" height="1" fill="#fff"/><rect x="3" y="4" width="1" height="1" fill="#fff"/><rect x="4" y="4" width="1" height="1" fill="#16171a"/><rect x="0" y="5" width="1" height="1" fill="#16171a"/><rect x="1" y="5" width="1" height="1" fill="#fff"/><rect x="2" y="5" width="1" height="1" fill="#fff"/><rect x="3" y="5" width="1" height="1" fill="#fff"/><rect x="4" y="5" width="1" height="1" fill="#fff"/><rect x="5" y="5" width="1" height="1" fill="#16171a"/><rect x="0" y="6" width="1" height="1" fill="#16171a"/><rect x="1" y="6" width="1" height="1" fill="#fff"/><rect x="2" y="6" width="1" height="1" fill="#fff"/><rect x="3" y="6" width="1" height="1" fill="#fff"/><rect x="4" y="6" width="1" height="1" fill="#fff"/><rect x="5" y="6" width="1" height="1" fill="#fff"/><rect x="6" y="6" width="1" height="1" fill="#16171a"/><rect x="0" y="7" width="1" height="1" fill="#16171a"/><rect x="1" y="7" width="1" height="1" fill="#fff"/><rect x="2" y="7" width="1" height="1" fill="#fff"/><rect x="3" y="7" width="1" height="1" fill="#fff"/><rect x="4" y="7" width="1" height="1" fill="#fff"/><rect x="5" y="7" width="1" height="1" fill="#fff"/><rect x="6" y="7" width="1" height="1" fill="#fff"/><rect x="7" y="7" width="1" height="1" fill="#16171a"/><rect x="0" y="8" width="1" height="1" fill="#16171a"/><rect x="1" y="8" width="1" height="1" fill="#fff"/><rect x="2" y="8" width="1" height="1" fill="#fff"/><rect x="3" y="8" width="1" height="1" fill="#fff"/><rect x="4" y="8" width="1" height="1" fill="#fff"/><rect x="5" y="8" width="1" height="1" fill="#fff"/><rect x="6" y="8" width="1" height="1" fill="#fff"/><rect x="7" y="8" width="1" height="1" fill="#fff"/><rect x="8" y="8" width="1" height="1" fill="#16171a"/><rect x="0" y="9" width="1" height="1" fill="#16171a"/><rect x="1" y="9" width="1" height="1" fill="#fff"/><rect x="2" y="9" width="1" height="1" fill="#fff"/><rect x="3" y="9" width="1" height="1" fill="#fff"/><rect x="4" y="9" width="1" height="1" fill="#fff"/><rect x="5" y="9" width="1" height="1" fill="#fff"/><rect x="6" y="9" width="1" height="1" fill="#fff"/><rect x="7" y="9" width="1" height="1" fill="#fff"/><rect x="8" y="9" width="1" height="1" fill="#fff"/><rect x="9" y="9" width="1" height="1" fill="#16171a"/><rect x="0" y="10" width="1" height="1" fill="#16171a"/><rect x="1" y="10" width="1" height="1" fill="#fff"/><rect x="2" y="10" width="1" height="1" fill="#fff"/><rect x="3" y="10" width="1" height="1" fill="#fff"/><rect x="4" y="10" width="1" height="1" fill="#fff"/><rect x="5" y="10" width="1" height="1" fill="#fff"/><rect x="6" y="10" width="1" height="1" fill="#fff"/><rect x="7" y="10" width="1" height="1" fill="#fff"/><rect x="8" y="10" width="1" height="1" fill="#fff"/><rect x="9" y="10" width="1" height="1" fill="#fff"/><rect x="10" y="10" width="1" height="1" fill="#16171a"/><rect x="0" y="11" width="1" height="1" fill="#16171a"/><rect x="1" y="11" width="1" height="1" fill="#fff"/><rect x="2" y="11" width="1" height="1" fill="#fff"/><rect x="3" y="11" width="1" height="1" fill="#fff"/><rect x="4" y="11" width="1" height="1" fill="#fff"/><rect x="5" y="11" width="1" height="1" fill="#fff"/><rect x="6" y="11" width="1" height="1" fill="#fff"/><rect x="7" y="11" width="1" height="1" fill="#16171a"/><rect x="8" y="11" width="1" height="1" fill="#16171a"/><rect x="9" y="11" width="1" height="1" fill="#16171a"/><rect x="10" y="11" width="1" height="1" fill="#16171a"/><rect x="11" y="11" width="1" height="1" fill="#16171a"/><rect x="0" y="12" width="1" height="1" fill="#16171a"/><rect x="1" y="12" width="1" height="1" fill="#fff"/><rect x="2" y="12" width="1" height="1" fill="#fff"/><rect x="3" y="12" width="1" height="1" fill="#fff"/><rect x="4" y="12" width="1" height="1" fill="#16171a"/><rect x="5" y="12" width="1" height="1" fill="#fff"/><rect x="6" y="12" width="1" height="1" fill="#fff"/><rect x="7" y="12" width="1" height="1" fill="#16171a"/><rect x="0" y="13" width="1" height="1" fill="#16171a"/><rect x="1" y="13" width="1" height="1" fill="#fff"/><rect x="2" y="13" width="1" height="1" fill="#fff"/><rect x="3" y="13" width="1" height="1" fill="#16171a"/><rect x="4" y="13" width="1" height="1" fill="#16171a"/><rect x="5" y="13" width="1" height="1" fill="#fff"/><rect x="6" y="13" width="1" height="1" fill="#fff"/><rect x="7" y="13" width="1" height="1" fill="#16171a"/><rect x="0" y="14" width="1" height="1" fill="#16171a"/><rect x="1" y="14" width="1" height="1" fill="#fff"/><rect x="2" y="14" width="1" height="1" fill="#16171a"/><rect x="5" y="14" width="1" height="1" fill="#16171a"/><rect x="6" y="14" width="1" height="1" fill="#fff"/><rect x="7" y="14" width="1" height="1" fill="#fff"/><rect x="8" y="14" width="1" height="1" fill="#16171a"/><rect x="0" y="15" width="1" height="1" fill="#16171a"/><rect x="1" y="15" width="1" height="1" fill="#16171a"/><rect x="5" y="15" width="1" height="1" fill="#16171a"/><rect x="6" y="15" width="1" height="1" fill="#fff"/><rect x="7" y="15" width="1" height="1" fill="#fff"/><rect x="8" y="15" width="1" height="1" fill="#16171a"/><rect x="0" y="16" width="1" height="1" fill="#16171a"/><rect x="6" y="16" width="1" height="1" fill="#16171a"/><rect x="7" y="16" width="1" height="1" fill="#fff"/><rect x="8" y="16" width="1" height="1" fill="#fff"/><rect x="9" y="16" width="1" height="1" fill="#16171a"/><rect x="6" y="17" width="1" height="1" fill="#16171a"/><rect x="7" y="17" width="1" height="1" fill="#fff"/><rect x="8" y="17" width="1" height="1" fill="#fff"/><rect x="9" y="17" width="1" height="1" fill="#16171a"/><rect x="7" y="18" width="1" height="1" fill="#16171a"/><rect x="8" y="18" width="1" height="1" fill="#16171a"/></svg>
+
+<img class="abs avatar" src="avatar_recolor.png">
+
+<div class="abs ann" style="left:46px;top:830px"><span class="big">96%</span><span class="sm">MINED</span>
+  <svg width="210" height="26"><path d="M4 16 C60 6 130 6 204 12 M30 22 C90 15 150 16 190 20" stroke="#f4f1ea" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>
+<div class="abs ann" style="left:870px;top:800px;text-align:right"><span class="big">÷2</span><span class="sm">HALVING</span>
+  <svg width="190" height="26"><path d="M4 12 C60 6 120 7 186 14 M24 21 C80 15 140 16 172 20" stroke="#f4f1ea" stroke-width="5" fill="none" stroke-linecap="round"/></svg></div>
+<svg class="abs arrow" width="70" height="110"><path d="M20 6 C40 40 44 70 36 98 M18 78 L36 100 L56 80" stroke="#FF8A2A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+<div class="abs doc"><i style="top:30px;width:96px"></i><i style="top:52px;width:120px"></i><i style="top:74px;width:84px"></i><b>₿</b></div>
+
+<div class="abs nolaw">DIGITAL<br>GOLD?
+  <svg viewBox="0 0 250 190"><path d="M140 14 C60 6 10 50 16 104 C22 160 120 186 196 160 C248 140 252 70 206 38 C176 18 120 10 84 22" fill="none" stroke="#f4f1ea" stroke-width="6" stroke-linecap="round"/></svg></div>
+
+<div class="abs fade"></div>
+<div class="abs title">BITCOIN SIRF 21 MILLION KYUN?</div>
+<svg class="abs brush" width="740" height="40"><path d="M6 22 C200 8 520 8 734 18 M60 32 C260 22 480 24 690 30" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/></svg>
+<div class="abs ep">EP 4</div>
+<div class="abs handle">@niks.crypto</div>
+
+<svg class="abs torn" viewBox="0 0 1080 96" preserveAspectRatio="none">
+  <path d="M0 40 L30 30 55 44 80 26 110 38 140 22 170 36 205 24 235 40 265 28 300 42 330 26 360 36 395 22 425 38 455 30 490 44 520 26 555 38 585 24 620 40 650 28 685 42 715 26 745 36 780 22 810 40 845 28 875 42 905 26 940 38 970 24 1000 40 1035 28 1080 36 L1080 96 L0 96Z" fill="#f2efe8"/>
+</svg>
+<svg class="abs grain" width="1080" height="1920"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#g)" opacity=".35"/></svg>
+</body></html>
