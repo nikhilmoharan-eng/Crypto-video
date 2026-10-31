@@ -1,0 +1,1228 @@
+{
+ "series": "CRYPTO.DECODED",
+ "series_icon": "coin",
+ "episode": 1,
+ "tag": "CRYPTO PARADOX",
+ "accent": "yellow",
+ "disclaimer": "SIRF JAANKARI · FIGURES: 31 OCT 2026 TAK · NOT ADVICE",
+ "concept": "INDIA KA CRYPTO PARADOX",
+ "music_mood": "tense",
+ "brand": {
+  "wordmark": "niks",
+  "suffix": ".crypto",
+  "handle": "@niks.crypto",
+  "color": "#7C5CFF",
+  "outro_log": "Crypto gyaan successfully installed.",
+  "follow": "FOLLOW @NIKS.CRYPTO"
+ },
+ "stinger_lines": {
+  "boot": "SYSTEM ONLINE",
+  "detect": "TOPIC LOCKED:",
+  "run": "LOADING EXPLANATION…"
+ },
+ "hook": [
+  {
+   "chip": "CRYPTO ADOPTION · DUNIYA MEIN",
+   "elements": [
+    {
+     "type": "stat",
+     "value": "#1",
+     "count": false,
+     "size": "xl",
+     "color": "acc",
+     "in": 0,
+     "label": "CRYPTO APNAANE MEIN",
+     "sub": "CHAINALYSIS GLOBAL ADOPTION INDEX"
+    },
+    {
+     "type": "card",
+     "title": "CHAINALYSIS RANKING",
+     "right": "INDIA",
+     "w": 600,
+     "in": "3:Chainalysis",
+     "mt": 14,
+     "rows": [
+      {
+       "icon": "flag",
+       "iconColor": "acc",
+       "label": "2024",
+       "sub": "GLOBAL INDEX",
+       "value": "#1",
+       "valueColor": "acc",
+       "in": "4:2024",
+       "compact": true
+      },
+      {
+       "icon": "flag",
+       "iconColor": "acc",
+       "label": "2025",
+       "sub": "GLOBAL INDEX",
+       "value": "#1",
+       "valueColor": "acc",
+       "in": "5:2025",
+       "compact": true
+      },
+      {
+       "icon": "users",
+       "label": "America",
+       "badge": "PEECHHE",
+       "badgeColor": "mute",
+       "in": "6:America",
+       "compact": true
+      },
+      {
+       "icon": "users",
+       "label": "Nigeria",
+       "badge": "PEECHHE",
+       "badgeColor": "mute",
+       "in": "7:Nigeria",
+       "compact": true
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Do saal tak…",
+     "audio": "/root/explainer-reel/episodes/clips/0000.00.wav"
+    },
+    {
+     "say": "duniya mein *crypto apnaane* mein *number one* desh kaun tha?",
+     "audio": "/root/explainer-reel/episodes/clips/0001.75.wav",
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*India.*",
+     "audio": "/root/explainer-reel/episodes/clips/0005.86.wav",
+     "mascot": "happy",
+     "mascot_pos": "right",
+     "pause": 0.3
+    },
+    {
+     "say": "*Chainalysis* ki ranking mein —",
+     "audio": "/root/explainer-reel/episodes/clips/0006.81.wav"
+    },
+    {
+     "say": "*2024* mein bhi,",
+     "audio": "/root/explainer-reel/episodes/clips/0008.37.wav"
+    },
+    {
+     "say": "*2025* mein bhi —",
+     "audio": "/root/explainer-reel/episodes/clips/0009.77.wav"
+    },
+    {
+     "say": "*America* se aage,",
+     "audio": "/root/explainer-reel/episodes/clips/0011.29.wav"
+    },
+    {
+     "say": "*Nigeria* se aage.",
+     "audio": "/root/explainer-reel/episodes/clips/0012.43.wav",
+     "mascot": "happy",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "chip": "SEPTEMBER 2026",
+   "elements": [
+    {
+     "type": "card",
+     "title": "GOVT OF INDIA",
+     "right": "REPORTS",
+     "w": 600,
+     "in": 0,
+     "rows": [
+      {
+       "icon": "bank",
+       "iconColor": "acc",
+       "label": "Finance Ministry",
+       "sub": "PARLIAMENT COMMITTEE KO",
+       "in": "1:sarkar",
+       "compact": true
+      }
+     ]
+    },
+    {
+     "type": "bubble",
+     "quote": "Crypto ke liye alag kanoon?",
+     "in": "2:alag",
+     "mt": 26,
+     "w": 560
+    },
+    {
+     "type": "stamp",
+     "text": "NAHI CHAHIYE",
+     "color": "red",
+     "rot": -6,
+     "size": 44,
+     "in": "3:Nahi+0.1",
+     "pos": {
+      "x": 320,
+      "y": 300,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "Aur *September 2026* mein…",
+     "audio": "/root/explainer-reel/episodes/clips/0014.06.wav"
+    },
+    {
+     "say": "*sarkar* ne kya kaha?",
+     "audio": "/root/explainer-reel/episodes/clips/0016.29.wav",
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "\"Crypto ke liye *alag kanoon?*\"",
+     "audio": "/root/explainer-reel/episodes/clips/0017.72.wav"
+    },
+    {
+     "say": "\"~Nahi chahiye.~\"",
+     "audio": "/root/explainer-reel/episodes/clips/0019.51.wav",
+     "mascot": "shock",
+     "mascot_pos": "right",
+     "pause": 0.35
+    }
+   ]
+  },
+  {
+   "align": "center",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "*#1* in use",
+     "size": 92,
+     "in": 0
+    },
+    {
+     "type": "text",
+     "mono": true,
+     "text": "— PHIR BHI —",
+     "in": "1:rules",
+     "mt": 10
+    },
+    {
+     "type": "bigtext",
+     "text": "~0~ naye rules?",
+     "size": 92,
+     "in": "1:mana",
+     "mt": 6
+    }
+   ],
+   "beats": [
+    {
+     "say": "Toh jo desh *sabse zyada* crypto use karta hai…",
+     "audio": "/root/explainer-reel/episodes/clips/0020.69.wav"
+    },
+    {
+     "say": "wahi *rules banane* se ~mana kyun~ kar raha hai?",
+     "audio": "/root/explainer-reel/episodes/clips/0023.70.wav",
+     "mascot": "think",
+     "mascot_pos": "center"
+    }
+   ]
+  }
+ ],
+ "body": [
+  {
+   "chip": "NUMBER ONE KAISE?",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "*Number one* kaise?",
+     "size": 64,
+     "in": 0,
+     "out": "1",
+     "pos": {
+      "x": 320,
+      "y": 190,
+      "center": true
+     }
+    },
+    {
+     "type": "card",
+     "title": "CHAINALYSIS KYA GINTA HAI?",
+     "w": 600,
+     "in": "1",
+     "rows": [
+      {
+       "icon": "building",
+       "label": "Sirf bade investors",
+       "sub": "NAHI",
+       "in": "2:bade",
+       "dim": "3",
+       "compact": true
+      },
+      {
+       "icon": "users",
+       "iconColor": "green",
+       "label": "Aam log",
+       "sub": "KHAREEDNA · BHEJNA",
+       "in": "3:aam",
+       "hl": "3:aam",
+       "compact": true
+      },
+      {
+       "icon": "building",
+       "iconColor": "acc",
+       "label": "Chhote shehar",
+       "sub": "TIER 2 · TIER 3",
+       "in": "4:shehron",
+       "compact": true
+      },
+      {
+       "icon": "coin",
+       "iconColor": "acc",
+       "label": "Chhoti amounts",
+       "sub": "RETAIL TRANSFERS",
+       "in": "5:amounts",
+       "compact": true
+      }
+     ]
+    },
+    {
+     "type": "grid",
+     "shape": "person",
+     "cols": 14,
+     "count": 42,
+     "cell": 30,
+     "color": "dim",
+     "highlight": 1.0,
+     "hl": "7:crores",
+     "hlColor": "acc",
+     "in": "6:India",
+     "mt": 16,
+     "label": "CRORES MEIN USERS"
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Number one* kaise?",
+     "audio": "/root/explainer-reel/episodes/clips/0029.80.wav",
+     "mascot": "think",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "Pehle samjho, ye *number one* aaya kahan se.",
+     "audio": "/root/explainer-reel/episodes/clips/0031.33.wav"
+    },
+    {
+     "say": "*Chainalysis* sirf bade investors ko nahi ginta.",
+     "audio": "/root/explainer-reel/episodes/clips/0034.19.wav"
+    },
+    {
+     "say": "Wo dekhta hai ki *aam log* kitna crypto kharid rahe hain, bhej rahe hain —",
+     "audio": "/root/explainer-reel/episodes/clips/0036.88.wav"
+    },
+    {
+     "say": "*chhote shehron* se,",
+     "audio": "/root/explainer-reel/episodes/clips/0040.92.wav"
+    },
+    {
+     "say": "*chhoti amounts* mein.",
+     "audio": "/root/explainer-reel/episodes/clips/0041.98.wav"
+    },
+    {
+     "say": "Aur India mein aise log…",
+     "audio": "/root/explainer-reel/episodes/clips/0043.22.wav"
+    },
+    {
+     "say": "*crores* mein hain.",
+     "audio": "/root/explainer-reel/episodes/clips/0044.68.wav",
+     "mascot": "happy",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "chip": "ABHI RULES KYA HAIN?",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "*Abhi rules* kya hain?",
+     "size": 64,
+     "in": 0,
+     "out": "1",
+     "pos": {
+      "x": 320,
+      "y": 190,
+      "center": true
+     }
+    },
+    {
+     "type": "card",
+     "title": "CRYPTO IN INDIA",
+     "right": "STATUS",
+     "w": 600,
+     "in": "1",
+     "rows": [
+      {
+       "icon": "check",
+       "iconColor": "green",
+       "label": "Ban?",
+       "sub": "TRADING LEGAL HAI",
+       "badge": "NAHI",
+       "badgeColor": "green",
+       "in": "2:ban"
+      },
+      {
+       "icon": "rupee",
+       "iconColor": "red",
+       "label": "Legal tender?",
+       "sub": "RUPEE JAISA PAISA NAHI",
+       "badge": "NAHI",
+       "badgeColor": "red",
+       "in": "3:legal"
+      },
+      {
+       "icon": "doc",
+       "iconColor": "acc",
+       "label": "Tax?",
+       "sub": "POORA LAGTA HAI",
+       "badge": "POORA",
+       "badgeColor": "acc",
+       "in": "4:tax",
+       "hl": "4:Poora"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Abhi rules* kya hain?",
+     "audio": "/root/explainer-reel/episodes/clips/0045.97.wav",
+     "mascot": "think",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "Ab *ajeeb baat* suno.",
+     "audio": "/root/explainer-reel/episodes/clips/0047.49.wav",
+     "mascot": "wink",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "Crypto India mein ^ban nahi^ hai.",
+     "audio": "/root/explainer-reel/episodes/clips/0048.99.wav"
+    },
+    {
+     "say": "Par *legal tender* bhi ~nahi~ hai.",
+     "audio": "/root/explainer-reel/episodes/clips/0050.96.wav"
+    },
+    {
+     "say": "Lekin *tax?* Poora hai.",
+     "audio": "/root/explainer-reel/episodes/clips/0052.55.wav",
+     "mascot": "shock",
+     "mascot_pos": "center"
+    }
+   ]
+  },
+  {
+   "chip": "TAX KA HISAAB",
+   "elements": [
+    {
+     "type": "row",
+     "gap": 16,
+     "in": 0,
+     "items": [
+      {
+       "type": "stat",
+       "value": 30,
+       "suffix": "%",
+       "size": "l",
+       "color": "acc",
+       "label": "MUNAFE PE TAX",
+       "in": "0:tees"
+      },
+      {
+       "type": "stat",
+       "value": 1,
+       "suffix": "%",
+       "size": "l",
+       "color": "acc",
+       "label": "TDS · HAR SALE PE",
+       "in": "1:TDS"
+      }
+     ]
+    },
+    {
+     "type": "card",
+     "title": "AUR NUKSAAN?",
+     "w": 600,
+     "in": "2:nuksaan",
+     "mt": 18,
+     "rows": [
+      {
+       "icon": "down",
+       "iconColor": "red",
+       "label": "Loss set-off",
+       "sub": "DOOSRE MUNAFE SE",
+       "badge": "ALLOWED NAHI",
+       "badgeColor": "red",
+       "in": "3:Usse",
+       "red": "3:adjust"
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "NO SET-OFF",
+     "color": "red",
+     "rot": -7,
+     "size": 38,
+     "in": "3:sakte",
+     "pos": {
+      "x": 430,
+      "y": 330,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "Munafe pe seedha *tees percent.*",
+     "audio": "/root/explainer-reel/episodes/clips/0054.19.wav"
+    },
+    {
+     "say": "Har sale pe *ek percent TDS.*",
+     "audio": "/root/explainer-reel/episodes/clips/0056.34.wav"
+    },
+    {
+     "say": "Aur ~nuksaan~ hua?",
+     "audio": "/root/explainer-reel/episodes/clips/0058.48.wav",
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Usse kisi munafe mein ~adjust bhi nahi~ kar sakte.",
+     "audio": "/root/explainer-reel/episodes/clips/0059.49.wav",
+     "mascot": "sad",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "chip": "SARKAR KI NAZAR",
+   "elements": [
+    {
+     "type": "check",
+     "title": "CONTROL CHECKLIST",
+     "in": 0,
+     "items": [
+      {
+       "label": "FIU-IND registration",
+       "tick": "0:FIU"
+      },
+      {
+       "label": "Anti-money laundering rules",
+       "tick": "1:laundering"
+      },
+      {
+       "label": "Tax: 30% + 1% TDS",
+       "tick": "2:tax"
+      },
+      {
+       "label": "Reporting · nazar",
+       "tick": "3:nazar"
+      },
+      {
+       "label": "Crypto ka alag kanoon",
+       "state": "x",
+       "tick": "4:kanoon"
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "NO LAW",
+     "color": "red",
+     "rot": -8,
+     "size": 46,
+     "in": "4:banati",
+     "pos": {
+      "x": 320,
+      "y": 345,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Exchanges* ko *FIU-IND* mein register hona padta hai,",
+     "audio": "/root/explainer-reel/episodes/clips/0062.13.wav"
+    },
+    {
+     "say": "*money laundering* ke rules maanne padte hain.",
+     "audio": "/root/explainer-reel/episodes/clips/0065.65.wav"
+    },
+    {
+     "say": "Matlab sarkar *tax leti hai…*",
+     "audio": "/root/explainer-reel/episodes/clips/0067.88.wav",
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*nazar rakhti hai…*",
+     "audio": "/root/explainer-reel/episodes/clips/0069.77.wav",
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "par ~kanoon nahi banati.~",
+     "audio": "/root/explainer-reel/episodes/clips/0070.94.wav",
+     "mascot": "shock",
+     "mascot_pos": "right",
+     "pause": 0.3
+    }
+   ]
+  },
+  {
+   "chip": "MANA KYUN?",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "*Mana* kyun?",
+     "size": 64,
+     "in": 0,
+     "out": "1",
+     "pos": {
+      "x": 320,
+      "y": 190,
+      "center": true
+     }
+    },
+    {
+     "type": "card",
+     "w": 600,
+     "in": "1:Reports",
+     "rows": [
+      {
+       "icon": "bank",
+       "iconColor": "acc",
+       "label": "Finance Ministry",
+       "sub": "→ PARLIAMENT COMMITTEE",
+       "badge": "REPORTS",
+       "badgeColor": "mute",
+       "compact": true,
+       "in": "1:Finance"
+      }
+     ]
+    },
+    {
+     "type": "flow",
+     "w": 640,
+     "h": 380,
+     "in": "2:alag",
+     "mt": 12,
+     "nodes": [
+      {
+       "id": "law",
+       "x": 170,
+       "y": 0,
+       "w": 250,
+       "icon": "doc",
+       "label": "Alag kanoon",
+       "sub": "AGAR BANA",
+       "in": "2:alag"
+      },
+      {
+       "id": "ok",
+       "x": 470,
+       "y": 95,
+       "w": 250,
+       "icon": "check",
+       "iconColor": "green",
+       "label": "\"Manzoori\"",
+       "sub": "LOGON KO LAGEGA",
+       "in": "3:manzoori"
+      },
+      {
+       "id": "money",
+       "x": 170,
+       "y": 190,
+       "w": 250,
+       "icon": "rupee",
+       "iconColor": "acc",
+       "label": "Zyada paisa",
+       "sub": "LOG LAGAYENGE",
+       "in": "4:paisa"
+      },
+      {
+       "id": "risk",
+       "x": 470,
+       "y": 285,
+       "w": 250,
+       "icon": "alert",
+       "iconColor": "red",
+       "label": "Zyada risk",
+       "color": "red",
+       "in": "5:risk"
+      }
+     ],
+     "edges": [
+      {
+       "from": "law",
+       "to": "ok",
+       "fromSide": "right",
+       "toSide": "top",
+       "color": "acc",
+       "dashed": true,
+       "in": "3:manzoori"
+      },
+      {
+       "from": "ok",
+       "to": "money",
+       "fromSide": "left",
+       "toSide": "top",
+       "color": "acc",
+       "dashed": true,
+       "in": "4:paisa"
+      },
+      {
+       "from": "money",
+       "to": "risk",
+       "fromSide": "right",
+       "toSide": "top",
+       "color": "red",
+       "dashed": true,
+       "in": "5:risk"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Mana* kyun?",
+     "audio": "/root/explainer-reel/episodes/clips/0072.46.wav",
+     "mascot": "think",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "*Reports* ke mutabik, *Finance Ministry* ne Parliament ki committee ko bataya —",
+     "audio": "/root/explainer-reel/episodes/clips/0073.47.wav"
+    },
+    {
+     "say": "agar crypto ke liye *alag kanoon* bana diya,",
+     "audio": "/root/explainer-reel/episodes/clips/0077.67.wav"
+    },
+    {
+     "say": "toh lagega sarkar ne isse *manzoori* de di.",
+     "audio": "/root/explainer-reel/episodes/clips/0080.16.wav"
+    },
+    {
+     "say": "Aur phir log aur *zyada paisa* lagayenge —",
+     "audio": "/root/explainer-reel/episodes/clips/0082.73.wav"
+    },
+    {
+     "say": "~zyada risk~ ke saath.",
+     "audio": "/root/explainer-reel/episodes/clips/0084.93.wav",
+     "mascot": "sad",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "chip": "SARKAR KA PLAN: e-RUPEE",
+   "elements": [
+    {
+     "type": "object",
+     "kind": "coin",
+     "color": "gold",
+     "symbol": "₹",
+     "size": 230,
+     "label": "e-RUPEE · RBI KI DIGITAL CURRENCY",
+     "in": "0:digital"
+    },
+    {
+     "type": "card",
+     "title": "SARKAR KI PASAND",
+     "w": 600,
+     "in": "1:Rupee",
+     "mt": 16,
+     "rows": [
+      {
+       "icon": "coin",
+       "iconColor": "red",
+       "label": "Crypto",
+       "sub": "PRIVATE · VOLATILE",
+       "badge": "ALAG KANOON NAHI",
+       "badgeColor": "red",
+       "compact": true,
+       "in": "1:Rupee"
+      },
+      {
+       "icon": "rupee",
+       "iconColor": "acc",
+       "label": "e-Rupee",
+       "sub": "RBI JAARI KARTA HAI",
+       "badge": "FOCUS",
+       "badgeColor": "acc",
+       "compact": true,
+       "in": "1:Rupee+0.2",
+       "hl": "1:Rupee+0.2"
+      }
+     ]
+    },
+    {
+     "type": "card",
+     "w": 600,
+     "in": "2:RBI",
+     "mt": 12,
+     "rows": [
+      {
+       "icon": "bank",
+       "iconColor": "acc",
+       "label": "RBI",
+       "sub": "CRYPTO PE STANCE",
+       "badge": "KHILAAF",
+       "badgeColor": "red",
+       "in": "2:RBI",
+       "red": "3:khilaaf"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Sarkar ka *focus* hai *RBI* ka apna *digital rupaya* —",
+     "audio": "/root/explainer-reel/episodes/clips/0086.36.wav"
+    },
+    {
+     "say": "*e-Rupee.*",
+     "audio": "/root/explainer-reel/episodes/clips/0089.69.wav",
+     "mascot": "happy",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "Aur *RBI?*",
+     "audio": "/root/explainer-reel/episodes/clips/0090.48.wav",
+     "mascot": "think",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "Wo toh pehle se crypto ke ~khilaaf~ hai.",
+     "audio": "/root/explainer-reel/episodes/clips/0091.44.wav",
+     "mascot": "point",
+     "mascot_pos": "center"
+    }
+   ]
+  },
+  {
+   "chip": "AAPKE LIYE MATLAB?",
+   "chip_color": "red",
+   "flash": true,
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "~Aapke liye~ matlab?",
+     "size": 64,
+     "in": 0,
+     "out": "1",
+     "pos": {
+      "x": 320,
+      "y": 190,
+      "center": true
+     }
+    },
+    {
+     "type": "card",
+     "title": "AGAR EXCHANGE…",
+     "w": 600,
+     "in": "1",
+     "rows": [
+      {
+       "icon": "building",
+       "iconColor": "red",
+       "label": "Doob jaaye",
+       "sub": "BAND / DIWALIYA",
+       "badge": "RISK",
+       "badgeColor": "red",
+       "in": "2:doob",
+       "red": "2:doob"
+      },
+      {
+       "icon": "unlock",
+       "iconColor": "red",
+       "label": "Hack ho jaaye",
+       "sub": "WALLET KHALI",
+       "badge": "RISK",
+       "badgeColor": "red",
+       "in": "3:hack",
+       "red": "3:hack"
+      },
+      {
+       "icon": "shield",
+       "label": "Crypto-specific kanoon",
+       "sub": "AAPKO BACHAANE KE LIYE",
+       "badge": "NAHI",
+       "badgeColor": "red",
+       "in": "4:kanoon"
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "NO SAFETY NET",
+     "color": "red",
+     "rot": -6,
+     "size": 40,
+     "in": "4:bachaane",
+     "pos": {
+      "x": 320,
+      "y": 420,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Aapke liye* matlab?",
+     "audio": "/root/explainer-reel/episodes/clips/0093.63.wav",
+     "mascot": "think",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "Toh aapke liye iska *matlab* kya hai?",
+     "audio": "/root/explainer-reel/episodes/clips/0094.80.wav"
+    },
+    {
+     "say": "Agar koi exchange ~doob jaaye…~",
+     "audio": "/root/explainer-reel/episodes/clips/0097.51.wav"
+    },
+    {
+     "say": "ya ~hack~ ho jaaye…",
+     "audio": "/root/explainer-reel/episodes/clips/0099.20.wav",
+     "mascot": "shock",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "koi khaas crypto kanoon aapko ~bachaane nahi~ aayega.",
+     "audio": "/root/explainer-reel/episodes/clips/0100.48.wav",
+     "mascot": "sad",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "chip": "YAAD HAI WAZIRX?",
+   "chip_color": "red",
+   "elements": [
+    {
+     "type": "card",
+     "title": "WAZIRX · JULY 2024",
+     "right": "HACK",
+     "w": 600,
+     "in": 0,
+     "rows": [
+      {
+       "icon": "alert",
+       "iconColor": "red",
+       "label": "Indian exchange hack",
+       "sub": "JULY 2024",
+       "in": 0
+      },
+      {
+       "icon": "lock",
+       "iconColor": "red",
+       "label": "Users ka paisa",
+       "sub": "WITHDRAWALS BAND",
+       "badge": "ATKA",
+       "badgeColor": "red",
+       "in": "1:paisa",
+       "red": "1:atka"
+      }
+     ]
+    },
+    {
+     "type": "timeline",
+     "title": "PAISA ATKA RAHA",
+     "icon": "clock",
+     "w": 600,
+     "in": "1:mahino",
+     "mt": 18,
+     "segments": [
+      {
+       "from": 0,
+       "to": 1,
+       "color": "red",
+       "in": "1:mahino",
+       "dur": 1.6
+      }
+     ],
+     "ticks": [
+      {
+       "pos": 0,
+       "label": "JUL '24"
+      },
+      {
+       "pos": 0.5,
+       "label": "MAHINE"
+      },
+      {
+       "pos": 1,
+       "label": "AUR MAHINE…",
+       "color": "red"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Yaad hai *WazirX?*",
+     "audio": "/root/explainer-reel/episodes/clips/0103.53.wav",
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Users ka paisa ~mahino tak atka~ raha.",
+     "audio": "/root/explainer-reel/episodes/clips/0104.77.wav",
+     "mascot": "sad",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "chip": "TWIST · 2026 INDEX",
+   "flash": true,
+   "elements": [
+    {
+     "type": "stat",
+     "value": 1,
+     "prefix": "#",
+     "count": false,
+     "size": "xl",
+     "color": "acc",
+     "label": "INDIA · 2025",
+     "in": 0,
+     "then": [
+      {
+       "at": "2:chhathe",
+       "value": 6,
+       "color": "red",
+       "label": "INDIA · 2026"
+      }
+     ]
+    },
+    {
+     "type": "card",
+     "title": "CHAINALYSIS 2026",
+     "right": "TOP 6",
+     "w": 600,
+     "in": "1:ranking",
+     "mt": 12,
+     "rows": [
+      {
+       "label": "Brazil",
+       "value": "#1",
+       "compact": true,
+       "in": "1:ranking"
+      },
+      {
+       "label": "United States",
+       "value": "#2",
+       "compact": true,
+       "in": "1:ranking+0.15"
+      },
+      {
+       "label": "Nigeria",
+       "value": "#3",
+       "compact": true,
+       "in": "1:ranking+0.3"
+      },
+      {
+       "label": "India",
+       "value": "#6",
+       "valueColor": "red",
+       "compact": true,
+       "in": "2:chhathe",
+       "red": "2:chhathe"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "mono": true,
+     "text": "30% TAX + ADHOORE RULES = ASAR?",
+     "in": "3:Tees",
+     "mt": 12
+    }
+   ],
+   "beats": [
+    {
+     "say": "Aur ek *twist* —",
+     "audio": "/root/explainer-reel/episodes/clips/0107.41.wav",
+     "mascot": "shock",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*2026* ki nayi ranking mein India number one se ~phisal kar…~",
+     "audio": "/root/explainer-reel/episodes/clips/0108.44.wav"
+    },
+    {
+     "say": "~chhathe number~ par aa gaya.",
+     "audio": "/root/explainer-reel/episodes/clips/0112.40.wav",
+     "mascot": "sad",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*Tees percent tax* aur *adhoore rules* ka asar?",
+     "audio": "/root/explainer-reel/episodes/clips/0114.04.wav",
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Ho sakta hai.",
+     "audio": "/root/explainer-reel/episodes/clips/0116.87.wav",
+     "mascot": "think",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "chip": "KYA KAREIN? · 3 TIPS",
+   "chip_color": "green",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "*Kya* karein?",
+     "size": 64,
+     "in": 0,
+     "out": "2",
+     "pos": {
+      "x": 320,
+      "y": 190,
+      "center": true
+     }
+    },
+    {
+     "type": "list",
+     "w": 600,
+     "in": "2",
+     "items": [
+      {
+       "kicker": "TIP 1",
+       "title": "Sirf *FIU-registered* exchange",
+       "in": "2:FIU"
+      },
+      {
+       "kicker": "TIP 2",
+       "title": "Saara paisa exchange pe *mat chhodo*",
+       "in": "3:saara"
+      },
+      {
+       "kicker": "TIP 3",
+       "title": "Har trade ka *hisaab* rakho",
+       "in": "4:hisaab"
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "TAX WAALE DEKH RAHE HAIN",
+     "color": "acc",
+     "rot": -4,
+     "size": 26,
+     "in": "5:tax",
+     "pos": {
+      "x": 320,
+      "y": 470,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Kya* karein?",
+     "audio": "/root/explainer-reel/episodes/clips/0117.92.wav",
+     "mascot": "point",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "Toh agar aap crypto *rakhte* ho —",
+     "audio": "/root/explainer-reel/episodes/clips/0118.88.wav",
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Ek: sirf *FIU-registered exchange* use karo.",
+     "audio": "/root/explainer-reel/episodes/clips/0120.54.wav"
+    },
+    {
+     "say": "Do: saara paisa exchange pe ~mat chhodo.~",
+     "audio": "/root/explainer-reel/episodes/clips/0123.92.wav"
+    },
+    {
+     "say": "Teen: har trade ka *hisaab* rakho…",
+     "audio": "/root/explainer-reel/episodes/clips/0126.89.wav"
+    },
+    {
+     "say": "kyunki *tax waale* nahi chhodenge.",
+     "audio": "/root/explainer-reel/episodes/clips/0129.12.wav",
+     "mascot": "wink",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "chip": "SHARE KARO",
+   "elements": [
+    {
+     "type": "bubble",
+     "quote": "Crypto mein sab chalta hai.",
+     "strike": "1:chalta+0.6",
+     "in": "1:kehta",
+     "w": 560
+    },
+    {
+     "type": "tiles",
+     "size": 92,
+     "in": "0:video",
+     "mt": 24,
+     "items": [
+      {
+       "icon": "users",
+       "color": "acc",
+       "label": "Dost",
+       "in": "0:dost"
+      },
+      {
+       "icon": "link",
+       "color": "brand",
+       "label": "Share"
+      },
+      {
+       "icon": "heart",
+       "color": "red",
+       "label": "Save"
+      },
+      {
+       "icon": "bell",
+       "color": "green",
+       "label": "Follow"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Ye video us *dost* ko bhejo",
+     "audio": "/root/explainer-reel/episodes/clips/0132.13.wav",
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "jo kehta hai, \"*crypto mein sab chalta hai.*\"",
+     "audio": "/root/explainer-reel/episodes/clips/0134.78.wav",
+     "mascot": "wink",
+     "mascot_pos": "right"
+    }
+   ]
+  }
+ ],
+ "outro": {
+  "say": "Ab samjhe?",
+  "audio": "/root/explainer-reel/episodes/clips/0136.71.wav"
+ }
+}
