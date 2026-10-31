@@ -1,0 +1,777 @@
+{
+ "series": "CRYPTO.DECODED",
+ "series_icon": "shield",
+ "episode": 3,
+ "tag": "SEED PHRASE SCAM",
+ "accent": "red",
+ "disclaimer": "SIRF JAANKARI · EXAMPLE WORDS · NOT ADVICE",
+ "concept": "SEED PHRASE SCAM",
+ "music_mood": "tense",
+ "brand": {
+  "wordmark": "niks",
+  "suffix": ".crypto",
+  "handle": "@niks.crypto",
+  "color": "#7C5CFF",
+  "outro_log": "Scam alert successfully installed.",
+  "follow": "FOLLOW @NIKS.CRYPTO"
+ },
+ "stinger_lines": {
+  "boot": "SYSTEM ONLINE",
+  "detect": "THREAT DETECTED:",
+  "run": "SCANNING SCAM…"
+ },
+ "hook": [
+  {
+   "hold": 0.04,
+   "chip": "AAPKA WALLET · EXAMPLE",
+   "elements": [
+    {
+     "type": "row",
+     "gap": 18,
+     "in": 0,
+     "items": [
+      {
+       "type": "object",
+       "kind": "lock",
+       "color": "red",
+       "size": 120,
+       "in": 0
+      },
+      {
+       "type": "stat",
+       "value": 12,
+       "from": 0,
+       "size": "l",
+       "color": "acc",
+       "label": "WORDS",
+       "sub": "= AAPKA POORA CRYPTO",
+       "in": "1:baarah"
+      }
+     ]
+    },
+    {
+     "type": "columns",
+     "title": "SEED PHRASE",
+     "in": "0.1",
+     "mt": 12,
+     "cols": [
+      {
+       "title": "WORD 1–6",
+       "color": "mute",
+       "items": [
+        {
+         "tag": "01",
+         "tagColor": "acc",
+         "text": "river",
+         "in": "1:baarah+0.00"
+        },
+        {
+         "tag": "02",
+         "tagColor": "acc",
+         "text": "candle",
+         "in": "1:baarah+0.07"
+        },
+        {
+         "tag": "03",
+         "tagColor": "acc",
+         "text": "orbit",
+         "in": "1:baarah+0.14"
+        },
+        {
+         "tag": "04",
+         "tagColor": "acc",
+         "text": "maple",
+         "in": "1:baarah+0.21"
+        },
+        {
+         "tag": "05",
+         "tagColor": "acc",
+         "text": "tiger",
+         "in": "1:baarah+0.28"
+        },
+        {
+         "tag": "06",
+         "tagColor": "acc",
+         "text": "lunar",
+         "in": "1:baarah+0.35"
+        }
+       ]
+      },
+      {
+       "title": "WORD 7–12",
+       "color": "mute",
+       "items": [
+        {
+         "tag": "07",
+         "tagColor": "acc",
+         "text": "ocean",
+         "in": "1:baarah+0.42"
+        },
+        {
+         "tag": "08",
+         "tagColor": "acc",
+         "text": "silver",
+         "in": "1:baarah+0.49"
+        },
+        {
+         "tag": "09",
+         "tagColor": "acc",
+         "text": "frozen",
+         "in": "1:baarah+0.56"
+        },
+        {
+         "tag": "10",
+         "tagColor": "acc",
+         "text": "punch",
+         "in": "1:baarah+0.63"
+        },
+        {
+         "tag": "11",
+         "tagColor": "acc",
+         "text": "gravity",
+         "in": "1:baarah+0.70"
+        },
+        {
+         "tag": "12",
+         "tagColor": "acc",
+         "text": "wisdom",
+         "in": "1:baarah+0.77"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "SEED PHRASE",
+     "color": "acc",
+     "rot": -6,
+     "size": 40,
+     "in": "2:seed",
+     "pos": {
+      "x": 320,
+      "y": 330,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "Aapka *poora crypto…*",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0000.00.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "sirf *baarah words* mein band hai.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0001.75.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Inhe kehte hain *seed phrase.*",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0003.74.wav",
+     "pause": 0.18,
+     "mascot": "point",
+     "mascot_pos": "right"
+    }
+   ]
+  }
+ ],
+ "body": [
+  {
+   "hold": 0.04,
+   "chip": "WALLET BANATE HI",
+   "elements": [
+    {
+     "type": "row",
+     "gap": 24,
+     "in": 0,
+     "items": [
+      {
+       "type": "phone",
+       "w": 250,
+       "in": 0,
+       "screen": "#14161a",
+       "time": "9:41",
+       "app": {
+        "title": "Create wallet",
+        "price": "Recovery phrase",
+        "sub": "Likh lo · kisi ko mat dikhao",
+        "button": "SHOW WORDS",
+        "buttonColor": "acc",
+        "in": "0:wallet"
+       }
+      },
+      {
+       "type": "stack",
+       "gap": 16,
+       "items": [
+        {
+         "type": "stat",
+         "value": 12,
+         "size": "l",
+         "color": "acc",
+         "label": "WORDS",
+         "in": "1:baarah"
+        },
+        {
+         "type": "text",
+         "mono": true,
+         "text": "— YA —",
+         "in": "1:ya"
+        },
+        {
+         "type": "stat",
+         "value": 24,
+         "size": "l",
+         "color": "acc",
+         "label": "WORDS",
+         "in": "1:chaubees"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Jab aap *wallet banate* ho,",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0005.62.wav",
+     "pause": 0.07,
+     "mascot": "idle",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "wallet aapko *baarah ya chaubees* English words deta hai.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0007.12.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "2048 WORDS KI LIST",
+   "elements": [
+    {
+     "type": "stat",
+     "value": 2048,
+     "from": 0,
+     "size": "l",
+     "color": "acc",
+     "label": "WORDS KI FIXED LIST",
+     "in": "0:hazaar"
+    },
+    {
+     "type": "grid",
+     "shape": "dot",
+     "cols": 32,
+     "count": 192,
+     "cell": 15,
+     "color": "dim",
+     "highlight": 12,
+     "hl": "0:list",
+     "hlColor": "acc",
+     "in": 0,
+     "mt": 6,
+     "label": "12 WORDS ISI LIST SE"
+    },
+    {
+     "type": "stat",
+     "value": "≈ 5 × 10³⁹",
+     "count": false,
+     "size": "m",
+     "color": "ink",
+     "label": "COMBINATIONS",
+     "in": "1:combinations",
+     "mt": 10
+    },
+    {
+     "type": "stamp",
+     "text": "GUESS = IMPOSSIBLE",
+     "color": "green",
+     "rot": -5,
+     "size": 32,
+     "in": "2:guess",
+     "pos": {
+      "x": 320,
+      "y": 250,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "Ye words, *do hazaar adtaalees* words ki ek fixed list se aate hain.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0010.24.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "Aur inke *combinations* itne zyada hain,",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0014.37.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "ki koi computer inhe ^guess nahi^ kar sakta.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0016.63.wav",
+     "pause": 0.07,
+     "mascot": "happy",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "TOH HACKER KYA KARTA HAI?",
+   "flash": true,
+   "elements": [
+    {
+     "type": "card",
+     "w": 600,
+     "in": 0,
+     "rows": [
+      {
+       "icon": "cpu",
+       "iconColor": "mute",
+       "label": "Guess karna",
+       "sub": "COMPUTER SE",
+       "badge": "NAMUMKIN",
+       "badgeColor": "mute",
+       "in": 0,
+       "dim": "1"
+      },
+      {
+       "icon": "user",
+       "iconColor": "red",
+       "label": "Aapse maangna",
+       "sub": "BAATON MEIN PHASA KE",
+       "badge": "ASAAN",
+       "badgeColor": "red",
+       "in": "1:maangta",
+       "red": "1:maangta"
+      }
+     ]
+    },
+    {
+     "type": "bigtext",
+     "text": "Wo ~maangta~ hai.",
+     "size": 86,
+     "in": "1:maangta",
+     "mt": 30
+    }
+   ],
+   "beats": [
+    {
+     "say": "Toh hacker *guess nahi karta…*",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0019.26.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "wo aapse ~maangta~ hai.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0021.11.wav",
+     "pause": 0.18,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "FAKE SUPPORT · SCAM",
+   "elements": [
+    {
+     "type": "chat",
+     "title": "Wallet Support ✓",
+     "right": "ONLINE",
+     "in": 0,
+     "messages": [
+      {
+       "from": "Wallet Support",
+       "text": "Sir, main wallet support se bol raha hoon.",
+       "in": "0:Sir"
+      },
+      {
+       "from": "Wallet Support",
+       "text": "Verify karne ke liye apne 12 words bhejiye.",
+       "in": "1:Verify"
+      }
+     ]
+    },
+    {
+     "type": "card",
+     "title": "RED FLAGS",
+     "w": 600,
+     "in": "0:support",
+     "mt": 14,
+     "rows": [
+      {
+       "icon": "check",
+       "iconColor": "red",
+       "label": "Fake blue tick",
+       "sub": "DM · TELEGRAM · CALL",
+       "in": "0:support",
+       "compact": true
+      },
+      {
+       "icon": "clock",
+       "iconColor": "red",
+       "label": "Jaldi verify karo",
+       "sub": "URGENCY = DABAAV",
+       "in": "1:Verify",
+       "compact": true
+      },
+      {
+       "icon": "key",
+       "iconColor": "red",
+       "label": "12 words maange",
+       "sub": "SABSE BADA RED FLAG",
+       "in": "1:words",
+       "red": "2:scam",
+       "compact": true
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "SCAM",
+     "color": "red",
+     "rot": -9,
+     "size": 92,
+     "in": "2:scam",
+     "pos": {
+      "x": 330,
+      "y": 120,
+      "center": true
+     },
+     "shake": "2:scam"
+    }
+   ],
+   "beats": [
+    {
+     "say": "\"Sir, main *wallet support* se bol raha hoon.\"",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0022.62.wav",
+     "pause": 0.07,
+     "mascot": "wink",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "\"Verify karne ke liye, apne *baarah words* bhejiye.\"",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0025.08.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "~Yahi scam hai.~",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0027.86.wav",
+     "pause": 0.18,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "WALLET KISKA?",
+   "elements": [
+    {
+     "type": "object",
+     "kind": "key",
+     "color": "gold",
+     "size": 150,
+     "in": 0,
+     "label": "12 WORDS = MASTER KEY"
+    },
+    {
+     "type": "card",
+     "w": 600,
+     "in": 0,
+     "mt": 12,
+     "rows": [
+      {
+       "icon": "key",
+       "iconColor": "acc",
+       "label": "12 words",
+       "sub": "JISKE PAAS",
+       "badge": "WALLET USKA",
+       "badgeColor": "red",
+       "in": "0:baarah",
+       "hl": "1:uska"
+      },
+      {
+       "icon": "lock",
+       "iconColor": "mute",
+       "label": "Password",
+       "badge": "ZAROORI NAHI",
+       "badgeColor": "mute",
+       "in": "2:password"
+      },
+      {
+       "icon": "phone",
+       "iconColor": "mute",
+       "label": "OTP",
+       "badge": "ZAROORI NAHI",
+       "badgeColor": "mute",
+       "in": "2:OTP"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Jiske paas ye *baarah words* hain…",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0029.09.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "wallet ~uska~ hai.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0030.87.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Na *password* chahiye, na *OTP.*",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0032.26.wav",
+     "pause": 0.07,
+     "mascot": "sad",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "PAISA GAYA TOH?",
+   "elements": [
+    {
+     "type": "card",
+     "title": "WALLET BALANCE · EXAMPLE",
+     "w": 600,
+     "in": 0,
+     "rows": [
+      {
+       "icon": "wallet",
+       "iconColor": "red",
+       "label": "Transfer: 12 words se",
+       "sub": "BLOCKCHAIN PE CONFIRMED",
+       "badge": "IRREVERSIBLE",
+       "badgeColor": "red",
+       "in": "0:paisa"
+      }
+     ]
+    },
+    {
+     "type": "stat",
+     "value": 0,
+     "from": 250000,
+     "prefix": "₹",
+     "size": "xl",
+     "color": "red",
+     "label": "AB BALANCE",
+     "in": "0:paisa",
+     "mt": 16
+    },
+    {
+     "type": "stamp",
+     "text": "NO REFUND",
+     "color": "red",
+     "rot": -7,
+     "size": 48,
+     "in": "1:wapas",
+     "pos": {
+      "x": 320,
+      "y": 330,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "Aur ~paisa gaya…~",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0034.48.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "toh ~wapas nahi aata.~",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0035.81.wav",
+     "pause": 0.18,
+     "mascot": "sad",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "3 RULES YAAD RAKHO",
+   "chip_color": "green",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "*3* rules",
+     "size": 110,
+     "in": 0,
+     "out": "1",
+     "pos": {
+      "x": 320,
+      "y": 200,
+      "center": true
+     }
+    },
+    {
+     "type": "list",
+     "w": 600,
+     "in": "1",
+     "items": [
+      {
+       "kicker": "RULE 1",
+       "title": "Seed phrase *kabhi share nahi*",
+       "in": "1:kabhi"
+      },
+      {
+       "kicker": "RULE 2",
+       "title": "Screenshot / cloud nahi — *kaagaz pe*",
+       "in": "3:screenshot"
+      },
+      {
+       "kicker": "RULE 3",
+       "title": "Website maange? *Turant band*",
+       "in": "5:website"
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "ASLI SUPPORT KABHI NAHI MAANGTA",
+     "color": "green",
+     "rot": -3,
+     "size": 24,
+     "in": "2:asli",
+     "pos": {
+      "x": 320,
+      "y": 470,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "Toh *teen rules* yaad rakho.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0037.24.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "Ek: seed phrase ~kabhi kisi ko mat do.~",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0038.85.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Koi bhi *asli support* ye nahi maangta.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0041.59.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "Do: iska *screenshot,* ya *cloud* mein copy mat rakho.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0043.79.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "*Kaagaz* pe likho, aur *safe jagah* rakho.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0047.27.wav",
+     "pause": 0.07,
+     "mascot": "happy",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Teen: koi bhi *website ya app* ye words maange…",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0049.48.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "toh ~turant band~ karo.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0052.60.wav",
+     "pause": 0.07,
+     "mascot": "wink",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "SHARE KARO",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "Share = *Protect*",
+     "size": 84,
+     "in": 0
+    },
+    {
+     "type": "bubble",
+     "quote": "Mere paas bhi crypto hai.",
+     "in": "0:dost",
+     "w": 560,
+     "mt": 18
+    },
+    {
+     "type": "tiles",
+     "size": 100,
+     "in": "0:video",
+     "mt": 24,
+     "items": [
+      {
+       "icon": "users",
+       "color": "acc",
+       "label": "Dost",
+       "in": "0:dost"
+      },
+      {
+       "icon": "link",
+       "color": "brand",
+       "label": "Share"
+      },
+      {
+       "icon": "shield",
+       "color": "green",
+       "label": "Safe"
+      },
+      {
+       "icon": "bell",
+       "color": "yellow",
+       "label": "Follow"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Ye video us *dost* ko bhejo, jiske paas *crypto* hai.",
+     "audio": "/root/explainer-reel/episodes/clips_seed/0053.94.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    }
+   ]
+  }
+ ],
+ "outro": {
+  "say": "Ab samjhe?",
+  "audio": "/root/explainer-reel/episodes/clips_seed/0056.93.wav",
+  "dur": 3.0
+ }
+}
