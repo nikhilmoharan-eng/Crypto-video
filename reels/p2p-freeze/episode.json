@@ -1,0 +1,563 @@
+{
+ "series": "CRYPTO.DECODED",
+ "series_icon": "bank",
+ "episode": 5,
+ "tag": "P2P FREEZE",
+ "accent": "cyan",
+ "disclaimer": "SIRF JAANKARI · EXAMPLE AMOUNTS · NOT LEGAL ADVICE",
+ "concept": "P2P BANK FREEZE",
+ "music_mood": "tense",
+ "brand": {
+  "wordmark": "niks",
+  "suffix": ".crypto",
+  "handle": "@niks.crypto",
+  "color": "#7C5CFF",
+  "outro_log": "P2P safety successfully installed.",
+  "follow": "FOLLOW @NIKS.CRYPTO"
+ },
+ "stinger_lines": {
+  "boot": "SYSTEM ONLINE",
+  "detect": "ALERT DETECTED:",
+  "run": "TRACING MONEY…"
+ },
+ "hook": [
+  {
+   "hold": 0.04,
+   "chip": "AAPKA P2P TRADE · EXAMPLE",
+   "elements": [],
+   "beats": [
+    {
+     "say": "Aapne *crypto becha.*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0000.00.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "*Paisa aa gaya.*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0001.60.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "^Sab theek.^",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0002.54.wav",
+     "pause": 0.07,
+     "mascot": "happy",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*3 din baad…*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0004.88.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "aapka *bank account,*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0006.34.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "~freeze.~",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0007.71.wav",
+     "pause": 0.9,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "KYUN?",
+   "chip_color": "red",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "*Kyun?*",
+     "size": 110,
+     "in": 0
+    },
+    {
+     "type": "row",
+     "gap": 20,
+     "in": "1",
+     "mt": 20,
+     "items": [
+      {
+       "type": "icon",
+       "name": "₹",
+       "size": 96,
+       "color": "#16171a",
+       "bg": "acc",
+       "round": true,
+       "in": "1"
+      },
+      {
+       "type": "stat",
+       "value": 50000,
+       "from": 0,
+       "prefix": "₹",
+       "size": "l",
+       "color": "ink",
+       "label": "JO PAISA AAYA · EXAMPLE",
+       "in": "1"
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "SCAM KA PAISA",
+     "color": "red",
+     "rot": -6,
+     "size": 46,
+     "in": "2:scam",
+     "pos": {
+      "x": 320,
+      "y": 300,
+      "center": true
+     },
+     "shake": "2:scam"
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Kyun?*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0009.39.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right",
+     "dur": 0.9
+    },
+    {
+     "say": "Kyunki wo paisa,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0010.93.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "kisi ~scam~ ka tha.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0012.26.wav",
+     "pause": 0.2,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  }
+ ],
+ "body": [
+  {
+   "hold": 0.04,
+   "chip": "P2P TRADE KYA HAI?",
+   "elements": [
+    {
+     "type": "flow",
+     "w": 640,
+     "h": 330,
+     "in": 0,
+     "nodes": [
+      {
+       "id": "you",
+       "x": 150,
+       "y": 20,
+       "w": 220,
+       "icon": "user",
+       "iconColor": "acc",
+       "label": "Aap",
+       "sub": "CRYPTO BECHTE HO",
+       "in": 0
+      },
+      {
+       "id": "str",
+       "x": 490,
+       "y": 20,
+       "w": 220,
+       "icon": "users",
+       "iconColor": "mute",
+       "label": "Anjaan insaan",
+       "sub": "BUYER",
+       "in": "1:anjaan"
+      },
+      {
+       "id": "upi",
+       "x": 320,
+       "y": 200,
+       "w": 260,
+       "icon": "bank",
+       "iconColor": "acc",
+       "label": "UPI / Bank",
+       "sub": "₹ AAPKE ACCOUNT MEIN",
+       "color": "acc",
+       "in": "2:UPI"
+      }
+     ],
+     "edges": [
+      {
+       "from": "you",
+       "to": "str",
+       "fromSide": "right",
+       "toSide": "left",
+       "color": "acc",
+       "in": "1:crypto"
+      },
+      {
+       "from": "str",
+       "to": "upi",
+       "fromSide": "bottom",
+       "toSide": "right",
+       "color": "green",
+       "dashed": true,
+       "in": "2:UPI"
+      },
+      {
+       "from": "upi",
+       "to": "you",
+       "fromSide": "left",
+       "toSide": "bottom",
+       "color": "green",
+       "dashed": true,
+       "in": "2:bank"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Ise kehte hain, *P2P trade.*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0014.33.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Aap seedha kisi *anjaan insaan* ko crypto bechte ho,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0016.65.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "aur wo aapko *UPI ya bank* se paisa bhejta hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0019.38.wav",
+     "pause": 0.07,
+     "mascot": "idle",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "TWIST",
+   "chip_color": "red",
+   "flash": true,
+   "elements": [
+    {
+     "type": "card",
+     "title": "WO PAISA KAHAN SE AAYA?",
+     "w": 600,
+     "in": 0,
+     "rows": [
+      {
+       "icon": "users",
+       "iconColor": "mute",
+       "label": "Buyer ka paisa?",
+       "sub": "AAPKO LAGA",
+       "in": 0,
+       "dim": "1:fraud"
+      },
+      {
+       "icon": "alert",
+       "iconColor": "red",
+       "label": "Fraud victim ka paisa",
+       "sub": "ASAL MEIN",
+       "badge": "CHORI KA",
+       "badgeColor": "red",
+       "in": "1:fraud",
+       "red": "1:victim"
+      }
+     ]
+    },
+    {
+     "type": "bubble",
+     "quote": "Sir, aapke account mein galti se paise aa gaye…",
+     "in": "1:victim",
+     "mt": 22,
+     "w": 560
+    }
+   ],
+   "beats": [
+    {
+     "say": "Par *kai baar,*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0023.61.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "wo paisa kisi ~fraud victim~ ka hota hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0024.70.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "CYBER COMPLAINT → TRACE",
+   "chip_color": "red",
+   "elements": [],
+   "beats": [
+    {
+     "say": "*Victim* cyber complaint karta hai…",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0027.63.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "aur *police,* paise ka poora raasta ~trace~ karti hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0029.73.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "Aur jahan jahan wo paisa gaya,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0034.03.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "wo account ~freeze~ ho sakta hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0035.86.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "Chahe aapki *koi galti na ho.*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0037.52.wav",
+     "pause": 0.2,
+     "mascot": "sad",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "KITNA TIME?",
+   "elements": [
+    {
+     "type": "timeline",
+     "title": "ACCOUNT FREEZE",
+     "icon": "lock",
+     "w": 600,
+     "in": 0,
+     "segments": [
+      {
+       "from": 0,
+       "to": 1,
+       "color": "red",
+       "in": "1:hafte",
+       "dur": 1.4
+      }
+     ],
+     "ticks": [
+      {
+       "pos": 0,
+       "label": "FREEZE"
+      },
+      {
+       "pos": 0.45,
+       "label": "HAFTE…",
+       "in": "1:hafte"
+      },
+      {
+       "pos": 1,
+       "label": "MAHINE…",
+       "color": "red",
+       "in": "1:mahine"
+      }
+     ]
+    },
+    {
+     "type": "grid",
+     "shape": "square",
+     "cols": 10,
+     "count": 40,
+     "cell": 40,
+     "color": "dim",
+     "highlight": 1.0,
+     "hl": "1:mahine",
+     "hlColor": "red",
+     "in": 0,
+     "mt": 18,
+     "stagger": 0.015,
+     "label": "HAR SQUARE = EK DIN · ACCOUNT BAND"
+    }
+   ],
+   "beats": [
+    {
+     "say": "Phir account *khulwane* mein,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0040.75.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "~hafte ya mahine~ bhi lag sakte hain.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0042.56.wav",
+     "pause": 0.07,
+     "mascot": "sad",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "3 RULES YAAD RAKHO",
+   "chip_color": "green",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "*3* rules",
+     "size": 110,
+     "in": 0,
+     "out": "1",
+     "pos": {
+      "x": 320,
+      "y": 200,
+      "center": true
+     }
+    },
+    {
+     "type": "list",
+     "w": 600,
+     "in": "1",
+     "items": [
+      {
+       "kicker": "RULE 1",
+       "title": "Sirf *verified, purane* traders",
+       "in": "1:verified"
+      },
+      {
+       "kicker": "RULE 2",
+       "title": "Paisa *usi ke naam* se",
+       "in": "3:naam"
+      },
+      {
+       "kicker": "RULE 3",
+       "title": "Har trade ka *screenshot + record*",
+       "in": "5:screenshot"
+      }
+     ]
+    },
+    {
+     "type": "check",
+     "title": "PAYMENT CHECK",
+     "in": "2",
+     "mt": 16,
+     "items": [
+      {
+       "label": "Trader ka naam = account ka naam",
+       "tick": "3:naam"
+      },
+      {
+       "label": "Third party payment",
+       "state": "x",
+       "tick": "4:Third"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Toh *teen cheezein* yaad rakho.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0045.34.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "Ek: sirf *verified, purane traders* se deal karo.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0047.04.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Do: jiske naam se trade hai,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0050.73.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "paisa *usi ke naam* ke account se aana chahiye.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0053.17.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "~Third party payment,~ bilkul nahi.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0056.00.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Teen: har trade ka *screenshot aur record,* sambhaal ke rakho.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0058.61.wav",
+     "pause": 0.07,
+     "mascot": "wink",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "SHARE KARO",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "Share = *Safe*",
+     "size": 84,
+     "in": 0
+    },
+    {
+     "type": "bubble",
+     "quote": "Main toh P2P pe hi bechta hoon.",
+     "in": "0:dost",
+     "w": 560,
+     "mt": 18
+    },
+    {
+     "type": "tiles",
+     "size": 100,
+     "in": "0:video",
+     "mt": 24,
+     "items": [
+      {
+       "icon": "users",
+       "color": "acc",
+       "label": "Dost",
+       "in": "0:dost"
+      },
+      {
+       "icon": "link",
+       "color": "brand",
+       "label": "Share"
+      },
+      {
+       "icon": "shield",
+       "color": "green",
+       "label": "Safe"
+      },
+      {
+       "icon": "bell",
+       "color": "yellow",
+       "label": "Follow"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Ye video us *dost* ko bhejo, jo *P2P* pe crypto bechta hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze/0063.44.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    }
+   ]
+  }
+ ],
+ "outro": {
+  "say": "Ab samjhe?",
+  "audio": "/root/explainer-reel/episodes/clips_freeze/0067.52.wav",
+  "dur": 3.0
+ }
+}

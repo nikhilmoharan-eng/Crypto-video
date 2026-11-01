@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      :root {
+        --ink: #f2efe8;
+        --mute: #8a8f8c;
+        --card: #151818;
+        --line: #2a2f2f;
+        --cyan: #5ac8fa;
+        --green: #3be58f;
+        --red: #ff5a47;
+        --font-display: "Inter", sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+      #root { position: absolute; inset: 0; font-family: var(--font-display); color: var(--ink); }
+      #stage { position: absolute; inset: 0; }
+      #inner { position: absolute; inset: 0; }
+      #trail { position: absolute; left: 0; top: 0; }
+      .node { position: absolute; width: 280px; height: 150px; border-radius: 22px; background: var(--card); border: 2px solid var(--line);
+        box-shadow: 0 24px 48px rgba(0,0,0,.5); padding: 20px 20px; overflow: hidden; }
+      .node .ic { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        font-weight: 900; font-size: 26px; color: #0b0d0e; background: var(--cyan); }
+      .node .ti { font-weight: 900; font-size: 30px; letter-spacing: -.02em; margin-top: 12px; }
+      .node .su { font: 700 18px var(--font-mono); letter-spacing: .08em; color: var(--mute); margin-top: 4px; }
+      .glow { position: absolute; inset: -2px; border-radius: 22px; border: 3px solid var(--cyan); box-shadow: 0 0 40px rgba(90,200,250,.6), inset 0 0 30px rgba(90,200,250,.25); }
+      .ice { position: absolute; inset: 0; border-radius: 20px; background: linear-gradient(135deg, rgba(220,245,255,.62), rgba(150,215,245,.38));
+        border: 3px solid var(--red); }
+      .ice svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .45; }
+      .lk { position: absolute; right: 14px; top: 14px; width: 54px; height: 54px; border-radius: 50%; background: var(--red);
+        display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(255,90,71,.5); }
+      .lk svg { width: 30px; height: 30px; }
+      #n0 { left: 80px; top: 400px; } #n1 { left: 400px; top: 400px; } #n2 { left: 720px; top: 400px; }
+      #n3 { left: 720px; top: 690px; } #n4 { left: 400px; top: 690px; } #pol { left: 80px; top: 690px; }
+      #n0 .ic { background: var(--red); color: #fff; }
+      #n4 { border-color: var(--cyan); }
+      #pol .ic { background: #e9e5da; }
+      #complaint { position: absolute; left: 80px; top: 575px; width: 280px; height: 92px; border-radius: 16px; background: #f2efe8; color: #16171a;
+        padding: 14px 18px; box-shadow: 0 16px 30px rgba(0,0,0,.45); }
+      #complaint .a { font: 800 18px var(--font-mono); letter-spacing: .1em; color: #c23a2c; }
+      #complaint .b { font-weight: 900; font-size: 28px; margin-top: 4px; }
+      .ring { opacity: 0; position: absolute; left: 155px; top: 700px; width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--cyan); }
+      #packet { position: absolute; left: 0; top: 0; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%;
+        background: radial-gradient(circle, #fff 0 30%, var(--cyan) 31% 60%, rgba(90,200,250,0) 61%); box-shadow: 0 0 30px var(--cyan); }
+      #packet b { position: absolute; left: 40px; top: -6px; font-weight: 900; font-size: 28px; color: var(--cyan); white-space: nowrap; text-shadow: 0 2px 10px #000; }
+      #status { position: absolute; left: 80px; top: 862px; width: 280px; text-align: center; font: 800 20px var(--font-mono); letter-spacing: .12em; color: var(--cyan); }
+      #status2 { position: absolute; left: 80px; top: 862px; width: 280px; text-align: center; font: 800 20px var(--font-mono); letter-spacing: .1em; color: var(--green); }
+      #tag { position: absolute; left: 390px; top: 868px; width: 420px; padding: 16px 20px; border-radius: 16px; background: #16171a; border: 2px solid var(--red);
+        text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,.5); }
+      #tag .x { font-weight: 900; font-size: 30px; letter-spacing: -.01em; }
+      #tag .y { font: 800 18px var(--font-mono); letter-spacing: .1em; color: var(--red); margin-top: 6px; }
+      #flash { position: absolute; left: 60px; top: 380px; width: 960px; height: 480px; border-radius: 40px; background: radial-gradient(closest-side, rgba(200,240,255,.55), transparent); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="9.81" data-width="1080" data-height="1920">
+      <div id="stage" class="clip" data-start="0" data-duration="9.81" data-track-index="0" data-layout-allow-overlap>
+        <div id="inner">
+          <svg id="trail" width="1080" height="1920" viewBox="0 0 1080 1920">
+            <path id="tp" d="M220 475 H540 H860 V765 H540" fill="none" stroke="#5ac8fa" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1250" stroke-dashoffset="1250" />
+            <path id="halo" d="M220 475 H540 H860 V765 H540" fill="none" stroke="#5ac8fa" stroke-opacity=".18" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div class="ring" id="r1"></div><div class="ring" id="r2"></div>
+          <div id="flash"></div>
+
+          <div class="node" id="n0" data-layout-allow-occlusion><div class="ic">!</div><div class="ti">Fraud victim</div><div class="su">₹50,000 GAYA</div></div>
+          <div id="complaint" data-layout-allow-occlusion><div class="a">CYBER COMPLAINT</div><div class="b">Helpline 1930</div></div>
+          <div class="node" id="pol" data-layout-allow-occlusion><div class="ic"><svg viewBox="0 0 24 24" width="30" height="30"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z" fill="#16171a"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke="#e9e5da" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg></div><div class="ti">Police</div><div class="su">CYBER CELL</div></div>
+          <div id="status">TRACING…</div><div id="status2">TRACE COMPLETE ✓</div>
+
+          <div class="node" id="n1" data-layout-allow-occlusion><div class="ic">₹</div><div class="ti">Scammer A/c</div><div class="su">PEHLA HOP</div>
+            <div class="glow"></div><div class="ice" data-layout-allow-occlusion><svg viewBox="0 0 280 150" preserveAspectRatio="none"><path d="M20 20l30 30m-15-15l12-4m-12 4l-4 12M250 120l-30-30m15 15l-12 4m12-4l4-12" stroke="#fff" stroke-width="2.5" fill="none"/></svg></div>
+            <div class="lk"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="#fff"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#fff" stroke-width="2.6" fill="none"/></svg></div></div>
+          <div class="node" id="n2" data-layout-allow-occlusion><div class="ic">₹</div><div class="ti">Mule A/c 1</div><div class="su">AAGE BHEJA</div>
+            <div class="glow"></div><div class="ice" data-layout-allow-occlusion><svg viewBox="0 0 280 150" preserveAspectRatio="none"><path d="M30 120l30-30m-15 15l-4-12m4 12l12 4M240 25l-30 30m15-15l-12-4m12 4l4 12" stroke="#fff" stroke-width="2.5" fill="none"/></svg></div>
+            <div class="lk"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="#fff"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#fff" stroke-width="2.6" fill="none"/></svg></div></div>
+          <div class="node" id="n3" data-layout-allow-occlusion><div class="ic">₹</div><div class="ti">Mule A/c 2</div><div class="su">P2P BUYER</div>
+            <div class="glow"></div><div class="ice" data-layout-allow-occlusion><svg viewBox="0 0 280 150" preserveAspectRatio="none"><path d="M20 20l30 30m-15-15l12-4m-12 4l-4 12M250 120l-30-30m15 15l-12 4m12-4l4-12" stroke="#fff" stroke-width="2.5" fill="none"/></svg></div>
+            <div class="lk"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="#fff"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#fff" stroke-width="2.6" fill="none"/></svg></div></div>
+          <div class="node" id="n4" data-layout-allow-occlusion><div class="ic">★</div><div class="ti">Aapka A/c</div><div class="su">₹50,000 AAYA</div>
+            <div class="glow"></div><div class="ice" data-layout-allow-occlusion><svg viewBox="0 0 280 150" preserveAspectRatio="none"><path d="M30 120l30-30m-15 15l-4-12m4 12l12 4M240 25l-30 30m15-15l-12-4m12 4l4 12" stroke="#fff" stroke-width="2.5" fill="none"/></svg></div>
+            <div class="lk"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" fill="#fff"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#fff" stroke-width="2.6" fill="none"/></svg></div></div>
+
+          <div id="packet"><b>₹50,000</b></div>
+          <div id="tag" data-layout-allow-occlusion><div class="x">Aapki galti nahi…</div><div class="y">PHIR BHI FREEZE</div></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // local time = engine time - 24.51
+      const pop = { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(1.8)" };
+      tl.fromTo("#n0", { scale: 0.6, opacity: 0 }, pop, 0.0);
+      tl.fromTo("#complaint", { y: -40, opacity: 0, rotation: -6 }, { y: 0, opacity: 1, rotation: -3, duration: 0.4, ease: "power3.out" }, 0.66);
+      tl.fromTo("#pol", { scale: 0.6, opacity: 0 }, pop, 1.87);
+      tl.fromTo("#status", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 2.0);
+      tl.fromTo(["#r1", "#r2"], { scale: 0.6, opacity: 0.9 }, { immediateRender: false, scale: 2.2, opacity: 0, duration: 1.1, ease: "power1.out", stagger: 0.55, repeat: 2 }, 1.95);
+      // the trail: Victim -> Scammer -> Mule 1 -> Mule 2 -> Aap
+      tl.fromTo("#halo", { opacity: 0 }, { opacity: 1, duration: 1.6, ease: "none" }, 2.85);
+      tl.fromTo("#tp", { attr: { "stroke-dashoffset": 1250 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.6, ease: "none" }, 2.85);
+      tl.fromTo("#packet", { x: 220, y: 475, opacity: 0 }, { x: 220, y: 475, opacity: 1, duration: 0.15 }, 2.8);
+      tl.to("#packet", { x: 540, duration: 0.31, ease: "none" }, 2.95);
+      tl.to("#packet", { x: 860, duration: 0.41, ease: "none" }, 3.26);
+      tl.to("#packet", { y: 765, duration: 0.37, ease: "none" }, 3.67);
+      tl.to("#packet", { x: 540, duration: 0.41, ease: "none" }, 4.04);
+      tl.to("#packet", { opacity: 0, scale: 2, duration: 0.3 }, 4.5);
+      tl.fromTo("#n1", { scale: 0.6, opacity: 0 }, pop, 3.05);
+      tl.fromTo("#n2", { scale: 0.6, opacity: 0 }, pop, 3.46);
+      tl.fromTo("#n3", { scale: 0.6, opacity: 0 }, pop, 3.85);
+      tl.fromTo("#n4", { scale: 0.6, opacity: 0 }, pop, 4.25);
+      tl.to("#status", { opacity: 0, duration: 0.15 }, 3.75);
+      tl.fromTo("#status2", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25 }, 3.95);
+      // jahan jahan paisa gaya: light up each hop
+      tl.fromTo(".glow", { opacity: 0 }, { opacity: 1, duration: 0.25, stagger: 0.28 }, 5.0);
+      // freeze wave
+      tl.fromTo("#flash", { opacity: 0 }, { opacity: 0, duration: 0.01 }, 0);
+      tl.to("#flash", { opacity: 1, duration: 0.12 }, 6.92);
+      tl.to("#flash", { opacity: 0, duration: 0.5 }, 7.05);
+      tl.to(".glow", { opacity: 0, duration: 0.2 }, 6.95);
+      tl.fromTo(".ice", { opacity: 0, clipPath: "inset(0% 100% 0% 0%)" }, { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 0.35, stagger: 0.16, ease: "power2.out" }, 6.96);
+      tl.fromTo(".lk", { scale: 0, rotation: -40 }, { scale: 1, rotation: 0, duration: 0.3, stagger: 0.16, ease: "back.out(2.5)" }, 7.1);
+      tl.to("#tp", { attr: { stroke: "#ff5a47" }, duration: 0.4 }, 7.0);
+      tl.to("#n4", { x: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, 7.6);
+      // aapki galti nahi
+      tl.fromTo("#tag", { y: 30, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 8.25);
+      tl.to("#n4", { scale: 1.06, duration: 0.25, yoyo: true, repeat: 1 }, 8.3);
+      tl.to("#inner", { opacity: 0, duration: 0.2 }, 9.58);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
