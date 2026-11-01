@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      :root { --ink:#f2efe8; --mute:#8a8f8c; --card:#151818; --line:#2a2f2f; --green:#3be58f; --red:#ff5a47; --orange:#ff9f2e;
+        --font-display:"Inter",sans-serif; --font-mono:"JetBrains Mono",monospace; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:absolute; inset:0; font-family:var(--font-display); color:var(--ink); }
+      #stage, #inner { position:absolute; inset:0; }
+      .card { position:absolute; left:90px; width:900px; border-radius:26px; background:var(--card); border:2px solid var(--line);
+        box-shadow:0 30px 60px rgba(0,0,0,.5); overflow:hidden; }
+      .lab { position:absolute; left:28px; top:22px; font:800 22px var(--font-mono); letter-spacing:.12em; color:var(--mute); }
+      .big { position:absolute; right:28px; top:14px; font-weight:900; font-size:48px; letter-spacing:-.02em; }
+      .chart { position:absolute; left:30px; top:80px; }
+      .pill { position:absolute; border-radius:40px; font-weight:900; letter-spacing:-.02em; box-shadow:0 16px 36px rgba(0,0,0,.45); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="7.82" data-width="1080" data-height="1920">
+      <div id="stage" class="clip" data-start="0" data-duration="7.82" data-track-index="0" data-layout-allow-overlap>
+        <div id="inner">
+          <div class="card" id="bank" style="top:395px;height:170px">
+            <svg id="bico" style="position:absolute;left:28px;top:26px" width="118" height="118" viewBox="0 0 64 64">
+              <path d="M32 6 L60 20 H4 Z" fill="#e9e5da"/>
+              <g fill="#e9e5da"><rect id="c1" x="9" y="24" width="7" height="26"/><rect id="c2" x="22" y="24" width="7" height="26"/>
+              <rect id="c3" x="35" y="24" width="7" height="26"/><rect id="c4" x="48" y="24" width="7" height="26"/></g>
+              <rect x="4" y="52" width="56" height="6" fill="#e9e5da"/>
+            </svg>
+            <div style="position:absolute;left:170px;top:30px;font:800 22px var(--font-mono);letter-spacing:.12em;color:var(--mute)">MARCH 2023 · AMERICA</div>
+            <div style="position:absolute;left:170px;top:66px;font-weight:900;font-size:50px;letter-spacing:-.02em">Ek bada bank</div>
+            <div class="pill" id="fail" style="right:26px;top:52px;padding:12px 22px;background:var(--red);color:#fff;font-size:30px">DOOB GAYA</div>
+          </div>
+          <div class="card" id="usdc" style="top:600px;height:420px">
+            <div class="lab">USDC · PRICE</div><div class="big" id="pnow" style="color:var(--green)">$1.00</div><div class="big" id="plow" style="color:var(--red)">$0.88</div>
+            <svg class="chart" width="840" height="300" viewBox="0 0 840 300">
+              <line x1="0" y1="50" x2="840" y2="50" stroke="#3be58f" stroke-opacity=".4" stroke-width="3" stroke-dasharray="10 12"/>
+              <text x="836" y="40" text-anchor="end" font-family="JetBrains Mono" font-weight="800" font-size="22" fill="#3be58f" fill-opacity=".7">$1.00</text>
+              <line x1="0" y1="270" x2="840" y2="270" stroke="#ff5a47" stroke-opacity=".35" stroke-width="3" stroke-dasharray="10 12"/>
+              <g id="lineclip">
+                <polyline points="0,52 60,49 120,51 180,50 240,52 300,50 360,51 420,53 450,120 480,200 510,268 540,250 580,190 620,150 660,120 700,100 740,85 780,72 840,62"
+                  fill="none" stroke="#5ac8fa" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+              </g>
+              <circle id="dot" cx="510" cy="268" r="14" fill="#ff5a47"/>
+            </svg>
+            <div id="hrs" style="position:absolute;left:30px;bottom:22px;font:800 22px var(--font-mono);letter-spacing:.12em;color:var(--mute)">KUCH GHANTE → WAPAS ~$1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // local = engine - 29.72
+      tl.fromTo("#bank", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 0);
+      tl.fromTo(["#c1", "#c2", "#c3", "#c4"], { rotation: 0, y: 0, transformOrigin: "50% 100%" }, { rotation: (i) => [-25, 18, -14, 30][i], y: 6, duration: 0.35, stagger: 0.07, ease: "power2.in" }, 2.05);
+      tl.fromTo("#bico", { y: 0 }, { y: 0, duration: 0.01 }, 0);
+      tl.to("#bico", { y: 14, duration: 0.3, ease: "power2.in" }, 2.15);
+      tl.fromTo("#fail", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.in" }, 2.15);
+      tl.to("#bank", { x: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, 2.4);
+      tl.fromTo("#usdc", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 2.85);
+      tl.fromTo("#lineclip", { clipPath: "inset(0px 100% 0px 0px)" }, { clipPath: "inset(0px 50% 0px 0px)", duration: 1.5, ease: "none" }, 3.05);
+      tl.fromTo("#hrs", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 4.65);
+      tl.to("#lineclip", { clipPath: "inset(0px 39% 0px 0px)", duration: 0.45, ease: "power2.in" }, 6.0);
+      tl.fromTo("#dot", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.3, ease: "back.out(3)" }, 6.42);
+      tl.fromTo("#pnow", { opacity: 1 }, { opacity: 0, duration: 0.2 }, 6.3);
+      tl.fromTo("#plow", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.in" }, 6.35);
+      tl.to("#usdc", { x: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, 6.5);
+      tl.to("#lineclip", { clipPath: "inset(0px 0% 0px 0px)", duration: 0.7, ease: "power1.out" }, 6.8);
+      tl.to("#inner", { opacity: 0, duration: 0.2 }, 7.58);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,560 @@
+{
+ "series": "CRYPTO.DECODED",
+ "series_icon": "coin",
+ "episode": 6,
+ "tag": "STABLECOIN",
+ "accent": "green",
+ "disclaimer": "SIRF JAANKARI · FIGURES: 1 NOV 2026 TAK · NOT ADVICE",
+ "concept": "STABLECOIN · $1 PEG",
+ "music_mood": "tense",
+ "brand": {
+  "wordmark": "niks",
+  "suffix": ".crypto",
+  "handle": "@niks.crypto",
+  "color": "#7C5CFF",
+  "outro_log": "Stablecoin basics successfully installed.",
+  "follow": "FOLLOW @NIKS.CRYPTO"
+ },
+ "stinger_lines": {
+  "boot": "SYSTEM ONLINE",
+  "detect": "CONCEPT DETECTED:",
+  "run": "CHECKING PEG…"
+ },
+ "hook": [
+  {
+   "hold": 0.04,
+   "chip": "BTC vs USDT",
+   "elements": [],
+   "beats": [
+    {
+     "say": "*Bitcoin* roz ~upar neeche~ hota hai.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0000.00.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "Par *USDT?*",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0002.49.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Hamesha lagbhag *$1.*",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0004.05.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*Kaise?*",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0005.99.wav",
+     "pause": 0.25,
+     "mascot": "think",
+     "mascot_pos": "right",
+     "dur": 0.8
+    }
+   ]
+  }
+ ],
+ "body": [
+  {
+   "hold": 0.04,
+   "chip": "STABLECOIN KYA HAI?",
+   "elements": [
+    {
+     "type": "row",
+     "gap": 24,
+     "in": 0,
+     "items": [
+      {
+       "type": "icon",
+       "name": "₮",
+       "size": 120,
+       "color": "#0b0d0e",
+       "bg": "acc",
+       "round": true,
+       "label": "STABLECOIN",
+       "in": 0
+      },
+      {
+       "type": "text",
+       "text": "=",
+       "size": 96,
+       "weight": 900,
+       "color": "mute",
+       "in": "1:currency"
+      },
+      {
+       "type": "icon",
+       "name": "$",
+       "size": 120,
+       "color": "#0b0d0e",
+       "bg": "#e9e5da",
+       "round": true,
+       "label": "DOLLAR",
+       "in": "2:dollar"
+      }
+     ]
+    },
+    {
+     "type": "card",
+     "title": "PEG · 1 = 1",
+     "w": 600,
+     "in": "1",
+     "mt": 22,
+     "rows": [
+      {
+       "icon": "₮",
+       "iconColor": "acc",
+       "label": "1 USDT",
+       "value": "≈ $1.00",
+       "valueColor": "acc",
+       "in": "1:crypto",
+       "compact": true
+      },
+      {
+       "icon": "$",
+       "iconColor": "acc",
+       "label": "1 USDC",
+       "value": "≈ $1.00",
+       "valueColor": "acc",
+       "in": "1:currency",
+       "compact": true
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Ise kehte hain, *stablecoin.*",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0006.78.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Ek crypto, jo kisi *asli currency* se juda rehta hai.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0008.88.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "Zyadatar, *dollar* se.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0012.06.wav",
+     "pause": 0.07,
+     "mascot": "happy",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "PEECHE KYA HAI?",
+   "elements": [
+    {
+     "type": "row",
+     "gap": 26,
+     "in": 0,
+     "items": [
+      {
+       "type": "object",
+       "kind": "safe",
+       "color": "silver",
+       "size": 170,
+       "in": 0
+      },
+      {
+       "type": "stack",
+       "gap": 10,
+       "items": [
+        {
+         "type": "stat",
+         "value": 1,
+         "prefix": "$",
+         "size": "l",
+         "color": "acc",
+         "label": "HAR 1 USDT KE PEECHE",
+         "in": "1:dollar"
+        },
+        {
+         "type": "text",
+         "mono": true,
+         "text": "COMPANY KA DAAVA",
+         "in": "1:reserve"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "card",
+     "title": "RESERVE",
+     "w": 600,
+     "in": "1:reserve",
+     "mt": 20,
+     "rows": [
+      {
+       "icon": "$",
+       "iconColor": "acc",
+       "label": "Cash",
+       "sub": "BANK MEIN",
+       "in": "2:Cash",
+       "compact": true
+      },
+      {
+       "icon": "doc",
+       "iconColor": "acc",
+       "label": "US govt bonds",
+       "sub": "TREASURY BILLS",
+       "in": "2:bonds",
+       "compact": true
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Company kehti hai, har ek *USDT* ke peeche,",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0013.84.wav",
+     "pause": 0.07,
+     "mascot": "idle",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*ek dollar* jitna paisa *reserve* mein rakha hai.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0016.69.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "*Cash,* aur American sarkar ke *bonds.*",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0019.18.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "USE KAHAN HOTA HAI?",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "*$1* = Stable",
+     "size": 92,
+     "in": 0
+    },
+    {
+     "type": "tiles",
+     "size": 104,
+     "in": "0:trading",
+     "mt": 26,
+     "items": [
+      {
+       "icon": "chart",
+       "color": "acc",
+       "label": "Trading",
+       "in": "0:trading"
+      },
+      {
+       "icon": "arrow",
+       "color": "cyan",
+       "label": "Transfer",
+       "in": "1:bhejne"
+      },
+      {
+       "icon": "globe",
+       "color": "blue",
+       "label": "Duniya bhar",
+       "in": "1:udhar"
+      },
+      {
+       "icon": "users",
+       "color": "brand",
+       "label": "P2P",
+       "in": "1:use"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Isliye log isse *trading* mein,",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0021.79.wav",
+     "pause": 0.07,
+     "mascot": "happy",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "aur paisa *idhar udhar bhejne* mein use karte hain.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0023.34.wav",
+     "pause": 0.07
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "PAR YAAD RAKHO",
+   "chip_color": "red",
+   "flash": true,
+   "elements": [
+    {
+     "type": "paper",
+     "kicker": "STABLECOIN",
+     "right": "TERMS",
+     "title": "1 = $1",
+     "sub": "COMPANY KA PROMISE",
+     "sign": "1:promise",
+     "in": 0
+    },
+    {
+     "type": "stamp",
+     "text": "SIRF PROMISE",
+     "color": "red",
+     "rot": -7,
+     "size": 46,
+     "in": "1:promise+0.3",
+     "pos": {
+      "x": 320,
+      "y": 250,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "Par *yaad rakho.*",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0026.00.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Ye ek ~promise~ pe chalta hai.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0027.07.wav",
+     "pause": 0.2,
+     "mascot": "think",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "2023 · DEPEG",
+   "chip_color": "red",
+   "elements": [],
+   "beats": [
+    {
+     "say": "*2023* mein, ek American bank ~doob~ gaya.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0029.07.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "Aur *USDC* naam ka stablecoin,",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0032.15.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "kuch ghanton ke liye,",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0034.14.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "lagbhag ~88 cent~ tak gir gaya.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0035.26.wav",
+     "pause": 0.2,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "FREEZE POWER",
+   "elements": [
+    {
+     "type": "grid",
+     "shape": "square",
+     "cols": 8,
+     "count": 24,
+     "cell": 54,
+     "color": "acc",
+     "highlight": 7,
+     "hl": "1:freeze",
+     "hlColor": "red",
+     "in": 0,
+     "stagger": 0.02,
+     "label": "HAR SQUARE = EK WALLET · EXAMPLE"
+    },
+    {
+     "type": "card",
+     "w": 600,
+     "in": "2:Binance",
+     "mt": 18,
+     "rows": [
+      {
+       "icon": "lock",
+       "iconColor": "red",
+       "label": "Binance hack · Oct 2026",
+       "sub": "HACKER KE STABLECOINS",
+       "badge": "FROZEN",
+       "badgeColor": "red",
+       "in": "2:Binance"
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "FREEZE",
+     "color": "red",
+     "rot": -8,
+     "size": 60,
+     "in": "1:freeze+0.2",
+     "pos": {
+      "x": 320,
+      "y": 120,
+      "center": true
+     },
+     "shake": "1:freeze+0.2"
+    }
+   ],
+   "beats": [
+    {
+     "say": "Aur *ek baat.*",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0037.49.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Company chahe toh, kisi bhi wallet ke stablecoin ~freeze~ kar sakti hai.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0038.63.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*Binance hack* mein, yahi hua tha.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0042.65.wav",
+     "pause": 0.07,
+     "mascot": "wink",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "TOH MATLAB?",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "Stable *≠* Safe",
+     "size": 96,
+     "in": 0
+    },
+    {
+     "type": "check",
+     "title": "STABLECOIN",
+     "in": "1",
+     "mt": 24,
+     "items": [
+      {
+       "label": "Zero risk",
+       "state": "x",
+       "tick": "1:risk"
+      },
+      {
+       "label": "Kam utaar chadhaav",
+       "tick": "2:utaar"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Toh stablecoin ka *matlab,*",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0044.74.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "~zero risk~ nahi.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0046.21.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Bas, *kam utaar chadhaav.*",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0047.43.wav",
+     "pause": 0.07,
+     "mascot": "happy",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "SHARE KARO",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "Share *karo*",
+     "size": 84,
+     "in": 0
+    },
+    {
+     "type": "bubble",
+     "quote": "USDT toh bilkul safe hai.",
+     "strike": "0:safe+0.5",
+     "in": "0:sochta",
+     "w": 560,
+     "mt": 18
+    },
+    {
+     "type": "tiles",
+     "size": 100,
+     "in": "0:dost",
+     "mt": 24,
+     "items": [
+      {
+       "icon": "users",
+       "color": "acc",
+       "label": "Dost",
+       "in": "0:dost"
+      },
+      {
+       "icon": "link",
+       "color": "brand",
+       "label": "Share"
+      },
+      {
+       "icon": "heart",
+       "color": "red",
+       "label": "Save"
+      },
+      {
+       "icon": "bell",
+       "color": "yellow",
+       "label": "Follow"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Ye video us *dost* ko bhejo, jo sochta hai, *USDT bilkul safe* hai.",
+     "audio": "/root/explainer-reel/episodes/clips_stable/0049.17.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    }
+   ]
+  }
+ ],
+ "outro": {
+  "say": "Ab samjhe?",
+  "audio": "/root/explainer-reel/episodes/clips_stable/0053.67.wav",
+  "dur": 3.0
+ }
+}
