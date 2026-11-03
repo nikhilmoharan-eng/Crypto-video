@@ -1,0 +1,521 @@
+{
+ "series": "CRYPTO.DECODED",
+ "series_icon": "bank",
+ "episode": 8,
+ "tag": "FREEZE · PART 3",
+ "accent": "cyan",
+ "disclaimer": "SIRF JAANKARI · EXAMPLE NAMES · NOT ADVICE",
+ "concept": "P2P BUYER · 5 RED FLAGS",
+ "music_mood": "tense",
+ "brand": {
+  "wordmark": "niks",
+  "suffix": ".crypto",
+  "handle": "@niks.crypto",
+  "color": "#7C5CFF",
+  "outro_log": "Red flag scanner installed.",
+  "follow": "FOLLOW @NIKS.CRYPTO"
+ },
+ "stinger_lines": {
+  "boot": "SYSTEM ONLINE",
+  "detect": "SCAN STARTED:",
+  "run": "CHECKING BUYER…"
+ },
+ "hook": [
+  {
+   "hold": 0.04,
+   "chip": "P2P BUYER · SCAN",
+   "elements": [],
+   "beats": [
+    {
+     "say": "P2P pe buyer *safe* hai ya ~scammer?~",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0000.00.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Ye *paanch red flags* dekho.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0002.82.wav",
+     "pause": 0.25,
+     "mascot": "point",
+     "mascot_pos": "right"
+    }
+   ]
+  }
+ ],
+ "body": [
+  {
+   "hold": 0.04,
+   "chip": "RED FLAG 1 · NAAM",
+   "chip_color": "red",
+   "elements": [],
+   "beats": [
+    {
+     "say": "*Red flag ek:*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0005.16.wav",
+     "pause": 0.07,
+     "dur": 0.8
+    },
+    {
+     "say": "~naam match~ nahi karta.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0006.47.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "Trade *kisi aur naam* se,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0008.35.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "aur paisa ~kisi aur ke account~ se.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0009.91.wav",
+     "pause": 0.2,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "RED FLAG 2 · NAYA ACCOUNT",
+   "chip_color": "red",
+   "elements": [
+    {
+     "type": "row",
+     "gap": 20,
+     "in": 0,
+     "items": [
+      {
+       "type": "icon",
+       "name": "flag",
+       "size": 110,
+       "color": "#fff",
+       "bg": "red",
+       "round": true,
+       "label": "RED FLAG 2",
+       "in": 0
+      },
+      {
+       "type": "stack",
+       "gap": 6,
+       "items": [
+        {
+         "type": "text",
+         "text": "Bilkul naya account",
+         "size": 54,
+         "weight": 900,
+         "in": 0
+        },
+        {
+         "type": "text",
+         "mono": true,
+         "text": "JOINED: 2 DIN PEHLE",
+         "in": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "card",
+     "title": "BUYER PROFILE · EXAMPLE",
+     "w": 600,
+     "in": "1",
+     "mt": 22,
+     "rows": [
+      {
+       "icon": "users",
+       "iconColor": "red",
+       "label": "Completed trades",
+       "value": "0",
+       "valueColor": "red",
+       "in": "1:purane",
+       "compact": true
+      },
+      {
+       "icon": "check",
+       "iconColor": "red",
+       "label": "Completion rate",
+       "value": "—",
+       "valueColor": "red",
+       "in": "1:completed",
+       "compact": true
+      },
+      {
+       "icon": "shield",
+       "iconColor": "red",
+       "label": "Verified",
+       "badge": "NAHI",
+       "badgeColor": "red",
+       "in": "1:orders",
+       "compact": true
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Red flag do:*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0012.50.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right",
+     "dur": 0.8
+    },
+    {
+     "say": "~bilkul naya account.~ Na purane trades, na completed orders.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0013.66.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "RED FLAG 3 · JALDI",
+   "chip_color": "red",
+   "elements": [
+    {
+     "type": "row",
+     "gap": 20,
+     "in": 0,
+     "items": [
+      {
+       "type": "icon",
+       "name": "flag",
+       "size": 110,
+       "color": "#fff",
+       "bg": "red",
+       "round": true,
+       "label": "RED FLAG 3",
+       "in": 0
+      },
+      {
+       "type": "stack",
+       "gap": 6,
+       "items": [
+        {
+         "type": "text",
+         "text": "Jaldi machana",
+         "size": 54,
+         "weight": 900,
+         "in": 0
+        },
+        {
+         "type": "text",
+         "mono": true,
+         "text": "URGENCY = DABAAV",
+         "in": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "chat",
+     "title": "P2P ORDER CHAT",
+     "right": "BUYER",
+     "in": "1",
+     "mt": 20,
+     "messages": [
+      {
+       "from": "Buyer",
+       "text": "Bhai jaldi release karo!!",
+       "in": "1:jaldi"
+      },
+      {
+       "from": "Buyer",
+       "text": "Mujhe urgent hai, 2 min mein",
+       "in": "1:urgent"
+      }
+     ]
+    },
+    {
+     "type": "ring",
+     "text": "2:00",
+     "frac": 0.3,
+     "color": "red",
+     "r": 56,
+     "label": "TIMER",
+     "in": "1:urgent",
+     "mt": 16
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Red flag teen:*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0018.54.wav",
+     "pause": 0.07,
+     "dur": 0.8
+    },
+    {
+     "say": "~jaldi machana.~",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0019.92.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "\"Bhai *jaldi release* karo, mujhe *urgent* hai.\"",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0021.36.wav",
+     "pause": 0.2,
+     "mascot": "think",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "RED FLAG 4 · PLATFORM KE BAHAR",
+   "chip_color": "red",
+   "elements": [
+    {
+     "type": "row",
+     "gap": 20,
+     "in": 0,
+     "items": [
+      {
+       "type": "icon",
+       "name": "flag",
+       "size": 110,
+       "color": "#fff",
+       "bg": "red",
+       "round": true,
+       "label": "RED FLAG 4",
+       "in": 0
+      },
+      {
+       "type": "stack",
+       "gap": 6,
+       "items": [
+        {
+         "type": "text",
+         "text": "Platform ke bahar",
+         "size": 54,
+         "weight": 900,
+         "in": 0
+        },
+        {
+         "type": "text",
+         "mono": true,
+         "text": "NO ESCROW · NO PROTECTION",
+         "in": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "type": "row",
+     "gap": 30,
+     "in": "1",
+     "mt": 24,
+     "items": [
+      {
+       "type": "icon",
+       "name": "shield",
+       "size": 120,
+       "color": "#0b0d0e",
+       "bg": "acc",
+       "round": true,
+       "label": "EXCHANGE · SAFE",
+       "in": "1"
+      },
+      {
+       "type": "text",
+       "text": "→",
+       "size": 90,
+       "weight": 900,
+       "color": "red",
+       "in": "2:WhatsApp"
+      },
+      {
+       "type": "icon",
+       "name": "chat",
+       "size": 120,
+       "color": "#fff",
+       "bg": "green",
+       "round": true,
+       "label": "WHATSAPP",
+       "in": "2:WhatsApp",
+       "cross": "2:sasta"
+      }
+     ]
+    },
+    {
+     "type": "bubble",
+     "quote": "WhatsApp pe aao, sasta de dunga",
+     "in": "2:WhatsApp",
+     "mt": 20,
+     "w": 560
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Red flag chaar:*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0024.46.wav",
+     "pause": 0.07,
+     "dur": 0.8
+    },
+    {
+     "say": "~platform ke bahar~ deal ki baat.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0025.83.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "\"*WhatsApp* pe aao, ~sasta~ de dunga.\"",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0028.07.wav",
+     "pause": 0.2,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "RED FLAG 5 · TUKDON MEIN",
+   "chip_color": "red",
+   "elements": [],
+   "beats": [
+    {
+     "say": "*Red flag paanch:*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0030.80.wav",
+     "pause": 0.07,
+     "dur": 0.8
+    },
+    {
+     "say": "ek trade ka paisa, *kai alag alag accounts* se,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0032.29.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "~tukdon~ mein aana.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0035.19.wav",
+     "pause": 0.25,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "TOH KYA KAREIN?",
+   "chip_color": "green",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "Ek bhi flag? ~Cancel.~",
+     "size": 74,
+     "in": 0
+    },
+    {
+     "type": "compare",
+     "arrow": false,
+     "itemW": 280,
+     "in": "1",
+     "mt": 24,
+     "items": [
+      {
+       "top": "THODA MUNAFA",
+       "value": "₹200",
+       "color": "mute",
+       "sub": "CHHOD DO",
+       "in": "2:munafa"
+      },
+      {
+       "top": "ACCOUNT FREEZE",
+       "value": "MAHINE",
+       "color": "red",
+       "border": "red",
+       "sub": "BACH GAYE",
+       "in": "3:freeze"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Inme se *ek bhi* dikhe,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0037.04.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "toh trade ~cancel~ karo.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0038.52.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*Thoda munafa* chhodna,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0039.97.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "^account freeze se behtar^ hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0041.28.wav",
+     "pause": 0.07,
+     "mascot": "happy",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "SHARE KARO",
+   "elements": [
+    {
+     "type": "check",
+     "title": "5 RED FLAGS",
+     "in": 0,
+     "items": [
+      {
+       "label": "Naam match nahi",
+       "state": "x",
+       "tick": "0:video"
+      },
+      {
+       "label": "Naya account",
+       "state": "x",
+       "tick": "0:video+0.2"
+      },
+      {
+       "label": "Jaldi machana",
+       "state": "x",
+       "tick": "0:video+0.4"
+      },
+      {
+       "label": "Platform ke bahar",
+       "state": "x",
+       "tick": "0:video+0.6"
+      },
+      {
+       "label": "Tukdon mein paisa",
+       "state": "x",
+       "tick": "0:video+0.8"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Ye video us *dost* ko bhejo, jo *roz P2P* pe trade karta hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze3/0043.31.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    }
+   ]
+  }
+ ],
+ "outro": {
+  "say": "Ab samjhe?",
+  "audio": "/root/explainer-reel/episodes/clips_freeze3/0047.30.wav",
+  "dur": 3.0
+ }
+}

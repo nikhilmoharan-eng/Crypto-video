@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      :root { --ink:#f2efe8; --mute:#8a8f8c; --card:#151818; --line:#2a2f2f; --cyan:#5ac8fa; --green:#3be58f; --red:#ff5a47;
+        --font-display:"Inter",sans-serif; --font-mono:"JetBrains Mono",monospace; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:absolute; inset:0; font-family:var(--font-display); color:var(--ink); }
+      #stage, #inner { position:absolute; inset:0; }
+      .a { position:absolute; }
+      .mono { font-family:var(--font-mono); font-weight:800; letter-spacing:.12em; }
+      .card { position:absolute; border-radius:24px; background:var(--card); border:2px solid var(--line); box-shadow:0 26px 50px rgba(0,0,0,.5); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="4.97" data-width="1080" data-height="1920">
+      <div id="stage" class="clip" data-start="0" data-duration="4.97" data-track-index="0" data-layout-allow-overlap>
+        <div id="inner">
+
+          <div class="a" id="big" style="left:0;right:0;top:560px;text-align:center;font-weight:900;font-size:150px;letter-spacing:-.03em">Red flag <span style="color:var(--red)">5</span></div>
+          <div class="card src" id="a0" style="left:60px;top:430px;width:180px;height:150px;padding:18px"><div class="mono" style="font-size:16px;color:var(--mute)">A/C 1</div><div style="font-weight:900;font-size:36px;margin-top:8px;color:#ff8a7a">₹8,000</div></div><div class="card src" id="a1" style="left:260px;top:430px;width:180px;height:150px;padding:18px"><div class="mono" style="font-size:16px;color:var(--mute)">A/C 2</div><div style="font-weight:900;font-size:36px;margin-top:8px;color:#ff8a7a">₹12,500</div></div><div class="card src" id="a2" style="left:460px;top:430px;width:180px;height:150px;padding:18px"><div class="mono" style="font-size:16px;color:var(--mute)">A/C 3</div><div style="font-weight:900;font-size:36px;margin-top:8px;color:#ff8a7a">₹9,000</div></div><div class="card src" id="a3" style="left:660px;top:430px;width:180px;height:150px;padding:18px"><div class="mono" style="font-size:16px;color:var(--mute)">A/C 4</div><div style="font-weight:900;font-size:36px;margin-top:8px;color:#ff8a7a">₹15,000</div></div><div class="card src" id="a4" style="left:860px;top:430px;width:180px;height:150px;padding:18px"><div class="mono" style="font-size:16px;color:var(--mute)">A/C 5</div><div style="font-weight:900;font-size:36px;margin-top:8px;color:#ff8a7a">₹5,500</div></div>
+          <svg class="a" style="left:0;top:0" width="1080" height="1920"><path class="ln" d="M150 590 Q 150 760 540 860" stroke="#ff5a47" stroke-width="5" fill="none" stroke-dasharray="10 10" opacity="0"/><path class="ln" d="M350 590 Q 350 760 540 860" stroke="#ff5a47" stroke-width="5" fill="none" stroke-dasharray="10 10" opacity="0"/><path class="ln" d="M550 590 Q 550 760 540 860" stroke="#ff5a47" stroke-width="5" fill="none" stroke-dasharray="10 10" opacity="0"/><path class="ln" d="M750 590 Q 750 760 540 860" stroke="#ff5a47" stroke-width="5" fill="none" stroke-dasharray="10 10" opacity="0"/><path class="ln" d="M950 590 Q 950 760 540 860" stroke="#ff5a47" stroke-width="5" fill="none" stroke-dasharray="10 10" opacity="0"/></svg>
+          <div class="a pk" id="p0" style="left:150px;top:600px;width:28px;height:28px;margin-left:-14px;border-radius:50%;background:var(--red);box-shadow:0 0 24px var(--red)"></div><div class="a pk" id="p1" style="left:350px;top:600px;width:28px;height:28px;margin-left:-14px;border-radius:50%;background:var(--red);box-shadow:0 0 24px var(--red)"></div><div class="a pk" id="p2" style="left:550px;top:600px;width:28px;height:28px;margin-left:-14px;border-radius:50%;background:var(--red);box-shadow:0 0 24px var(--red)"></div><div class="a pk" id="p3" style="left:750px;top:600px;width:28px;height:28px;margin-left:-14px;border-radius:50%;background:var(--red);box-shadow:0 0 24px var(--red)"></div><div class="a pk" id="p4" style="left:950px;top:600px;width:28px;height:28px;margin-left:-14px;border-radius:50%;background:var(--red);box-shadow:0 0 24px var(--red)"></div>
+          <div class="card" id="you" style="left:290px;top:860px;width:500px;height:190px;padding:28px;border-color:var(--cyan)">
+            <div class="mono" style="font-size:20px;color:var(--mute)">AAPKA A/C · 1 TRADE</div>
+            <div style="font-weight:900;font-size:66px;margin-top:8px">₹<span id="tot">0</span></div></div>
+          <div class="a" id="st" style="left:280px;top:1090px;padding:12px 30px 6px;border:8px solid var(--red);border-radius:14px;color:var(--red);font-weight:900;font-size:60px">TUKDON MEIN = RISK</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#big", { scale: 2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.in" }, 0.0);
+      tl.to("#big", { y: -300, opacity: 0, duration: 0.3, ease: "power2.in" }, 0.8);
+      tl.fromTo("#you", { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 1.0);
+      tl.fromTo(".src", { y: -200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, stagger: 0.12, ease: "back.out(2)" }, 2.0);
+      tl.fromTo(".ln", { opacity: 0 }, { opacity: 0.8, duration: 0.2, stagger: 0.12 }, 2.4);
+      [0,1,2,3,4].forEach((i) => {
+        tl.fromTo("#p" + i, { x: 0, y: 0, opacity: 0 }, { x: 540 - (150 + i * 200), y: 270, opacity: 1, duration: 0.5, ease: "power1.in" }, 2.5 + i * 0.18);
+        tl.to("#p" + i, { opacity: 0, duration: 0.1 }, 3.0 + i * 0.18);
+      });
+      const tot = { v: 0 };
+      tl.fromTo(tot, { v: 0 }, { v: 50000, duration: 1.2, ease: "none", onUpdate: () => { document.querySelector("#tot").textContent = Math.round(tot.v).toLocaleString("en-IN"); } }, 2.9);
+      tl.to("#you", { borderColor: "#ff5a47", duration: 0.2 }, 3.9);
+      tl.fromTo("#st", { scale: 2.4, opacity: 0, rotation: -12 }, { scale: 1, opacity: 1, rotation: -4, duration: 0.2, ease: "power4.in" }, 3.95);
+      tl.to("#inner", { opacity: 0, duration: 0.18 }, 4.75);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
