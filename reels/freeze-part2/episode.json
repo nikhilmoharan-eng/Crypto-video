@@ -1,0 +1,558 @@
+{
+ "series": "CRYPTO.DECODED",
+ "series_icon": "bank",
+ "episode": 7,
+ "tag": "FREEZE · PART 2",
+ "accent": "cyan",
+ "disclaimer": "SIRF JAANKARI · GENERAL STEPS · NOT LEGAL ADVICE",
+ "concept": "ACCOUNT FREEZE · AB KYA?",
+ "music_mood": "tense",
+ "brand": {
+  "wordmark": "niks",
+  "suffix": ".crypto",
+  "handle": "@niks.crypto",
+  "color": "#7C5CFF",
+  "outro_log": "Freeze recovery steps installed.",
+  "follow": "FOLLOW @NIKS.CRYPTO"
+ },
+ "stinger_lines": {
+  "boot": "SYSTEM ONLINE",
+  "detect": "CASE DETECTED:",
+  "run": "LOADING STEPS…"
+ },
+ "hook": [
+  {
+   "hold": 0.04,
+   "chip": "ACCOUNT FROZEN",
+   "chip_color": "red",
+   "elements": [],
+   "beats": [
+    {
+     "say": "Aapka account ~freeze~ ho gaya.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0000.00.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "^Ghabraiye mat.^",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0002.04.wav",
+     "pause": 0.07,
+     "mascot": "happy",
+     "mascot_pos": "right",
+     "dur": 0.9
+    },
+    {
+     "say": "Pehle ye samjho, ki freeze *kisne kiya.*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0003.13.wav",
+     "pause": 0.25,
+     "mascot": "think",
+     "mascot_pos": "right"
+    }
+   ]
+  }
+ ],
+ "body": [
+  {
+   "hold": 0.04,
+   "chip": "FREEZE KISNE KIYA?",
+   "elements": [
+    {
+     "type": "flow",
+     "w": 640,
+     "h": 420,
+     "in": 0,
+     "nodes": [
+      {
+       "id": "pol",
+       "x": 320,
+       "y": 0,
+       "w": 300,
+       "icon": "shield",
+       "iconColor": "acc",
+       "label": "Police / Cyber cell",
+       "sub": "REQUEST BHEJTE HAIN",
+       "in": "1:Police"
+      },
+      {
+       "id": "bank",
+       "x": 320,
+       "y": 150,
+       "w": 300,
+       "icon": "bank",
+       "iconColor": "mute",
+       "label": "Bank",
+       "sub": "KHUD NAHI KARTA",
+       "in": "0:bank"
+      },
+      {
+       "id": "ac",
+       "x": 320,
+       "y": 300,
+       "w": 300,
+       "icon": "lock",
+       "iconColor": "red",
+       "label": "Aapka account",
+       "sub": "HOLD / LIEN",
+       "color": "red",
+       "in": "2:hold"
+      }
+     ],
+     "edges": [
+      {
+       "from": "pol",
+       "to": "bank",
+       "fromSide": "bottom",
+       "toSide": "top",
+       "color": "acc",
+       "in": "1:kehne"
+      },
+      {
+       "from": "bank",
+       "to": "ac",
+       "fromSide": "bottom",
+       "toSide": "top",
+       "color": "red",
+       "in": "2:hold"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Zyadatar, *bank khud* nahi karta.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0005.77.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*Police ya cyber cell* ke kehne pe,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0008.02.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "bank account pe *hold* lagata hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0009.91.wav",
+     "pause": 0.07,
+     "mascot": "idle",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "STEP 1 · BANK BRANCH",
+   "chip_color": "green",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "Step *1*",
+     "size": 110,
+     "in": 0,
+     "out": "1",
+     "pos": {
+      "x": 320,
+      "y": 200,
+      "center": true
+     }
+    },
+    {
+     "type": "paper",
+     "kicker": "APPLICATION · BRANCH MANAGER",
+     "right": "LIKHIT MEIN",
+     "title": "Freeze kyun hua?",
+     "sub": "KAUNSI COMPLAINT · KAUNSA POLICE STATION",
+     "sign": "1:likhit",
+     "in": "1"
+    },
+    {
+     "type": "card",
+     "w": 600,
+     "in": "2",
+     "mt": 16,
+     "rows": [
+      {
+       "icon": "doc",
+       "iconColor": "acc",
+       "label": "Complaint / FIR no.",
+       "sub": "KISNE REPORT KIYA",
+       "in": "2:complaint",
+       "compact": true
+      },
+      {
+       "icon": "shield",
+       "iconColor": "acc",
+       "label": "Police station",
+       "sub": "KAHAN SE REQUEST AAYI",
+       "in": "2:police",
+       "compact": true
+      },
+      {
+       "icon": "rupee",
+       "iconColor": "red",
+       "label": "Hold amount",
+       "sub": "KITNA ROKA GAYA",
+       "in": "2:request",
+       "compact": true
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Toh *step ek:*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0011.89.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "center"
+    },
+    {
+     "say": "*bank branch* jao, aur *likhit mein* poocho,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0013.01.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "freeze kis *complaint* ya kis *police station* ki request pe hua.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0015.29.wav",
+     "pause": 0.07
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "STEP 2 · POLICE / CYBER CELL",
+   "chip_color": "green",
+   "elements": [
+    {
+     "type": "bigtext",
+     "text": "Step *2*",
+     "size": 110,
+     "in": 0,
+     "out": "1",
+     "pos": {
+      "x": 320,
+      "y": 200,
+      "center": true
+     }
+    },
+    {
+     "type": "row",
+     "gap": 22,
+     "in": "1",
+     "items": [
+      {
+       "type": "phone",
+       "w": 200,
+       "in": "1",
+       "screen": "#14161a",
+       "time": "11:20",
+       "app": {
+        "title": "Calling…",
+        "price": "Cyber Cell",
+        "sub": "Officer",
+        "button": "CONNECTED",
+        "buttonColor": "green",
+        "in": "1:contact"
+       }
+      },
+      {
+       "type": "card",
+       "w": 380,
+       "in": "1:police",
+       "rows": [
+        {
+         "icon": "user",
+         "iconColor": "acc",
+         "label": "Investigating officer",
+         "sub": "AAPKA CASE ISI KE PAAS",
+         "in": "2:officer"
+        },
+        {
+         "icon": "shield",
+         "iconColor": "acc",
+         "label": "Police station",
+         "sub": "JAHAN COMPLAINT HAI",
+         "in": "1:police"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "*Step do:*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0018.73.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "center",
+     "dur": 0.8
+    },
+    {
+     "say": "us *police station ya cyber cell* se contact karo.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0019.73.wav",
+     "pause": 0.07,
+     "mascot": "idle",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*Wahi officer,* aapka case dekh raha hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0022.49.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "STEP 3 · SABOOT",
+   "chip_color": "green",
+   "elements": [],
+   "beats": [
+    {
+     "say": "*Step teen:*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0024.82.wav",
+     "pause": 0.07,
+     "dur": 0.8
+    },
+    {
+     "say": "apna *saboot* taiyaar rakho.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0025.94.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "Exchange ka *trade record,*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0027.57.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "*buyer ki details,*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0028.97.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "aur *payment ke screenshots.*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0030.14.wav",
+     "pause": 0.2,
+     "mascot": "happy",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "KITNA HOLD HOTA HAI?",
+   "elements": [
+    {
+     "type": "split",
+     "title": "AAPKA BALANCE · EXAMPLE",
+     "w": 600,
+     "in": 0,
+     "a": {
+      "label": "HOLD · COMPLAINT AMOUNT",
+      "frac": 0.3,
+      "color": "red"
+     },
+     "b": {
+      "label": "BAAKI CHALTA HAI",
+      "color": "green",
+      "in": "1:complaint"
+     }
+    },
+    {
+     "type": "card",
+     "w": 600,
+     "in": "0:utna",
+     "mt": 18,
+     "rows": [
+      {
+       "icon": "rupee",
+       "iconColor": "red",
+       "label": "Kabhi: sirf disputed amount",
+       "sub": "JITNA COMPLAINT MEIN",
+       "in": "0:utna",
+       "compact": true
+      },
+      {
+       "icon": "lock",
+       "iconColor": "red",
+       "label": "Kabhi: poora account",
+       "sub": "DEBIT FREEZE",
+       "badge": "FULL",
+       "badgeColor": "red",
+       "in": "2:poora",
+       "red": "2:poora",
+       "compact": true
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "POORA FROZEN",
+     "color": "red",
+     "rot": -7,
+     "size": 40,
+     "in": "2:account",
+     "pos": {
+      "x": 320,
+      "y": 120,
+      "center": true
+     }
+    }
+   ],
+   "beats": [
+    {
+     "say": "Kai baar sirf *utna amount* hold hota hai,",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0031.72.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "jitna *complaint* mein hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0033.90.wav",
+     "pause": 0.07
+    },
+    {
+     "say": "Kai baar, ~poora account.~",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0035.41.wav",
+     "pause": 0.07,
+     "mascot": "shock",
+     "mascot_pos": "right"
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "AGLA RASTA",
+   "elements": [
+    {
+     "type": "list",
+     "w": 600,
+     "in": 0,
+     "items": [
+      {
+       "kicker": "OPTION 1",
+       "title": "*Lawyer* se salah lo",
+       "in": "1:lawyer"
+      },
+      {
+       "kicker": "OPTION 2",
+       "title": "Court mein *release ki arzi*",
+       "in": "2:Court"
+      }
+     ]
+    },
+    {
+     "type": "icon",
+     "name": "⚖",
+     "size": 120,
+     "color": "#0b0d0e",
+     "bg": "acc",
+     "round": true,
+     "label": "LEGAL ROUTE",
+     "in": "2:arzi",
+     "mt": 22
+    }
+   ],
+   "beats": [
+    {
+     "say": "Aur agar *baat na bane,*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0037.14.wav",
+     "pause": 0.07,
+     "mascot": "think",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "toh kisi *lawyer* se salah lo.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0038.43.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "*Court* se bhi, account khulwane ki *arzi* di ja sakti hai.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0040.03.wav",
+     "pause": 0.07
+    }
+   ]
+  },
+  {
+   "hold": 0.04,
+   "chip": "SAVE KARO",
+   "elements": [
+    {
+     "type": "check",
+     "title": "FREEZE CHECKLIST",
+     "in": 0,
+     "items": [
+      {
+       "label": "Bank se likhit reason",
+       "tick": "0:save"
+      },
+      {
+       "label": "Police / cyber cell contact",
+       "tick": "0:save+0.25"
+      },
+      {
+       "label": "Saboot ka folder",
+       "tick": "0:save+0.5"
+      },
+      {
+       "label": "Zaroorat ho toh lawyer",
+       "tick": "1:zaroorat"
+      }
+     ]
+    },
+    {
+     "type": "tiles",
+     "size": 92,
+     "in": "1:kaam",
+     "mt": 22,
+     "items": [
+      {
+       "icon": "star",
+       "color": "acc",
+       "label": "Save"
+      },
+      {
+       "icon": "link",
+       "color": "brand",
+       "label": "Share"
+      },
+      {
+       "icon": "bell",
+       "color": "green",
+       "label": "Follow"
+      }
+     ]
+    }
+   ],
+   "beats": [
+    {
+     "say": "Ye video *save* karo.",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0043.14.wav",
+     "pause": 0.07,
+     "mascot": "point",
+     "mascot_pos": "right"
+    },
+    {
+     "say": "Kabhi zaroorat pade, toh *kaam aayega.*",
+     "audio": "/root/explainer-reel/episodes/clips_freeze2/0044.41.wav",
+     "pause": 0.07,
+     "mascot": "wink",
+     "mascot_pos": "right"
+    }
+   ]
+  }
+ ],
+ "outro": {
+  "say": "Ab samjhe?",
+  "audio": "/root/explainer-reel/episodes/clips_freeze2/0046.49.wav",
+  "dur": 3.0
+ }
+}

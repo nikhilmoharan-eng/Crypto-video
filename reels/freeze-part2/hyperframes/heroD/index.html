@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      :root { --ink:#f2efe8; --mute:#8a8f8c; --card:#151818; --line:#2a2f2f; --cyan:#5ac8fa; --green:#3be58f; --red:#ff5a47;
+        --font-display:"Inter",sans-serif; --font-mono:"JetBrains Mono",monospace; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:absolute; inset:0; font-family:var(--font-display); color:var(--ink); }
+      #stage, #inner { position:absolute; inset:0; }
+      .a { position:absolute; }
+      .mono { font-family:var(--font-mono); font-weight:800; letter-spacing:.12em; }
+      .tag { position:absolute; padding:16px 26px; border-radius:18px; background:var(--card); border:3px solid var(--cyan); font-weight:900; font-size:40px;
+        box-shadow:0 18px 36px rgba(0,0,0,.5); color:var(--cyan); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="6.2" data-width="1080" data-height="1920">
+      <div id="stage" class="clip" data-start="0" data-duration="6.2" data-track-index="0" data-layout-allow-overlap>
+        <div id="inner">
+          <div class="a" id="big" style="left:0;right:0;top:560px;text-align:center;font-weight:900;font-size:200px;letter-spacing:-.03em">Step <span style="color:var(--green)">3</span></div>
+          <div class="a" id="folder" style="left:160px;top:640px;width:760px;height:430px">
+            <div class="a" style="left:0;top:0;width:280px;height:60px;border-radius:18px 18px 0 0;background:#2a6f8f"></div>
+            <div class="a" style="left:0;top:44px;width:760px;height:386px;border-radius:0 20px 20px 20px;background:#2a6f8f"></div>
+            <div class="a mono" style="left:30px;top:100px;font-size:26px;color:#d9f2ff">SABOOT · FREEZE CASE</div>
+            <div class="a" id="flap" style="left:0;top:120px;width:760px;height:310px;border-radius:20px;background:#3a8fb5;transform-origin:50% 100%;box-shadow:0 -10px 30px rgba(0,0,0,.25)"></div>
+          </div>
+          <div class="a doc" id="d1" data-layout-allow-occlusion style="left:120px;top:380px;width:270px;height:300px;border-radius:16px;background:#f2efe8;color:#16171a;padding:22px;box-shadow:0 20px 40px rgba(0,0,0,.5)">
+            <div class="mono" style="font-size:18px;color:#2a6f8f">EXCHANGE</div><div style="font-weight:900;font-size:34px;margin-top:6px">Trade record</div>
+            <div style="margin-top:16px;height:10px;width:200px;background:#c9c3b6;border-radius:5px"></div><div style="margin-top:12px;height:10px;width:160px;background:#c9c3b6;border-radius:5px"></div>
+            <div style="margin-top:12px;height:10px;width:210px;background:#c9c3b6;border-radius:5px"></div><div class="mono" style="margin-top:22px;font-size:22px;color:#1f9e5c">SELL 560 USDT ✓</div></div>
+          <div class="a doc" id="d2" data-layout-allow-occlusion style="left:405px;top:360px;width:270px;height:300px;border-radius:16px;background:#f2efe8;color:#16171a;padding:22px;box-shadow:0 20px 40px rgba(0,0,0,.5)">
+            <div class="mono" style="font-size:18px;color:#2a6f8f">BUYER</div><div style="font-weight:900;font-size:34px;margin-top:6px">Details</div>
+            <div class="mono" style="margin-top:18px;font-size:20px;line-height:1.6">NAAM: R. KUMAR<br>UPI: rk@upi<br>ID: user_83x1</div></div>
+          <div class="a doc" id="d3" data-layout-allow-occlusion style="left:690px;top:380px;width:270px;height:300px;border-radius:16px;background:#f2efe8;color:#16171a;padding:22px;box-shadow:0 20px 40px rgba(0,0,0,.5)">
+            <div class="mono" style="font-size:18px;color:#2a6f8f">PAYMENT</div><div style="font-weight:900;font-size:34px;margin-top:6px">Screenshot</div>
+            <div style="margin-top:16px;border-radius:12px;background:#16171a;color:#3be58f;padding:14px;font-weight:900;font-size:30px">+₹50,000<div class="mono" style="font-size:16px;color:#8a8f8c;margin-top:4px">UPI · CREDITED</div></div></div>
+          <div class="a" id="ready" style="left:0;right:0;top:1110px;text-align:center"><span style="display:inline-block;padding:16px 30px;border-radius:16px;border:5px solid var(--green);color:var(--green);font-weight:900;font-size:46px;transform:rotate(-4deg)">SABOOT READY ✓</span></div>
+          <div class="a mono" id="note" style="left:0;right:0;top:1040px;text-align:center;font-size:22px;color:var(--mute)">EXAMPLE DETAILS</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // local = engine - 26.47
+      tl.fromTo("#big", { scale: 2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.in" }, 0.0);
+      tl.to("#big", { y: -380, scale: 0.55, opacity: 0, duration: 0.35, ease: "power2.in" }, 0.85);
+      tl.fromTo("#folder", { y: 500, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, 0.95);
+      tl.fromTo("#flap", { rotationX: 0 }, { rotationX: -55, duration: 0.4, ease: "power2.out" }, 1.4);
+      tl.fromTo("#d1", { x: -600, rotation: -25, opacity: 0 }, { x: 0, rotation: -6, opacity: 1, duration: 0.45, ease: "power3.out" }, 2.24);
+      tl.fromTo("#d2", { y: -700, rotation: 20, opacity: 0 }, { y: 0, rotation: 2, opacity: 1, duration: 0.45, ease: "power3.out" }, 3.55);
+      tl.fromTo("#d3", { x: 600, rotation: 25, opacity: 0 }, { x: 0, rotation: 7, opacity: 1, duration: 0.45, ease: "power3.out" }, 4.76);
+      tl.fromTo("#note", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 2.6);
+      tl.to(["#d1", "#d2", "#d3"], { y: 330, scale: 0.8, duration: 0.35, stagger: 0.05, ease: "power2.in" }, 5.3);
+      tl.to("#flap", { rotationX: 0, duration: 0.3 }, 5.55);
+      tl.fromTo("#ready", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "power4.in" }, 5.6);
+      tl.to("#inner", { opacity: 0, duration: 0.18 }, 6.0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      :root { --ink:#f2efe8; --mute:#8a8f8c; --card:#151818; --line:#2a2f2f; --cyan:#5ac8fa; --green:#3be58f; --red:#ff5a47;
+        --font-display:"Inter",sans-serif; --font-mono:"JetBrains Mono",monospace; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:absolute; inset:0; font-family:var(--font-display); color:var(--ink); }
+      #stage, #inner { position:absolute; inset:0; }
+      .a { position:absolute; }
+      .mono { font-family:var(--font-mono); font-weight:800; letter-spacing:.12em; }
+      .tag { position:absolute; padding:16px 26px; border-radius:18px; background:var(--card); border:3px solid var(--cyan); font-weight:900; font-size:40px;
+        box-shadow:0 18px 36px rgba(0,0,0,.5); color:var(--cyan); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="4.96" data-width="1080" data-height="1920">
+      <div id="stage" class="clip" data-start="0" data-duration="4.96" data-track-index="0" data-layout-allow-overlap>
+        <div id="inner">
+          <div class="a" id="glow" style="left:240px;top:330px;width:600px;height:780px;border-radius:50%;background:radial-gradient(closest-side,rgba(90,200,250,.35),transparent 70%)"></div>
+          <div class="a" id="phone" style="left:350px;top:390px;width:380px;height:640px;border-radius:52px;background:#0b0d0e;border:3px solid #2f3535;box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 0 10px #121516;overflow:hidden">
+            <div class="a" style="left:130px;top:14px;width:120px;height:30px;border-radius:16px;background:#000;z-index:3"></div>
+            <div class="a" style="left:26px;top:70px"><div class="mono" style="font-size:19px;color:var(--mute)">MY BANK · A/C ••4821</div><div style="font-weight:900;font-size:36px;margin-top:8px">Savings</div>
+              <div style="margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;width:328px"><div class="mono" style="font-size:18px;color:var(--mute)">BALANCE</div><div style="font-weight:900;font-size:46px">₹1,70,000</div></div></div>
+            <svg class="a" id="frost" data-layout-allow-occlusion style="inset:0;width:100%;height:100%" viewBox="0 0 380 640" preserveAspectRatio="none">
+              <defs><filter id="fz"><feTurbulence type="fractalNoise" baseFrequency="0.035 0.09" numOctaves="4" seed="3"/><feColorMatrix values="0 0 0 0 .78  0 0 0 0 .92  0 0 0 0 1  0 0 0 1.6 -.55"/></filter></defs>
+              <rect width="380" height="640" fill="rgba(170,220,245,.28)"/><rect width="380" height="640" filter="url(#fz)"/></svg>
+            <div class="a" id="banner" data-layout-allow-occlusion style="left:22px;right:22px;top:300px;border-radius:20px;padding:22px 16px;background:var(--red);color:#fff;text-align:center;box-shadow:0 20px 50px rgba(255,90,71,.45)">
+              <div style="font-weight:900;font-size:34px">ACCOUNT FROZEN</div><div class="mono" style="font-size:18px;margin-top:6px">DEBIT FREEZE</div></div>
+          </div>
+          <div class="a" id="calm" style="left:90px;top:440px;width:220px;height:220px">
+            <div class="a" id="ring" style="inset:0;border-radius:50%;border:6px solid var(--green)"></div>
+            <div class="a" style="inset:0;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;font-size:34px;color:var(--green);line-height:1.05">DON'T<br>PANIC</div>
+          </div>
+          <svg class="a" id="mag" style="left:0;top:0" width="200" height="200" viewBox="0 0 64 64"><circle cx="26" cy="26" r="17" fill="rgba(90,200,250,.18)" stroke="#5ac8fa" stroke-width="5"/><path d="M39 39 L56 56" stroke="#5ac8fa" stroke-width="7" stroke-linecap="round"/></svg>
+          <div class="tag" id="t1" style="left:70px;top:770px">BANK?</div>
+          <div class="tag" id="t2" style="left:770px;top:520px">POLICE?</div>
+          <div class="tag" id="t3" style="left:700px;top:860px">CYBER CELL?</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // local = engine - 0.35
+      tl.fromTo("#phone", { y: 140, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 0);
+      tl.fromTo("#glow", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.1);
+      tl.fromTo("#frost", { opacity: 0, clipPath: "inset(0% 0% 100% 0%)" }, { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 0.4, ease: "power2.inOut" }, 0.3);
+      tl.fromTo("#banner", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.in" }, 0.6);
+      tl.to("#phone", { x: 12, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, 0.85);
+      // ghabraiye mat
+      tl.fromTo("#calm", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 1.48);
+      tl.fromTo("#ring", { scale: 1, opacity: 1 }, { scale: 1.35, opacity: 0, duration: 0.9, ease: "sine.out", repeat: 2 }, 1.6);
+      tl.to("#glow", { opacity: 0.4, duration: 0.6 }, 1.6);
+      // kisne kiya: magnifier scans, suspects pop
+      tl.fromTo("#mag", { x: 300, y: 560, opacity: 0 }, { x: 330, y: 560, opacity: 1, duration: 0.2 }, 2.6);
+      tl.to("#mag", { x: 560, y: 600, duration: 0.6, ease: "sine.inOut" }, 2.8);
+      tl.to("#mag", { x: 420, y: 760, duration: 0.6, ease: "sine.inOut" }, 3.4);
+      tl.to("#calm", { opacity: 0, duration: 0.25 }, 3.4);
+      tl.fromTo(["#t1", "#t2", "#t3"], { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, stagger: 0.18, ease: "back.out(2.4)" }, 3.6);
+      tl.to("#inner", { opacity: 0, duration: 0.2 }, 4.74);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
