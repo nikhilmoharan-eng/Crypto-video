@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      :root { --ink:#f2efe8; --mute:#8a8f8c; --card:#151818; --line:#2a2f2f; --cyan:#5ac8fa; --green:#3be58f; --red:#ff5a47; --orange:#ff9f2e;
+        --font-display:"Inter",sans-serif; --font-mono:"JetBrains Mono",monospace; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:transparent; }
+      #root { position:absolute; inset:0; font-family:var(--font-display); color:var(--ink); }
+      #stage, #inner { position:absolute; inset:0; }
+      .a { position:absolute; }
+      .mono { font-family:var(--font-mono); font-weight:800; letter-spacing:.12em; }
+      .card { position:absolute; border-radius:24px; background:var(--card); border:2px solid var(--line); box-shadow:0 26px 50px rgba(0,0,0,.5); }
+      .node { position:absolute; width:250px; height:250px; border-radius:30px; background:var(--card); border:3px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 26px 50px rgba(0,0,0,.5); }
+      .node .ic { width:110px; height:110px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:60px; color:#0b0d0e; }
+      .node .t { font-weight:900; font-size:36px; margin-top:16px; }
+      .node .s { font-family:var(--font-mono); font-weight:800; font-size:18px; letter-spacing:.1em; color:var(--mute); margin-top:4px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="6.48" data-width="1080" data-height="1920">
+      <div id="stage" class="clip" data-start="0" data-duration="6.48" data-track-index="0" data-layout-allow-overlap>
+        <div id="inner">
+
+          <div class="a" id="big" style="left:0;right:0;top:560px;text-align:center;font-weight:900;font-size:130px;letter-spacing:-.03em">Pro <span style="color:var(--green)">tip</span></div>
+          <div class="card" id="tr" style="left:80px;top:420px;width:440px;height:420px;padding:30px;overflow:hidden">
+            <div class="mono" style="font-size:20px;color:var(--cyan)">BANK A/C 1</div><div style="font-weight:900;font-size:52px;margin-top:8px">Trading</div>
+            <div class="mono" style="font-size:18px;color:var(--mute);margin-top:6px">SIRF CRYPTO</div>
+            <div style="font-weight:900;font-size:50px;margin-top:40px">₹40,000</div>
+            <svg class="a" id="frost" data-layout-allow-occlusion style="left:0;top:0;width:440px;height:420px" viewBox="0 0 440 420"><defs><filter id="fz"><feTurbulence type="fractalNoise" baseFrequency="0.035 0.09" numOctaves="4" seed="5"/><feColorMatrix values="0 0 0 0 .78  0 0 0 0 .92  0 0 0 0 1  0 0 0 1.6 -.55"/></filter></defs>
+              <rect width="440" height="420" fill="rgba(170,220,245,.3)"/><rect width="440" height="420" filter="url(#fz)"/></svg>
+            <div class="a" id="lk" data-layout-allow-occlusion style="left:150px;top:140px;width:140px;height:140px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center">
+              <svg viewBox="0 0 24 24" width="80" height="80"><rect x="5" y="10" width="14" height="10" rx="2" fill="#fff"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#fff" stroke-width="2.6" fill="none"/></svg></div></div>
+          <div class="card" id="sa" style="left:560px;top:420px;width:440px;height:420px;padding:30px;border-color:var(--green)">
+            <div class="mono" style="font-size:20px;color:var(--green)">BANK A/C 2</div><div style="font-weight:900;font-size:52px;margin-top:8px">Salary</div>
+            <div class="mono" style="font-size:18px;color:var(--mute);margin-top:6px">ROZ KA KHARCHA</div>
+            <div style="font-weight:900;font-size:50px;margin-top:40px">₹85,000</div></div>
+          <div class="a" id="wall" style="left:528px;top:400px;width:24px;height:460px;border-radius:12px;background:var(--cyan);box-shadow:0 0 30px rgba(90,200,250,.6)"></div>
+          <div class="a" id="safe" style="left:600px;top:880px"><span style="display:inline-block;padding:14px 26px;border-radius:16px;border:5px solid var(--green);color:var(--green);font-weight:900;font-size:44px">BACHA RAHA ✓</span></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#big", { scale: 2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "power4.in" }, 0.0);
+      tl.to("#big", { y: -300, opacity: 0, duration: 0.3, ease: "power2.in" }, 0.7);
+      tl.fromTo("#tr", { x: -600, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 0.85);
+      tl.fromTo("#sa", { x: 600, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 1.75);
+      tl.fromTo("#wall", { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 0.35, ease: "power2.out" }, 2.1);
+      tl.fromTo("#frost", { opacity: 0, clipPath: "inset(0% 0% 100% 0%)" }, { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 0.4, ease: "power2.inOut" }, 3.4);
+      tl.fromTo("#lk", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2.5)" }, 3.6);
+      tl.to("#tr", { x: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, 3.7);
+      tl.to("#sa", { scale: 1.05, duration: 0.2, yoyo: true, repeat: 1 }, 4.4);
+      tl.fromTo("#safe", { scale: 2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "power4.in" }, 4.45);
+      tl.to("#inner", { opacity: 0, duration: 0.18 }, 6.26);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
