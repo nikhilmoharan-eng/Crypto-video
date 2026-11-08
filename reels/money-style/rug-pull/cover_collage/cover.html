@@ -1,0 +1,81 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:IN;font-weight:400;src:url(fonts/inter-latin-400-normal.woff2)}
+@font-face{font-family:IN;font-weight:800;src:url(fonts/inter-latin-800-normal.woff2)}
+@font-face{font-family:IN;font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}
+@font-face{font-family:GV;src:url(fonts/great-vibes-latin-400-normal.woff2)}
+:root{--navy:#0B1F4A;--royal:#2F6FD8;--sky:#7CC0FF;--ice:#EAF3FF;--green:#22A45D;--red:#E5484D}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0B1F4A url(bg.jpg) center/cover no-repeat}
+body{position:relative;font-family:IN,sans-serif}
+.a{position:absolute}
+.dots{inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1.6px,transparent 1.8px);background-size:34px 34px}
+.sh{filter:drop-shadow(0 26px 30px rgba(4,14,38,.45)) drop-shadow(0 6px 8px rgba(4,14,38,.3))}
+/* headline */
+.h{left:0;right:0;top:560px;text-align:center;white-space:nowrap}
+.h .s1{font-weight:900;font-size:112px;letter-spacing:-.05em;background:linear-gradient(90deg,#EAF3FF,#9FD3FF);-webkit-background-clip:text;color:transparent}
+.h .sc{font-family:GV;font-size:160px;color:#22D37A;margin:0 4px;position:relative;top:14px;text-shadow:0 6px 24px rgba(4,14,38,.35)}
+.h .s2{font-weight:900;font-size:112px;letter-spacing:-.05em;background:linear-gradient(90deg,#9FD3FF,#7CC0FF);-webkit-background-clip:text;color:transparent}
+.sub{left:0;right:0;top:740px;text-align:center;font-family:GV;font-size:104px;color:#EAF3FF;opacity:.92}
+/* telegram sticker */
+.tg{left:-30px;top:60px;width:470px;height:330px;transform:rotate(-14deg);border-radius:34px;background:#fff;padding:26px 28px;border:6px solid #fff}
+.tg .hd{display:flex;gap:16px;align-items:center}
+.tg .av{width:72px;height:72px;border-radius:50%;background:#2AABEE;color:#fff;display:flex;align-items:center;justify-content:center;font-size:38px}
+.tg .t1{font-weight:900;font-size:32px;color:#111}.tg .t2{font-size:22px;color:#6b7280}
+.tg .m{margin-top:16px;background:#EEF4FF;border-radius:18px;padding:14px 18px;font-weight:800;font-size:28px;color:#111}
+/* coin */
+.coin{right:40px;top:40px;width:300px;height:300px;border-radius:50%;
+ background:radial-gradient(circle at 35% 30%,#fff2b8 0,#f6c445 30%,#d99611 62%,#8a5a06 100%);
+ box-shadow:inset -18px -24px 40px rgba(90,50,0,.45),inset 14px 16px 30px rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center}
+.coin b{font-weight:900;font-size:170px;color:#7a4c05;text-shadow:2px 3px 0 rgba(255,240,190,.6),-2px -2px 0 rgba(90,50,0,.35)}
+/* avatar */
+.av1{left:110px;top:840px;width:960px}
+.pxw{left:110px;top:840px;width:960px;height:960px;clip-path:polygon(74% 72%,90% 72%,90% 84%,96% 84%,96% 100%,72% 100%,72% 86%,74% 86%)}
+.pxw img{width:100%}
+/* stickers on avatar */
+.note{left:430px;top:1110px;width:430px;height:190px;transform:rotate(-6deg);background:linear-gradient(135deg,#e6efe0,#cfdcc8);border:6px solid #f7faf4;border-radius:10px;overflow:hidden}
+.note .in{position:absolute;inset:10px;border:3px solid #6b8a66;border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.note .v{font-weight:900;font-size:64px;color:#2f4f2c}
+.note .c{width:110px;height:110px;border-radius:50%;border:4px solid #6b8a66;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:64px;color:#2f4f2c;background:rgba(255,255,255,.4)}
+.chart{left:30px;top:1480px;width:380px;height:250px;transform:rotate(-12deg);background:#fff;border-radius:26px;border:6px solid #fff;padding:18px}
+.chart .l{font-weight:800;font-size:20px;letter-spacing:.12em;color:#6b7280}
+.holo{left:400px;top:1700px;width:330px;height:110px;transform:rotate(-4deg);border-radius:18px;
+ background:linear-gradient(110deg,#b9f3ff,#c7b8ff 30%,#ffd1f0 50%,#b8ffd8 70%,#9fd3ff);border:4px solid #fff;display:flex;align-items:center;justify-content:center;
+ font-weight:900;font-size:44px;letter-spacing:-.02em;color:#0B1F4A}
+.tag{left:330px;top:1395px;transform:rotate(8deg);background:#F4C84A;border:4px solid #fff;border-radius:12px;padding:10px 20px;font-weight:900;font-size:40px;color:#111}
+/* ios menu */
+.menu{left:120px;top:1290px;display:flex;background:#1c1c1e;border-radius:16px;overflow:visible;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.menu div{padding:22px 30px;color:#fff;font-size:30px;border-right:1px solid #3a3a3c}
+.menu div:last-child{border:none}
+.menu:after{content:"";position:absolute;left:40px;bottom:-14px;border:14px solid transparent;border-top-color:#1c1c1e;border-bottom:0}
+/* pin */
+.pin{right:-40px;top:1500px;transform:rotate(-30deg)}
+.handle{left:0;right:0;top:1846px;text-shadow:0 2px 10px rgba(4,14,38,.6);text-align:center;font-weight:800;font-size:30px;color:rgba(234,243,255,.9)}
+.pills{left:0;right:0;top:450px;display:flex;justify-content:center;gap:14px}
+.pill{padding:12px 24px;border-radius:40px;font-weight:800;font-size:28px}
+.pd{background:#0B1F4A;color:#fff}.pd i{display:inline-block;width:13px;height:13px;border-radius:4px;background:#22D37A;margin-right:10px;vertical-align:2px}
+.pw{background:#fff;color:#111}
+</style></head><body>
+<div class="a dots"></div>
+
+<div class="a tg sh"><div class="hd"><div class="av" style="background:linear-gradient(135deg,#7CC0FF,#B98CFF)">🌙</div><div><div class="t1">$MOON token</div><div class="t2">Next big thing 🚀</div></div></div>
+  <div class="m">Roadmap: Q3 Moon 🌕</div><div class="m" style="color:#E5484D">Liquidity: $0 ✕</div></div>
+<div class="a coin sh"><b>₿</b></div>
+
+<div class="a pills"><div class="pill pd"><i></i>Scam Files</div><div class="pill pw">Case 04 · Rug Pull</div></div>
+<div class="a h"><span class="s1">Ek raat</span><span class="sc">sab</span><span class="s2">gayab?</span></div>
+<div class="a sub">rug pull…</div>
+
+<img class="a av1 sh" src="avatar_blue.png">
+<div class="a pxw"><img src="avatar_px.png"></div>
+
+<svg class="a pin sh" width="330" height="120" viewBox="0 0 330 120"><path d="M20 60 C20 25 60 25 60 60 L300 60 C315 60 315 85 300 85 L40 85 C20 85 10 70 20 60" fill="none" stroke="#c9cfd8" stroke-width="9" stroke-linecap="round"/><rect x="250" y="44" width="70" height="56" rx="14" fill="#aeb6c2"/></svg>
+
+<div class="a note sh"><div class="in"><div class="c">₹</div><div class="v">$0.00</div></div></div>
+<div class="a tag sh">ANONYMOUS DEV</div>
+<div class="a menu"><div>Select</div><div>Select All</div><div>Paste</div><div>▶</div></div>
+<div class="a chart sh"><div class="l">LIQUIDITY POOL</div><div style="position:relative;margin-top:14px;height:120px;border-radius:20px;border:5px solid #2F6FD8;background:#EEF4FF;overflow:hidden"><div style="position:absolute;left:0;right:0;bottom:0;height:12%;background:#2F6FD8"></div><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:44px;color:#E5484D">DRAINED</div></div></div>
+<div class="a holo sh">RUG PULLED</div>
+<div class="a handle">@niks.crypto</div>
+</body></html>
