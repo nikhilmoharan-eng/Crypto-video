@@ -17,17 +17,18 @@
       #lines { position:absolute; left:0; top:0; }
       #grain { position:absolute; left:0; top:0; mix-blend-mode:overlay; opacity:.22; }
       #dots { position:absolute; inset:-68px 0 0 0; background-image:radial-gradient(rgba(255,255,255,.16) 1.6px, transparent 1.8px); background-size:34px 34px; }
-      .pills { position:absolute; left:0; right:0; top:250px; display:flex; justify-content:center; gap:14px; }
+      .pills { position:absolute; left:0; right:0; top:230px; display:flex; justify-content:center; gap:14px; }
       .pill { padding:14px 26px; border-radius:40px; font-weight:800; font-size:30px; }
       .pd { background:#0B1F4A; color:#fff; } .pd i { display:inline-block; width:14px; height:14px; border-radius:4px; background:#22D37A; margin-right:12px; vertical-align:2px; }
       .pw { background:#fff; color:#111; }
-      .cap { position:absolute; left:70px; right:70px; top:350px; text-align:center; }
+      .cap { position:absolute; left:70px; right:70px; top:330px; text-align:center; }
       .cl { font-weight:800; font-size:66px; line-height:1.2; letter-spacing:-.02em; color:#fff; text-shadow:0 4px 20px rgba(4,14,38,.35); }
       .w { display:inline-block; opacity:.35; }
       .kw { color:#fff; padding:0 16px 4px; border-radius:14px; transform:rotate(-2deg); text-shadow:none; box-shadow:0 8px 20px rgba(4,14,38,.25); }
       .cardwrap { position:absolute; inset:0; }
       .card { position:absolute; left:90px; width:900px; border-radius:36px; background:#fff; box-shadow:0 30px 70px rgba(4,14,38,.35);
-        padding:44px 40px; display:flex; flex-direction:column; align-items:center; overflow:hidden; }
+        padding:44px 40px 50px; display:flex; flex-direction:column; align-items:center; overflow:visible; }
+      .exh { position:absolute; right:-18px; top:-26px; transform:rotate(6deg); background:#F4C84A; color:#111; font-weight:900; font-size:26px; letter-spacing:.1em; padding:10px 20px; border-radius:10px; box-shadow:0 10px 24px rgba(4,14,38,.3); }
       .lab { align-self:flex-start; font-weight:800; font-size:26px; letter-spacing:.12em; color:#6b7280; }
       .t1 { font-weight:800; font-size:44px; letter-spacing:-.02em; }
       .t2 { font-weight:400; font-size:32px; color:#6b7280; }
@@ -90,7 +91,16 @@
       .sc1 { white-space:nowrap; padding:30px 28px; border-radius:22px; background:#EFFAF3; color:#22A45D; font-weight:900; font-size:40px; }
       .sc2 { white-space:nowrap; padding:30px 28px; border-radius:22px; background:#FFF1F1; color:#E5484D; font-weight:900; font-size:40px; }
       .eq { font-weight:900; font-size:80px; color:#111; }
-      .handle { position:absolute; left:0; right:0; top:1330px; text-align:center; font-weight:800; font-size:32px; color:rgba(255,255,255,.85); }
+      #trk { position:absolute; left:60px; right:60px; top:1350px; padding:26px 26px 30px; border-radius:30px; background:rgba(234,243,255,.16);
+        border:2px solid rgba(234,243,255,.4); backdrop-filter:blur(12px); box-shadow:0 20px 50px rgba(4,14,38,.3); }
+      #trk .tl { font-weight:800; font-size:22px; letter-spacing:.16em; color:rgba(255,255,255,.8); margin-bottom:16px; }
+      #trk .row { display:flex; justify-content:space-between; }
+      .st { width:104px; text-align:center; opacity:.35; }
+      .st .e { width:84px; height:84px; margin:0 auto; border-radius:50%; background:rgba(11,31,74,.55); display:flex; align-items:center; justify-content:center; font-size:42px; border:3px solid transparent; }
+      .st .n { margin-top:8px; font-weight:800; font-size:20px; color:#fff; white-space:nowrap; }
+      .bar { margin-top:22px; height:12px; border-radius:6px; background:rgba(11,31,74,.45); overflow:hidden; }
+      .bf { height:100%; width:100%; background:linear-gradient(90deg,#7CC0FF,#22D37A); transform-origin:0 50%; }
+      .handle { position:absolute; left:0; right:0; top:1640px; text-align:center; font-weight:800; font-size:32px; color:rgba(255,255,255,.85); }
       .pp { display:inline-block; }
     </style>
   </head>
@@ -115,36 +125,37 @@
         <svg id="grain" width="1080" height="1920"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="1080" height="1920" filter="url(#gn)"/></svg><div id="dots"></div></div>
       <div id="hdr" class="clip" data-start="0" data-duration="46.9" data-track-index="1">
         <div class="pills"><div class="pill pd"><i></i>Scam Files</div><div class="pill pw">Case 04 · Rug Pull</div></div>
+        <div id="trk"><div class="tl">CASE TRACKER</div><div class="row"><div class="st" id="st0"><div class="e">🚀</div><div class="n">Launch</div></div><div class="st" id="st1"><div class="e">📣</div><div class="n">Hype</div></div><div class="st" id="st2"><div class="e">💰</div><div class="n">Pool</div></div><div class="st" id="st3"><div class="e">🌙</div><div class="n">3 AM</div></div><div class="st" id="st4"><div class="e">🧹</div><div class="n">Rug</div></div><div class="st" id="st5"><div class="e">💀</div><div class="n">$0</div></div><div class="st" id="st6"><div class="e">✅</div><div class="n">Check</div></div><div class="st" id="st7"><div class="e">🚩</div><div class="n">Lesson</div></div></div><div class="bar"><div class="bf" id="bf"></div></div></div>
         <div class="handle">@niks.crypto</div>
       </div>
-      <div id="k1" class="clip cardwrap" data-start="0.0" data-duration="2.7" data-track-index="3"><div class="card" id="k1c" style="top:640px;height:620px"><div class="lab">SCAM FILES</div>
+      <div id="k1" class="clip cardwrap" data-start="0.0" data-duration="2.7" data-track-index="3"><div class="card" id="k1c" style="top:600px;min-height:440px"><div class="lab">SCAM FILES</div>
           <svg id="fold" viewBox="0 0 120 90" width="300" height="225" style="margin-top:20px"><path d="M6 14 h40 l8 10 h60 v60 h-108z" fill="#F4C84A" stroke="#111" stroke-width="4"/><rect x="6" y="30" width="108" height="54" fill="#FFD866" stroke="#111" stroke-width="4"/></svg>
           <div class="stampc" id="k1s">CASE #04</div></div></div>
-      <div id="k2" class="clip cardwrap" data-start="2.7" data-duration="7.7" data-track-index="3"><div class="card" id="k2c" style="top:640px;height:660px"><div class="row1"><div class="av" style="background:linear-gradient(135deg,#7CC0FF,#B98CFF)">🌙</div><div><div class="t1">$MOON token</div><div class="t2">moontoken.xyz · EXAMPLE</div></div></div>
+      <div id="k2" class="clip cardwrap" data-start="2.7" data-duration="7.7" data-track-index="3"><div class="card" id="k2c" style="top:600px;min-height:440px"><div class="row1"><div class="av" style="background:linear-gradient(135deg,#7CC0FF,#B98CFF)">🌙</div><div><div class="t1">$MOON token</div><div class="t2">moontoken.xyz · EXAMPLE</div></div></div>
           <div class="hero" id="k2h">Next big thing 🚀</div>
           <div class="rm" id="k2r"><span>Q1 Launch ✓</span><span>Q2 Exchange</span><span>Q3 Moon 🌕</span></div>
-          <div class="msg" id="m1">@influencer: "100x gem, abhi lo!" 🔥</div></div></div>
-      <div id="k3" class="clip cardwrap" data-start="10.4" data-duration="4.0" data-track-index="3"><div class="card" id="k3c" style="top:640px;height:620px"><div class="lab">LIQUIDITY POOL</div>
+          <div class="msg" id="m1">@influencer: "100x gem, abhi lo!" 🔥</div><div class="exh">EXHIBIT #01</div></div></div>
+      <div id="k3" class="clip cardwrap" data-start="10.4" data-duration="4.0" data-track-index="3"><div class="card" id="k3c" style="top:600px;min-height:440px"><div class="lab">LIQUIDITY POOL</div>
           <div class="hugeg" id="k3n" style="font-size:150px;margin-top:40px">$0</div>
           <div class="crowd" id="k3c"><span class="pp"><svg viewBox="0 0 40 52" width="46" height="59"><circle cx="20" cy="12" r="10" fill="#2F6FD8"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#2F6FD8"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="46" height="59"><circle cx="20" cy="12" r="10" fill="#2F6FD8"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#2F6FD8"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="46" height="59"><circle cx="20" cy="12" r="10" fill="#2F6FD8"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#2F6FD8"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="46" height="59"><circle cx="20" cy="12" r="10" fill="#2F6FD8"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#2F6FD8"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="46" height="59"><circle cx="20" cy="12" r="10" fill="#2F6FD8"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#2F6FD8"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="46" height="59"><circle cx="20" cy="12" r="10" fill="#2F6FD8"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#2F6FD8"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="46" height="59"><circle cx="20" cy="12" r="10" fill="#2F6FD8"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#2F6FD8"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="46" height="59"><circle cx="20" cy="12" r="10" fill="#2F6FD8"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#2F6FD8"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="46" height="59"><circle cx="20" cy="12" r="10" fill="#2F6FD8"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#2F6FD8"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="46" height="59"><circle cx="20" cy="12" r="10" fill="#2F6FD8"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#2F6FD8"/></svg></span></div>
-          <div class="sub" id="k3t" style="color:#22A45D">Price ▲</div></div></div>
-      <div id="k4" class="clip cardwrap" data-start="14.4" data-duration="4.0" data-track-index="3"><div class="card" id="k4c" style="top:640px;height:620px"><div class="lab">EK RAAT · 3:12 AM</div>
+          <div class="sub" id="k3t" style="color:#22A45D">Price ▲</div><div class="exh">EXHIBIT #02</div></div></div>
+      <div id="k4" class="clip cardwrap" data-start="14.4" data-duration="4.0" data-track-index="3"><div class="card" id="k4c" style="top:600px;min-height:440px"><div class="lab">EK RAAT · 3:12 AM</div>
           <div class="pool"><div class="pf" id="k4p"></div><div class="pl" id="k4n">$2,400,000</div></div>
           <div class="msg" id="m2" style="background:#FFF1F1;color:#E5484D">Dev wallet: removed ALL liquidity</div>
-          <div class="stampc" id="k4x" style="margin-top:26px">RUG PULLED</div></div></div>
-      <div id="k5" class="clip cardwrap" data-start="18.4" data-duration="5.6" data-track-index="3"><div class="card" id="k5c" style="top:640px;height:620px"><div class="lab">RUG PULL = KALEEN KHEENCH</div>
-          <div class="rugw"><div class="figs" id="k5f"><span class="pp"><svg viewBox="0 0 40 52" width="70" height="91"><circle cx="20" cy="12" r="10" fill="#111"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#111"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="70" height="91"><circle cx="20" cy="12" r="10" fill="#111"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#111"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="70" height="91"><circle cx="20" cy="12" r="10" fill="#111"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#111"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="70" height="91"><circle cx="20" cy="12" r="10" fill="#111"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#111"/></svg></span></div><div class="rug" id="k5r"></div></div></div></div>
-      <div id="k6" class="clip cardwrap" data-start="24.0" data-duration="5.5" data-track-index="3"><div class="card" id="k6c" style="top:640px;height:640px"><div class="lab">AB?</div>
+          <div class="stampc" id="k4x" style="margin-top:26px">RUG PULLED</div><div class="exh">EXHIBIT #03</div></div></div>
+      <div id="k5" class="clip cardwrap" data-start="18.4" data-duration="5.6" data-track-index="3"><div class="card" id="k5c" style="top:600px;min-height:440px"><div class="lab">RUG PULL = KALEEN KHEENCH</div>
+          <div class="rugw"><div class="figs" id="k5f"><span class="pp"><svg viewBox="0 0 40 52" width="70" height="91"><circle cx="20" cy="12" r="10" fill="#111"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#111"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="70" height="91"><circle cx="20" cy="12" r="10" fill="#111"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#111"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="70" height="91"><circle cx="20" cy="12" r="10" fill="#111"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#111"/></svg></span><span class="pp"><svg viewBox="0 0 40 52" width="70" height="91"><circle cx="20" cy="12" r="10" fill="#111"/><path d="M2 52 Q2 26 20 26 Q38 26 38 52Z" fill="#111"/></svg></span></div><div class="rug" id="k5r"></div></div><div class="exh">EXHIBIT #04</div></div></div>
+      <div id="k6" class="clip cardwrap" data-start="24.0" data-duration="5.5" data-track-index="3"><div class="card" id="k6c" style="top:600px;min-height:440px"><div class="lab">AB?</div>
           <div class="hugeg" id="k6v" style="font-size:180px;color:#E5484D;margin-top:20px">$0.00</div>
           <div class="dead" id="k6a">🌐 moontoken.xyz — <b>site can't be reached</b></div>
-          <div class="dead" id="k6b">🐦 @moontoken — <b>account deleted</b></div></div></div>
-      <div id="k7" class="clip cardwrap" data-start="29.5" data-duration="11.4" data-track-index="3"><div class="card" id="k7c" style="top:640px;height:660px"><div class="lab">KHARIDNE SE PEHLE · SOCHO</div>
+          <div class="dead" id="k6b">🐦 @moontoken — <b>account deleted</b></div><div class="exh">EXHIBIT #05</div></div></div>
+      <div id="k7" class="clip cardwrap" data-start="29.5" data-duration="11.4" data-track-index="3"><div class="card" id="k7c" style="top:600px;min-height:440px"><div class="lab">KHARIDNE SE PEHLE · SOCHO</div>
           <div class="ck" id="c1"><span class="ok">?</span><div><div class="t1">Team asli ya anonymous?</div><div class="t2">naam, chehra, history</div></div></div>
           <div class="ck" id="c2"><span class="ok">?</span><div><div class="t1">Liquidity locked?</div><div class="t2">lock hai toh nikal nahi sakte</div></div></div>
-          <div class="ck" id="c3"><span class="ok">?</span><div><div class="t1">Asli product ya sirf hype?</div><div class="t2">kaam karta hai kuch?</div></div></div></div></div>
-      <div id="k8" class="clip cardwrap" data-start="40.9" data-duration="3.9" data-track-index="3"><div class="card" id="k8c" style="top:640px;height:520px"><div class="lesson">LESSON</div>
-          <div class="scale"><div class="sc1" id="k8a">Bada promise 🚀</div><div class="eq">=</div><div class="sc2" id="k8b">Bada red flag 🚩</div></div></div></div>
-      <div id="k9" class="clip cardwrap" data-start="44.8" data-duration="2.1" data-track-index="3"><div class="card" id="k9c" style="top:700px;height:380px"><div class="prof"><div class="pav">₿</div><div><div class="t1">niks.crypto</div><div class="t2">Crypto · Scams · Money</div></div></div>
+          <div class="ck" id="c3"><span class="ok">?</span><div><div class="t1">Asli product ya sirf hype?</div><div class="t2">kaam karta hai kuch?</div></div></div><div class="exh">EXHIBIT #06</div></div></div>
+      <div id="k8" class="clip cardwrap" data-start="40.9" data-duration="3.9" data-track-index="3"><div class="card" id="k8c" style="top:600px;min-height:440px"><div class="lesson">LESSON</div>
+          <div class="scale"><div class="sc1" id="k8a">Bada promise 🚀</div><div class="eq">=</div><div class="sc2" id="k8b">Bada red flag 🚩</div></div><div class="exh">EXHIBIT #07</div></div></div>
+      <div id="k9" class="clip cardwrap" data-start="44.8" data-duration="2.1" data-track-index="3"><div class="card" id="k9c" style="top:700px;min-height:380px"><div class="prof"><div class="pav">₿</div><div><div class="t1">niks.crypto</div><div class="t2">Crypto · Scams · Money</div></div></div>
           <div class="btns"><div class="fbtn" id="fb"><span id="fb1">Follow</span><span id="fb2">Following ✓</span></div><div class="mbtn">Message</div></div>
           <svg id="cur" viewBox="0 0 24 24" width="64" height="64" style="position:absolute;left:0;top:0"><path d="M4 2 L4 20 L9 15 L12 22 L15 21 L12 14 L19 14 Z" fill="#111" stroke="#fff" stroke-width="1.5"/></svg></div></div>
       <div id="cap0" class="clip cap" data-start="0.0" data-duration="1.51" data-track-index="5"><div class="cl"><span class="w" data-t="0.0">Scam</span> <span class="w" data-t="0.38">Files.</span> </div></div>
@@ -203,6 +214,10 @@
       const draw = (id, t, d) => tl.to(id, { attr: { "stroke-dashoffset": 0 }, duration: d, ease: "power1.inOut" }, t);
       const pop = (id, t) => tl.fromTo(id, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.5)" }, t);
       const slam = (id, t, r) => tl.fromTo(id, { scale: 2.4, opacity: 0, rotation: r - 12 }, { scale: 1, opacity: 1, rotation: r, duration: 0.2, ease: "power4.in" }, t);
+      // tracker
+      tl.fromTo("#trk", { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 2.4);
+      tl.fromTo("#bf", { scaleX: 0 }, { scaleX: 1, duration: 46.9 - 2.6, ease: "none" }, 2.6);
+      tl.fromTo("#st0", { opacity: 0.35, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.25, ease: "back.out(3)" }, 2.7);tl.to("#st0 .e", { borderColor: "#22D37A", background: "#0B1F4A", duration: 0.2 }, 2.7);tl.to("#st0", { scale: 1, duration: 0.2 }, 3.0);tl.fromTo("#st1", { opacity: 0.35, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.25, ease: "back.out(3)" }, 7.28);tl.to("#st1 .e", { borderColor: "#22D37A", background: "#0B1F4A", duration: 0.2 }, 7.28);tl.to("#st1", { scale: 1, duration: 0.2 }, 7.58);tl.fromTo("#st2", { opacity: 0.35, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.25, ease: "back.out(3)" }, 10.4);tl.to("#st2 .e", { borderColor: "#22D37A", background: "#0B1F4A", duration: 0.2 }, 10.4);tl.to("#st2", { scale: 1, duration: 0.2 }, 10.700000000000001);tl.fromTo("#st3", { opacity: 0.35, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.25, ease: "back.out(3)" }, 14.4);tl.to("#st3 .e", { borderColor: "#22D37A", background: "#0B1F4A", duration: 0.2 }, 14.4);tl.to("#st3", { scale: 1, duration: 0.2 }, 14.700000000000001);tl.fromTo("#st4", { opacity: 0.35, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.25, ease: "back.out(3)" }, 18.4);tl.to("#st4 .e", { borderColor: "#22D37A", background: "#0B1F4A", duration: 0.2 }, 18.4);tl.to("#st4", { scale: 1, duration: 0.2 }, 18.7);tl.fromTo("#st5", { opacity: 0.35, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.25, ease: "back.out(3)" }, 24.0);tl.to("#st5 .e", { borderColor: "#22D37A", background: "#0B1F4A", duration: 0.2 }, 24.0);tl.to("#st5", { scale: 1, duration: 0.2 }, 24.3);tl.fromTo("#st6", { opacity: 0.35, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.25, ease: "back.out(3)" }, 29.5);tl.to("#st6 .e", { borderColor: "#22D37A", background: "#0B1F4A", duration: 0.2 }, 29.5);tl.to("#st6", { scale: 1, duration: 0.2 }, 29.8);tl.fromTo("#st7", { opacity: 0.35, scale: 1 }, { opacity: 1, scale: 1.12, duration: 0.25, ease: "back.out(3)" }, 40.9);tl.to("#st7 .e", { borderColor: "#22D37A", background: "#0B1F4A", duration: 0.2 }, 40.9);tl.to("#st7", { scale: 1, duration: 0.2 }, 41.199999999999996);
       // k1
       pop("#fold", 0.3); slam("#k1s", 1.5, -6);
       // k2 shiny launch

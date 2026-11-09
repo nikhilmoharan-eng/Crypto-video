@@ -34,6 +34,9 @@ PHRASES = [
 CARDS = [("k1", 0.0, 2.7), ("k2", 2.7, 10.4), ("k3", 10.4, 14.4), ("k4", 14.4, 18.4), ("k5", 18.4, 24.0),
          ("k6", 24.0, 29.5), ("k7", 29.5, 40.9), ("k8", 40.9, 44.8), ("k9", 44.8, DUR)]
 
+TRACK = [("🚀", "Launch", 2.7), ("📣", "Hype", 7.28), ("💰", "Pool", 10.4), ("🌙", "3 AM", 14.4), ("🧹", "Rug", 18.4),
+         ("💀", "$0", 24.0), ("✅", "Check", 29.5), ("🚩", "Lesson", 40.9)]
+
 COL = {"g": "#22A45D", "r": "#E5484D", "b": "#2F6FD8"}
 
 
@@ -52,10 +55,12 @@ def words(phr):
     return out
 
 
-def card(cid, inner, top=640, h=620):
+def card(cid, inner, top=600, h=620):
     a, b = [(x, y) for k, x, y in CARDS if k == cid][0]
+    n = [k for k, _, _ in CARDS].index(cid)
+    tag = f'<div class="exh">EXHIBIT #{n:02d}</div>' if 0 < n < len(CARDS) - 1 else ""
     return (f'      <div id="{cid}" class="clip cardwrap" data-start="{a}" data-duration="{round(b-a,2)}" data-track-index="3">'
-            f'<div class="card" id="{cid}c" style="top:{top}px;height:{h}px">{inner}</div></div>')
+            f'<div class="card" id="{cid}c" style="top:{top}px;min-height:{min(h, 440)}px">{inner}{tag}</div></div>')
 
 
 ICON_BANK = '<svg viewBox="0 0 64 64" width="{s}" height="{s}"><path d="M32 6 L60 20 H4 Z" fill="#111"/><g fill="#111"><rect x="9" y="24" width="7" height="24"/><rect x="22" y="24" width="7" height="24"/><rect x="35" y="24" width="7" height="24"/><rect x="48" y="24" width="7" height="24"/></g><rect x="4" y="50" width="56" height="6" fill="#111"/></svg>'
@@ -134,17 +139,18 @@ def build():
       #lines {{ position:absolute; left:0; top:0; }}
       #grain {{ position:absolute; left:0; top:0; mix-blend-mode:overlay; opacity:.22; }}
       #dots {{ position:absolute; inset:-68px 0 0 0; background-image:radial-gradient(rgba(255,255,255,.16) 1.6px, transparent 1.8px); background-size:34px 34px; }}
-      .pills {{ position:absolute; left:0; right:0; top:250px; display:flex; justify-content:center; gap:14px; }}
+      .pills {{ position:absolute; left:0; right:0; top:230px; display:flex; justify-content:center; gap:14px; }}
       .pill {{ padding:14px 26px; border-radius:40px; font-weight:800; font-size:30px; }}
       .pd {{ background:#0B1F4A; color:#fff; }} .pd i {{ display:inline-block; width:14px; height:14px; border-radius:4px; background:#22D37A; margin-right:12px; vertical-align:2px; }}
       .pw {{ background:#fff; color:#111; }}
-      .cap {{ position:absolute; left:70px; right:70px; top:350px; text-align:center; }}
+      .cap {{ position:absolute; left:70px; right:70px; top:330px; text-align:center; }}
       .cl {{ font-weight:800; font-size:66px; line-height:1.2; letter-spacing:-.02em; color:#fff; text-shadow:0 4px 20px rgba(4,14,38,.35); }}
       .w {{ display:inline-block; opacity:.35; }}
       .kw {{ color:#fff; padding:0 16px 4px; border-radius:14px; transform:rotate(-2deg); text-shadow:none; box-shadow:0 8px 20px rgba(4,14,38,.25); }}
       .cardwrap {{ position:absolute; inset:0; }}
       .card {{ position:absolute; left:90px; width:900px; border-radius:36px; background:#fff; box-shadow:0 30px 70px rgba(4,14,38,.35);
-        padding:44px 40px; display:flex; flex-direction:column; align-items:center; overflow:hidden; }}
+        padding:44px 40px 50px; display:flex; flex-direction:column; align-items:center; overflow:visible; }}
+      .exh {{ position:absolute; right:-18px; top:-26px; transform:rotate(6deg); background:#F4C84A; color:#111; font-weight:900; font-size:26px; letter-spacing:.1em; padding:10px 20px; border-radius:10px; box-shadow:0 10px 24px rgba(4,14,38,.3); }}
       .lab {{ align-self:flex-start; font-weight:800; font-size:26px; letter-spacing:.12em; color:#6b7280; }}
       .t1 {{ font-weight:800; font-size:44px; letter-spacing:-.02em; }}
       .t2 {{ font-weight:400; font-size:32px; color:#6b7280; }}
@@ -207,7 +213,16 @@ def build():
       .sc1 {{ white-space:nowrap; padding:30px 28px; border-radius:22px; background:#EFFAF3; color:#22A45D; font-weight:900; font-size:40px; }}
       .sc2 {{ white-space:nowrap; padding:30px 28px; border-radius:22px; background:#FFF1F1; color:#E5484D; font-weight:900; font-size:40px; }}
       .eq {{ font-weight:900; font-size:80px; color:#111; }}
-      .handle {{ position:absolute; left:0; right:0; top:1330px; text-align:center; font-weight:800; font-size:32px; color:rgba(255,255,255,.85); }}
+      #trk {{ position:absolute; left:60px; right:60px; top:1350px; padding:26px 26px 30px; border-radius:30px; background:rgba(234,243,255,.16);
+        border:2px solid rgba(234,243,255,.4); backdrop-filter:blur(12px); box-shadow:0 20px 50px rgba(4,14,38,.3); }}
+      #trk .tl {{ font-weight:800; font-size:22px; letter-spacing:.16em; color:rgba(255,255,255,.8); margin-bottom:16px; }}
+      #trk .row {{ display:flex; justify-content:space-between; }}
+      .st {{ width:104px; text-align:center; opacity:.35; }}
+      .st .e {{ width:84px; height:84px; margin:0 auto; border-radius:50%; background:rgba(11,31,74,.55); display:flex; align-items:center; justify-content:center; font-size:42px; border:3px solid transparent; }}
+      .st .n {{ margin-top:8px; font-weight:800; font-size:20px; color:#fff; white-space:nowrap; }}
+      .bar {{ margin-top:22px; height:12px; border-radius:6px; background:rgba(11,31,74,.45); overflow:hidden; }}
+      .bf {{ height:100%; width:100%; background:linear-gradient(90deg,#7CC0FF,#22D37A); transform-origin:0 50%; }}
+      .handle {{ position:absolute; left:0; right:0; top:1640px; text-align:center; font-weight:800; font-size:32px; color:rgba(255,255,255,.85); }}
       .pp {{ display:inline-block; }}
     </style>
   </head>
@@ -232,6 +247,7 @@ def build():
         <svg id="grain" width="1080" height="1920"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="1080" height="1920" filter="url(#gn)"/></svg><div id="dots"></div></div>
       <div id="hdr" class="clip" data-start="0" data-duration="{DUR}" data-track-index="1">
         <div class="pills"><div class="pill pd"><i></i>Scam Files</div><div class="pill pw">Case 04 · Rug Pull</div></div>
+        <div id="trk"><div class="tl">CASE TRACKER</div><div class="row">{"".join(f'<div class="st" id="st{i}"><div class="e">{e}</div><div class="n">{n}</div></div>' for i, (e, n, _) in enumerate(TRACK))}</div><div class="bar"><div class="bf" id="bf"></div></div></div>
         <div class="handle">@niks.crypto</div>
       </div>
 {chr(10).join(cards)}
@@ -272,6 +288,10 @@ def build():
       const draw = (id, t, d) => tl.to(id, {{ attr: {{ "stroke-dashoffset": 0 }}, duration: d, ease: "power1.inOut" }}, t);
       const pop = (id, t) => tl.fromTo(id, {{ scale: 0, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.5)" }}, t);
       const slam = (id, t, r) => tl.fromTo(id, {{ scale: 2.4, opacity: 0, rotation: r - 12 }}, {{ scale: 1, opacity: 1, rotation: r, duration: 0.2, ease: "power4.in" }}, t);
+      // tracker
+      tl.fromTo("#trk", {{ y: 200, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }}, 2.4);
+      tl.fromTo("#bf", {{ scaleX: 0 }}, {{ scaleX: 1, duration: {DUR} - 2.6, ease: "none" }}, 2.6);
+      {"".join(f'tl.fromTo("#st{i}", {{ opacity: 0.35, scale: 1 }}, {{ opacity: 1, scale: 1.12, duration: 0.25, ease: "back.out(3)" }}, {t});tl.to("#st{i} .e", {{ borderColor: "#22D37A", background: "#0B1F4A", duration: 0.2 }}, {t});tl.to("#st{i}", {{ scale: 1, duration: 0.2 }}, {t + 0.3});' for i, (_, _, t) in enumerate(TRACK))}
       // k1
       pop("#fold", 0.3); slam("#k1s", 1.5, -6);
       // k2 shiny launch
