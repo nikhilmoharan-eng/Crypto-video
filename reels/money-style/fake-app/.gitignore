@@ -5,3 +5,4 @@ render.log
 voiceover.wav
 mix.wav
 work-*/
+.*hf-transaction*
