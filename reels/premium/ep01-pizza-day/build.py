@@ -35,8 +35,8 @@ PROPS = [
         <div class="stamp" id="p2s" style="position:static;display:inline-block;margin-top:24px">PAID IN BTC</div></div>'''),
     ("p3", 9.9, 12.9, '''<div class="card" style="width:620px">
         <div class="hd"><div class="av">LH</div><div><div class="t" style="font-size:52px">Laszlo Hanyecz</div><div class="s">PROGRAMMER · FLORIDA</div></div></div>
-        <div class="chips"><span>Early bitcoin miner</span><span>2010</span></div></div>'''),
-    ("p4", 12.9, 20.1, '''<div class="card" style="width:680px">
+        <div class="chips"><span>Early bitcoin miner</span><span>2010</span></div><div class="post" style="margin-top:24px"><div class="pa">FORUM USERNAME</div><div class="pt">laszlo</div></div></div>'''),
+    ("p4", 12.9, 20.1, '''<div class="card" style="width:640px">
         <div class="lab">BITCOIN FORUM · MAY 2010</div>
         <div class="post"><div class="pa">laszlo</div><div class="pt" id="p4t">"I'll pay 10,000 bitcoins for a couple of pizzas…"</div></div>
         <div class="deal"><div class="dl" id="p4a">''' + PIZZA.format(s=110) + PIZZA.format(s=110) + '''</div><div class="eq">⇄</div><div class="dr" id="p4b">10,000 ₿</div></div></div>'''),
@@ -48,9 +48,9 @@ PROPS = [
         <div class="lab">4 DIN BAAD · DELIVERED</div>
         <div class="row c" id="p6z">''' + PIZZA.format(s=170) + PIZZA.format(s=170) + '''</div>
         <div class="stamp" id="p6s" style="position:static;margin-top:26px;display:inline-block">FIRST BTC PURCHASE</div></div>'''),
-    ("p7", 34.7, 40.0, '''<div class="card" style="width:660px">
+    ("p7", 34.7, 40.0, '''<div class="card" style="width:640px">
         <div class="lab">10,000 BTC KI VALUE</div>
-        <svg width="600" height="300" viewBox="0 0 600 300"><defs><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#C858C6"/><stop offset="1" stop-color="#9D14FF"/></linearGradient></defs>
+        <svg width="556" height="280" viewBox="0 0 600 300"><defs><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#C858C6"/><stop offset="1" stop-color="#9D14FF"/></linearGradient></defs>
           <g stroke="rgba(255,255,255,.1)"><line x1="0" y1="100" x2="600" y2="100"/><line x1="0" y1="200" x2="600" y2="200"/></g>
           <polyline id="p7l" points="10,285 120,282 220,276 300,262 380,226 450,170 520,80 590,18" fill="none" stroke="url(#gl)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="900" stroke-dashoffset="900"/>
           <text x="10" y="260" font-family="SM" font-size="22" fill="#A99BB3">2010 · $40</text><text x="590" y="58" text-anchor="end" font-family="SM" font-weight="700" font-size="24" fill="#E7B6FF" id="p7t" opacity="0">AAJ · ₹ HAZAARON CR</text></svg></div>'''),
@@ -61,7 +61,7 @@ PROPS = [
     ("p9", 47.5, 54.1, '''<div class="card" style="width:620px">
         <div class="cal"><div class="ct">HAR SAAL</div><div class="cd">22</div><div class="cy">MAY</div></div>
         <div class="pd" id="p9t">Bitcoin Pizza Day</div><div class="row c">''' + PIZZA.format(s=90) + PIZZA.format(s=90) + PIZZA.format(s=90) + '''</div></div>'''),
-    ("p10", 54.1, DUR, '''<div class="card" style="width:660px">
+    ("p10", 54.1, DUR, '''<div class="card" style="width:640px">
         <div class="lab">COMMENTS</div>
         <div class="cin"><div class="av" style="width:64px;height:64px;font-size:26px">U</div><div class="ctx"><span id="p10t"></span><i id="p10c">|</i></div><div class="cpost">Post</div></div>
         <div class="reply" id="p10r"><div class="av" style="width:64px;height:64px;font-size:22px;background:linear-gradient(135deg,#9D14FF,#C858C6)">₿</div>
@@ -86,7 +86,7 @@ def build():
         caps.append(f'      <div id="cap{i}" class="clip capb" data-start="{a}" data-duration="{round(b-a,2)}" data-track-index="5"><div class="cbx" id="cbx{i}">{inner}</div></div>')
     props = "\n".join(f'      <div id="{k}" class="clip prop" data-start="{a}" data-duration="{round(b-a,2)}" data-track-index="3"><div class="pw" id="{k}w">{h[:-6]}<div class="sweep"></div></div></div></div>'
                       for k, a, b, h in PROPS)
-    parts = "".join(f'<i class="pt" style="left:{(i*137)%1040+20}px;top:{(i*263)%1800+60}px;width:{3+(i%3)*2}px;height:{3+(i%3)*2}px"></i>' for i in range(46))
+    parts = "".join(f'<i class="ptc" style="left:{(i*137)%1040+20}px;top:{(i*263)%1800+60}px;width:{3+(i%3)*2}px;height:{3+(i%3)*2}px"></i>' for i in range(46))
 
     html = f'''<!doctype html>
 <html lang="en">
@@ -109,29 +109,21 @@ def build():
       #grid {{ position:absolute; left:100px; right:100px; top:640px; height:880px; opacity:.6;
         background-image:linear-gradient(rgba(200,88,198,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(200,88,198,.16) 1px,transparent 1px); background-size:60px 60px;
         -webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%); mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%); }}
-      .pt {{ position:absolute; border-radius:50%; background:rgba(231,182,255,.55); box-shadow:0 0 10px rgba(200,88,198,.8); }}
+      .ptc {{ position:absolute; border-radius:50%; background:rgba(231,182,255,.55); box-shadow:0 0 10px rgba(200,88,198,.8); }}
       #vig {{ position:absolute; inset:0; background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(0,0,0,.55)); }}
       #grain {{ position:absolute; inset:0; opacity:.07; mix-blend-mode:overlay; }}
       #handle {{ position:absolute; left:0; right:0; top:240px; text-align:center; font-weight:500; font-size:30px; color:rgba(255,255,255,.5); }}
       #handle b {{ color:#C858C6; font-weight:600; }}
-      #stl {{ position:absolute; left:80px; right:80px; top:1680px; padding:28px 34px 54px; border-radius:30px; background:rgba(18,9,23,.45); border:1.5px solid rgba(255,255,255,.16); backdrop-filter:blur(16px); }}
-      .stl-h {{ display:flex; justify-content:space-between; font-family:"SM"; font-size:20px; letter-spacing:.14em; color:#A99BB3; }}
-      .stl-r {{ position:relative; margin:34px 20px 0; height:6px; }}
-      .stl-l {{ position:absolute; inset:0; border-radius:3px; background:rgba(255,255,255,.14); }}
-      .stl-f {{ position:absolute; inset:0; border-radius:3px; background:linear-gradient(90deg,#C858C6,#9D14FF); transform-origin:0 50%; box-shadow:0 0 16px rgba(200,88,198,.7); }}
-      .stl-d {{ position:absolute; top:-9px; width:0; }}
-      .stl-d i {{ position:absolute; left:-12px; width:24px; height:24px; border-radius:50%; background:#2A1636; border:3px solid rgba(255,255,255,.3); }}
-      .stl-d b {{ position:absolute; left:-90px; width:180px; top:34px; text-align:center; font-family:"SM"; font-weight:400; font-size:17px; color:#A99BB3; white-space:nowrap; }}
       .capb {{ position:absolute; left:50px; right:50px; top:300px; text-align:center; }}
       .ln {{ line-height:1.08; }}
       .ln.ls {{ font-weight:400; font-size:50px; color:rgba(255,255,255,.88); margin-top:6px; }}
       .ln.lb {{ font-weight:600; font-size:100px; letter-spacing:-.04em; }}
       .ln.lg {{ font-weight:700; font-size:100px; letter-spacing:-.04em; }}
       .ln.lg .w {{ background:linear-gradient(90deg,#E7B6FF,#C858C6 45%,#9D14FF); -webkit-background-clip:text; color:transparent; }}
-      .w {{ display:inline-block; opacity:.25; }}
+      .w {{ display:inline-block; opacity:.42; }}
       .prop {{ position:absolute; inset:0; }}
-      .pw {{ position:absolute; left:0; right:0; top:740px; display:flex; justify-content:center; }}
-      .card {{ zoom:1.32; position:relative; border-radius:34px; background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.04)); backdrop-filter:blur(24px);
+      .pw {{ position:absolute; left:0; right:0; top:690px; height:1000px; display:flex; justify-content:center; align-items:center; }}
+      .card {{ zoom:1.5; position:relative; border-radius:34px; background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.04)); backdrop-filter:blur(24px);
         border:1.5px solid rgba(255,255,255,.22); box-shadow:0 40px 90px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.08); padding:38px 42px; overflow:hidden; }}
       .sweep {{ position:absolute; top:-200px; left:-400px; width:160px; height:1200px; transform:rotate(20deg); background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent); pointer-events:none; }}
       .lab {{ font-family:"SM"; font-size:22px; letter-spacing:.14em; color:#A99BB3; }}
@@ -163,7 +155,7 @@ def build():
       .li.ok {{ background:rgba(157,20,255,.18); border-color:rgba(200,88,198,.5); }}
       .x {{ width:72px; height:72px; flex:none; border-radius:50%; background:#670707; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:38px; }}
       .li.ok .x {{ background:linear-gradient(135deg,#9D14FF,#C858C6); }}
-      .pd {{ margin-top:26px; text-align:center; font-weight:700; font-size:50px; white-space:nowrap; background:linear-gradient(90deg,#E7B6FF,#C858C6,#9D14FF); -webkit-background-clip:text; color:transparent; }}
+      .pd {{ margin-top:26px; text-align:center; font-weight:700; font-size:50px; white-space:nowrap; background:linear-gradient(90deg,#F3D9FF,#E7B6FF,#C858C6); -webkit-background-clip:text; color:transparent; }}
       .cin {{ display:flex; align-items:center; gap:18px; margin-top:20px; padding:18px; border-radius:20px; background:#120917; }}
       .ctx {{ flex:1; font-weight:600; font-size:40px; }} .ctx i {{ font-style:normal; color:#C858C6; }}
       .cpost {{ font-weight:600; font-size:30px; color:#C858C6; }}
@@ -182,10 +174,6 @@ def build():
         <svg id="grain" width="1080" height="1920"><filter id="gn"><feTurbulence type="fractalNoise" baseFrequency="1" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="1080" height="1920" filter="url(#gn)"/></svg>
         <div id="vig"></div>
         <div id="handle">niks<b>.crypto</b></div>
-        <div id="stl"><div class="stl-h"><span>CRYPTO STORIES</span><span>EP 01 · PIZZA DAY</span></div>
-          <div class="stl-r"><div class="stl-l"></div><div class="stl-f" id="stf"></div>
-            {"".join(f'<div class="stl-d" style="left:{x}%"><i id="sd{i}"></i><b>{lab}</b></div>' for i, (x, lab) in enumerate([(0,"18 MAY · POST"),(33,"22 MAY · PIZZA"),(66,"2010 · $40"),(100,"AAJ · ₹ CR")]))}
-          </div></div>
       </div>
 {props}
 {chr(10).join(caps)}
@@ -198,13 +186,13 @@ def build():
       cyc("#g2", {{ x: 0, y: 0 }}, {{ x: 200, y: -80 }}, 18);
       cyc("#g3", {{ x: 0, y: 0, scale: 1 }}, {{ x: 60, y: 40, scale: 1.2 }}, 11);
       tl.fromTo("#pts", {{ y: 0 }}, {{ y: -260, duration: D, ease: "none" }}, 0);
-      document.querySelectorAll(".pt").forEach((p, i) => cyc(p, {{ opacity: 0.2 }}, {{ opacity: 1 }}, 2 + (i % 5)));
+      document.querySelectorAll(".ptc").forEach((p, i) => cyc(p, {{ opacity: 0.2 }}, {{ opacity: 1 }}, 2 + (i % 5)));
       // captions: block enter/exit + word reveal
       document.querySelectorAll(".capb").forEach((c) => {{
         const a = parseFloat(c.dataset.start), b = a + parseFloat(c.dataset.duration);
         tl.fromTo(c.querySelector(".cbx"), {{ y: 24, opacity: 0, filter: "blur(8px)" }}, {{ y: 0, opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }}, a + 0.02);
         tl.to(c.querySelector(".cbx"), {{ y: -20, opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }}, b - 0.2);
-        c.querySelectorAll(".w").forEach((w) => tl.fromTo(w, {{ opacity: 0.25, y: 6 }}, {{ opacity: 1, y: 0, duration: 0.14 }}, parseFloat(w.dataset.t)));
+        c.querySelectorAll(".w").forEach((w) => tl.fromTo(w, {{ opacity: 0.42, y: 6 }}, {{ opacity: 1, y: 0, duration: 0.14 }}, parseFloat(w.dataset.t)));
       }});
       // props: rise + blur, slow push-in, light sweep, exit
       document.querySelectorAll(".prop").forEach((p) => {{
@@ -217,9 +205,6 @@ def build():
       const pop = (id, t) => tl.fromTo(id, {{ scale: 0, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.4)" }}, t);
       const slam = (id, t, r) => tl.fromTo(id, {{ scale: 2.3, opacity: 0, rotation: r - 12 }}, {{ scale: 1, opacity: 1, rotation: r, duration: 0.2, ease: "power4.in" }}, t);
       const count = (id, a, b, t, d, fmt) => {{ const o = {{ v: a }}; tl.fromTo(o, {{ v: a }}, {{ v: b, duration: d, ease: "power2.out", onUpdate: () => {{ document.querySelector(id).textContent = fmt(o.v); }} }}, t); }};
-      tl.fromTo("#stl", {{ y: 120, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }}, 0.4);
-      tl.fromTo("#stf", {{ scaleX: 0 }}, {{ scaleX: 1, duration: D - 1, ease: "none" }}, 0.5);
-      [13.0, 27.1, 20.1, 34.7].forEach((t, i) => tl.to("#sd" + i, {{ background: "#C858C6", borderColor: "#fff", scale: 1.25, duration: 0.25, ease: "back.out(3)" }}, t));
       // p1
       tl.fromTo("#p1d", {{ y: 60, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.4, ease: "back.out(2)" }}, 0.3);
       tl.fromTo("#p1z svg", {{ scale: 0, rotation: -20 }}, {{ scale: 1, rotation: 0, duration: 0.35, stagger: 0.18, ease: "back.out(2.4)" }}, 4.64);
@@ -228,17 +213,18 @@ def build():
       // p3
       tl.fromTo("#p3w .chips span", {{ y: 20, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.25, stagger: 0.15 }}, 11.4);
       // p4 forum
-      tl.fromTo("#p4t", {{ clipPath: "inset(0 100% 0 0)" }}, {{ clipPath: "inset(0 0% 0 0)", duration: 1.6, ease: "none" }}, 13.4);
-      pop("#p4a", 15.5); pop("#p4b", 17.5);
+      tl.fromTo("#p4t", {{ clipPath: "inset(0 100% 0 0)" }}, {{ clipPath: "inset(0 0% 0 0)", duration: 1.4, ease: "none" }}, 13.2);
+      pop("#p4a", 14.6); pop("#p4b", 17.5);
       // p5
       pop("#p5c", 24.7);
       // p6
-      tl.fromTo("#p6z svg", {{ y: -200, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.45, stagger: 0.2, ease: "bounce.out" }}, 29.3); slam("#p6s", 32.2, -4);
+      tl.fromTo("#p6z svg", {{ y: -200, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.45, stagger: 0.2, ease: "bounce.out" }}, 27.5);
+      tl.to("#p6z svg", {{ scale: 1.12, duration: 0.18, yoyo: true, repeat: 1, stagger: 0.1 }}, 29.3); slam("#p6s", 32.2, -4);
       // p7 chart
-      tl.to("#p7l", {{ attr: {{ "stroke-dashoffset": 0 }}, duration: 2.0, ease: "power2.in" }}, 35.4);
+      tl.to("#p7l", {{ attr: {{ "stroke-dashoffset": 0 }}, duration: 2.6, ease: "power1.inOut" }}, 34.9);
       tl.to("#p7t", {{ opacity: 1, duration: 0.3 }}, 37.6);
       // p8
-      tl.fromTo("#p8a", {{ x: -80, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }}, 41.1);
+      tl.fromTo("#p8a", {{ x: -80, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }}, 40.45);
       tl.fromTo("#p8b", {{ x: -80, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }}, 44.3);
       // p9
       pop("#p9t", 52.2);
