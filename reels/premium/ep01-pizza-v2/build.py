@@ -70,12 +70,12 @@ PROPS = [
         <div class="stampo" id="nr" style="position:absolute;right:34px;bottom:26px">NO REGRETS</div></div>'''),
     ("pg", 47.5, 54.1, f'''
       <div class="calp"><div class="rings"><i></i><i></i><i></i><i></i></div><div class="cm">MAY</div><div class="cdd">22</div><div class="cy">HAR SAAL</div>
-        <div class="stk" id="pdy" style="left:-150px;right:auto;bottom:-130px;white-space:nowrap"><div class="sk-r">{PIZZA.format(s=56)}<b style="font-size:40px">Bitcoin Pizza Day</b></div></div></div>'''),
+        <div class="stk" id="pdy" style="left:-70px;right:auto;bottom:-120px;white-space:nowrap"><div class="sk-r">{PIZZA.format(s=56)}<b style="font-size:40px">Bitcoin Pizza Day</b></div></div></div>'''),
     ("ph", 54.1, DUR, '''
       <div class="cmt"><div class="ct">Comments</div><div class="cin"><span id="ty"></span><i id="cur">|</i><b>Post</b></div></div>
       <div class="dm" id="dm"><div class="ava sm">N</div><div><div class="dn">niks.crypto <span>sent you a message · now</span></div>
         <div class="dt">Agli crypto kahani ready hai 🙌</div><div class="dlk">niks.crypto/stories</div></div></div>
-      <div class="sph" id="s1" style="left:120px"></div><div class="sph" id="s2" style="left:880px"></div>'''),
+      <div class="sph" id="s1" style="left:70px"></div><div class="sph" id="s2" style="left:670px"></div>'''),
 ]
 
 
@@ -97,7 +97,11 @@ def caption_html(i, a, b, lines):
 
 def build():
     caps = "\n".join(caption_html(i, *c) for i, c in enumerate(CAPS))
-    props = "\n".join(f'      <div id="{k}" class="clip prop" data-start="{a}" data-duration="{round(b - a, 2)}" data-track-index="3"><div class="stage" id="{k}s">{h}</div></div>'
+    LH = {"s": 63, "b": 105, "a": 110, "h": 96}
+    def top_for(a, b):
+        hs = [sum(LH[l[0]] for l in lines) for ca, cb, lines in CAPS if ca < b - 0.01 and cb > a + 0.01]
+        return 330 + max(hs or [200]) + 70
+    props = "\n".join(f'      <div id="{k}" class="clip prop" data-start="{a}" data-duration="{round(b - a, 2)}" data-track-index="3"><div class="stage" id="{k}s" style="top:{top_for(a, b)}px">{h}</div></div>'
                       for k, a, b, h in PROPS)
     html = f'''<!doctype html>
 <html lang="en">
@@ -117,24 +121,26 @@ def build():
       #root {{ position:absolute; inset:0; font-family:"SG",sans-serif; color:#fff; overflow:hidden; }}
       #bg {{ position:absolute; inset:0; background:radial-gradient(1100px 900px at 50% 62%,#24113A 0%,#170B20 55%,#120917 100%); }}
       #glow {{ position:absolute; left:140px; top:1500px; width:800px; height:600px; border-radius:50%; background:rgba(157,20,255,.22); filter:blur(90px); }}
-      #grid {{ position:absolute; left:90px; right:90px; top:700px; height:960px;
+      #grid {{ position:absolute; left:60px; right:60px; top:640px; height:1100px;
         background-image:linear-gradient(rgba(231,182,255,.07) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(231,182,255,.07) 1.5px,transparent 1.5px); background-size:64px 64px;
         -webkit-mask-image:radial-gradient(ellipse at center,#000 35%,transparent 72%); mask-image:radial-gradient(ellipse at center,#000 35%,transparent 72%); }}
-      #handle {{ position:absolute; left:0; right:0; top:200px; text-align:center; font-weight:600; font-size:30px; color:rgba(255,255,255,.28); }}
+      #handle {{ position:absolute; left:0; right:0; top:250px; text-align:center; font-weight:600; font-size:30px; color:rgba(255,255,255,.28); }}
       /* captions */
-      .cap {{ position:absolute; left:60px; right:60px; top:290px; text-align:center; }}
+      .cap {{ position:absolute; left:40px; right:40px; top:330px; text-align:center; }}
       .ln {{ line-height:1.12; }}
-      .ln.s {{ font-weight:400; font-size:48px; color:rgba(255,255,255,.9); }}
-      .ln.b {{ font-weight:700; font-size:80px; letter-spacing:-.035em; }}
-      .ln.a {{ font-weight:700; font-size:84px; letter-spacing:-.035em; }}
+      .ln.s {{ font-weight:400; font-size:56px; color:rgba(255,255,255,.9); }}
+      .ln.b {{ font-weight:700; font-size:94px; letter-spacing:-.035em; }}
+      .ln.a {{ font-weight:700; font-size:98px; letter-spacing:-.035em; }}
       .ln.a .w {{ background:linear-gradient(90deg,#F1D2FF,#C858C6 55%,#A63BFF); -webkit-background-clip:text; color:transparent; }}
-      .ln.h {{ position:relative; display:inline-block; margin-top:10px; font-weight:700; font-size:60px; letter-spacing:-.02em; padding:2px 20px 8px; }}
+      .ln.h {{ position:relative; display:inline-block; margin-top:10px; font-weight:700; font-size:66px; letter-spacing:-.02em; padding:2px 20px 8px; }}
       .bar {{ position:absolute; inset:0; background:#fff; transform-origin:0 50%; }}
       .bt {{ position:relative; color:#120917; }}
       .w {{ display:inline-block; opacity:0; }}
       /* prop stage */
       .prop {{ position:absolute; inset:0; }}
-      .stage {{ position:absolute; left:0; right:0; top:760px; height:860px; display:flex; align-items:center; justify-content:center; }}
+      .stage {{ position:absolute; left:0; right:0; top:690px; height:1050px; display:flex; align-items:flex-start; justify-content:center; }}
+      .stage > * {{ zoom:1.28; }}
+      #pas > *, #pds > * {{ zoom:1.12; }} #pcs > * {{ zoom:1.18; }} #pbs > *, #pfs > * {{ zoom:1.42; }} #phs > * {{ zoom:1.3; }} #pgs > * {{ zoom:1.4; }} #pes > * {{ zoom:1.38; }}
       .glass {{ background:linear-gradient(180deg,#24162E,#1A1022); border:1.5px solid rgba(255,255,255,.12); box-shadow:0 50px 100px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.07); }}
       /* A printer + receipt */
       .printer {{ position:relative; width:700px; height:820px; }}
@@ -150,7 +156,7 @@ def build():
       .rc .stampo {{ margin-top:44px; margin-left:60px; color:#9D14FF; border-color:#9D14FF; }}
       .stampo.big {{ position:absolute; left:150px; bottom:40px; font-size:36px; background:rgba(18,9,23,.85); }}
       /* B forum window */
-      .win {{ position:relative; width:780px; border-radius:30px; padding:0 0 40px; background:#F6F0FA; color:#1A0F22; box-shadow:0 50px 100px rgba(0,0,0,.55); }}
+      .win {{ position:relative; width:670px; border-radius:30px; padding:0 0 40px; background:#F6F0FA; color:#1A0F22; box-shadow:0 50px 100px rgba(0,0,0,.55); }}
       .wbar {{ display:flex; align-items:center; gap:12px; padding:22px 28px; border-bottom:2px solid #E6DDEE; }}
       .wbar i {{ width:16px; height:16px; border-radius:50%; background:#D5C8E0; }} .wbar span {{ margin-left:16px; font-family:"SM"; font-size:22px; color:#8B7B98; }}
       .wt {{ padding:30px 40px 0; font-weight:700; font-size:46px; }}
@@ -159,7 +165,7 @@ def build():
       .ava.sm {{ width:64px; height:64px; font-size:28px; }}
       .un {{ font-weight:700; font-size:36px; color:#7A10D8; }} .ud {{ font-family:"SM"; font-size:20px; color:#8B7B98; margin-top:2px; }}
       .body {{ padding:24px 40px 40px; font-size:38px; line-height:1.35; min-height:180px; }}
-      .stk {{ position:absolute; right:-40px; bottom:-120px; border-radius:24px; padding:20px 26px; background:#1A1022; border:3px solid #C858C6; box-shadow:0 30px 60px rgba(0,0,0,.5); transform:rotate(-4deg); }}
+      .stk {{ position:absolute; right:-20px; bottom:-90px; border-radius:24px; padding:20px 26px; background:#1A1022; border:3px solid #C858C6; box-shadow:0 30px 60px rgba(0,0,0,.5); transform:rotate(-4deg); }}
       .sk-l {{ font-family:"SM"; font-size:20px; color:#C858C6; letter-spacing:.12em; }}
       .sk-r {{ display:flex; align-items:center; gap:14px; margin-top:8px; }} .sk-r em {{ font-style:normal; font-size:44px; color:#C858C6; }} .sk-r b {{ font-family:"SM"; font-size:44px; color:#fff; }}
       /* C calculator */
@@ -187,7 +193,7 @@ def build():
         display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 40px 90px rgba(0,0,0,.6), 0 0 0 10px rgba(200,88,198,.25); }}
       .cv {{ font-family:"SM"; font-weight:700; font-size:68px; color:#7A10D8; white-space:nowrap; }} .cl {{ font-family:"SM"; font-size:20px; color:#8B7B98; letter-spacing:.08em; margin-top:6px; }}
       /* F doc */
-      .doc {{ position:relative; width:780px; border-radius:28px; padding:44px 46px 110px; background:#F6F0FA; color:#1A0F22; box-shadow:0 50px 100px rgba(0,0,0,.55); }}
+      .doc {{ position:relative; width:670px; border-radius:28px; padding:44px 46px 110px; background:#F6F0FA; color:#1A0F22; box-shadow:0 50px 100px rgba(0,0,0,.55); }}
       .dq {{ font-weight:700; font-size:46px; }} .da {{ font-size:42px; margin-top:20px; color:#5D4E68; }}
       .dp {{ font-size:40px; line-height:1.35; margin-top:20px; }}
       .hl {{ background:linear-gradient(90deg,rgba(200,88,198,.38),rgba(200,88,198,.38)) no-repeat 0 0 / 0% 100%; padding:0 4px; }}
@@ -197,13 +203,13 @@ def build():
       .cm {{ border-radius:36px 36px 0 0; background:linear-gradient(90deg,#9D14FF,#C858C6); color:#fff; font-family:"SM"; font-weight:700; font-size:44px; letter-spacing:.2em; padding:34px 0 24px; }}
       .cdd {{ font-weight:700; font-size:250px; line-height:1.05; letter-spacing:-.04em; }} .cy {{ font-family:"SM"; font-size:28px; color:#8B7B98; letter-spacing:.16em; }}
       /* H comments */
-      .cmt {{ position:absolute; left:160px; top:200px; width:760px; border-radius:28px; padding:30px; background:#F6F0FA; color:#1A0F22; box-shadow:0 40px 80px rgba(0,0,0,.5); }}
+      .cmt {{ position:absolute; left:70px; top:40px; width:690px; border-radius:28px; padding:30px; background:#F6F0FA; color:#1A0F22; box-shadow:0 40px 80px rgba(0,0,0,.5); }}
       .ct {{ font-weight:700; font-size:34px; }} .cin {{ display:flex; align-items:center; margin-top:20px; padding:22px 26px; border-radius:40px; background:#ECE3F3; font-size:38px; font-weight:600; }}
       .cin i {{ font-style:normal; color:#9D14FF; }} .cin b {{ margin-left:auto; color:#9D14FF; font-size:32px; }}
-      .dm {{ position:absolute; left:160px; top:470px; width:760px; display:flex; gap:20px; border-radius:28px; padding:28px; background:#F6F0FA; color:#1A0F22; border:4px solid #C858C6; box-shadow:0 40px 80px rgba(0,0,0,.5); }}
+      .dm {{ position:absolute; left:70px; top:300px; width:690px; display:flex; gap:20px; border-radius:28px; padding:28px; background:#F6F0FA; color:#1A0F22; border:4px solid #C858C6; box-shadow:0 40px 80px rgba(0,0,0,.5); }}
       .dn {{ font-weight:700; font-size:30px; }} .dn span {{ font-weight:400; font-size:22px; color:#8B7B98; }}
       .dt {{ font-size:32px; margin-top:6px; }} .dlk {{ font-size:30px; color:#9D14FF; font-weight:600; margin-top:4px; }}
-      .sph {{ position:absolute; top:760px; width:90px; height:90px; border-radius:50%; background:radial-gradient(circle at 35% 30%,#F8E6FF,#C858C6 45%,#6E0FB4); box-shadow:0 20px 40px rgba(0,0,0,.5); }}
+      .sph {{ position:absolute; top:560px; width:90px; height:90px; border-radius:50%; background:radial-gradient(circle at 35% 30%,#F8E6FF,#C858C6 45%,#6E0FB4); box-shadow:0 20px 40px rgba(0,0,0,.5); }}
     </style>
   </head>
   <body>
