@@ -348,7 +348,7 @@
       const typ = (id, word, t, d) => { const o = { n: 0 }; tl.fromTo(o, { n: 0 }, { n: word.length, duration: d, ease: "none", onUpdate: () => { document.querySelector(id).textContent = word.slice(0, Math.round(o.n)); } }, t); };
       const IN = (v) => Math.round(v).toLocaleString("en-IN");
       // A free $30 + legal tender
-      pop("#gift", 3.6, 0); num("#cb", 0, 30, 4.0, 1.2, (v) => "$" + Math.round(v));
+      tl.set("#gift", { opacity: 0.2, scale: 1, rotation: 0 }, 0.01); pop("#gift", 3.6, 0); num("#cb", 0, 30, 4.0, 1.2, (v) => "$" + Math.round(v));
       tl.set("#lt", { opacity: 0 }, 0); slam("#lt", 9.6, -4);
       // B country
       tl.set("#pres", { opacity: 0.15 }, 11.9); pop("#pres", 18.14, 0);
@@ -358,7 +358,7 @@
       pop("#fee", 25.82, -3);
       tl.set("#bc", { opacity: 0 }, 19.8); pop("#bc", 30.11, 0);
       // D law + app
-      tl.set(["#w1", "#app"], { opacity: 0 }, 31.4); pop("#w1", 36.5, 4);
+      tl.set("#w1", { opacity: 0 }, 31.4); tl.set("#app", { opacity: 0.2, scale: 1, rotation: 0 }, 31.4); pop("#w1", 36.5, 4);
       pop("#app", 39.8, 0); num("#sb", 0, 30, 43.0, 0.8, (v) => "+$" + Math.round(v));
       // E treasury + tweet
       num("#gb", 0, 6000, 45.3, 2.6, (v) => IN(v) + (v > 5999 ? "+" : ""));
@@ -370,7 +370,7 @@
       tl.set(["#cnd", "#shop"], { opacity: 0 }, 62.5); pop("#cnd", 65.92, 0); pop("#shop", 68.38, 0);
       tl.set("#opt", { textContent: "OPTIONAL", color: "#E0584F" }, 70.6); tl.fromTo("#opt", { scale: 1.4 }, { immediateRender: false, scale: 1, duration: 0.3 }, 70.6);
       // H debate
-      pop("#h1", 74.2, -3); pop("#h2", 76.9, 3); tl.set("#db", { opacity: 0 }, 72.7); slam("#db", 78.48, -3);
+      tl.set(["#h1", "#h2"], { opacity: 0.2, scale: 1, rotation: 0 }, 72.75); pop("#h1", 74.2, -3); pop("#h2", 76.9, 3); tl.set("#db", { opacity: 0 }, 72.7); slam("#db", 78.48, -3);
       // I countries
       [0, 1, 2, 3, 4].forEach((k) => pop("#fl" + k, 82.0 + k * 0.4, 0));
       // J comment + DM + spheres
